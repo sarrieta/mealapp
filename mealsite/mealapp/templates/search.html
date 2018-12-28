@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+  body{
+    background-color:black;
+    background-image: url("{%static 'media/img/background/index-header-background.jpeg'%}");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+}
+  </style>
+
+
+  <body id="page-top">
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong><font size="">Search</font></strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5"><font size="6">Enter you seach in the box below</font></p>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+  </body>
+
+{%endblock%}
