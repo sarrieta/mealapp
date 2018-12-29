@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load easy_maps_tags %}
 
+<meta name="viewport" content="initial-scale=1.0">
+<meta charset="utf-8">
 <style>
 
   body{
@@ -12,10 +15,23 @@
     background-attachment: fixed;
     background-position: center;
   }
+  /* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+  #map {
+    height: 80%;
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom:200px;
+    float:center;
 
-}
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+        }
   </style>
-
 
   <body id="page-top">
 
@@ -30,11 +46,16 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5"><font size="6">Enter you seach in the box below</font></p>
-
           </div>
         </div>
       </div>
     </header>
+
+    <div id="map"></div>
+
+
+
+
 
   </body>
 
