@@ -12,3 +12,7 @@ def index(request):
 def search(request):
 	#return HttpResponse("Hello you are at the index")
 	return render (request,'search.html')
+
+def search2(request):
+	#return HttpResponse("Hello you are at the index")
+	return render (request,'search2.html')

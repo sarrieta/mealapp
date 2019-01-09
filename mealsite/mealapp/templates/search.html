@@ -1,62 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% load easy_maps_tags %}
 
-<meta name="viewport" content="initial-scale=1.0">
-<meta charset="utf-8">
-<style>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+         height: 80%;
+         margin-left:100px;
+         margin-right:100px;
+         margin-bottom:200px;
+         float:center;
 
-  body{
-    background-color:black;
-    background-image: url("{%static 'media/img/background/index-header-background.jpeg'%}");
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    background-position: center;
-  }
-  /* Always set the map height explicitly to define the size of the div
-  * element that contains the map. */
-  #map {
-    height: 80%;
-    margin-left:100px;
-    margin-right:100px;
-    margin-bottom:200px;
-    float:center;
+       }
 
-  }
-  /* Optional: Makes the sample page fill the window. */
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-        }
-  </style>
+       body{
+         background-color:black;
+         background-image: url("{%static 'media/img/background/index-header-background.jpeg'%}");
+         background-repeat:no-repeat;
+         background-size:cover;
+         background-attachment: fixed;
+         background-position: center;
+       }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
-  <body id="page-top">
+    </style>
 
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong><font size="">Search</font></strong>
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5"><font size="6">Enter you seach in the box below</font></p>
-          </div>
+<<body>
+  <header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong><font size="">Search</font></strong>
+          </h1>
+          <hr>
         </div>
+
       </div>
-    </header>
+    </div>
+  </header>
 
-    <div id="map"></div>
-
-
-
+  <div id="map"></div>
 
 
-  </body>
+</body>
+
+
+
+
 
 {%endblock%}

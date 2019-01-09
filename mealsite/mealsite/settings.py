@@ -38,11 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'easy_maps',
     'mealapp',
 ]
 
-EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1c'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
