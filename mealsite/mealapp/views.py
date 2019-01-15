@@ -8,16 +8,20 @@ import requests
 from .models import Menu
 
 
-def index(request):
 
+
+def index(request):
 
 	return render (request,'index.html')
 
+def map(request):
 
-def search(request):
+	return render (request,'map.html')
 
-	return render (request,'search.html')
+def login(request):
 
-def search2(request):
-	#return HttpResponse("Hello you are at the index")
-	return render (request,'search2.html')
+	return render (request,'login.html')
+
+def register(request):
+
+	return render (request,'register.html')

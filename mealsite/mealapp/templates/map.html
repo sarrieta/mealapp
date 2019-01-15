@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+         height: 80%;
+         margin-left:100px;
+         margin-right:100px;
+         margin-bottom:200px;
+         float:center;
+
+       }
+
+       body{
+         background-color:black;
+         background-image: url("{%static 'media/img/background/index-header-background.jpeg'%}");
+         background-repeat:no-repeat;
+         background-size:cover;
+         background-attachment: fixed;
+         background-position: center;
+       }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+
+<body>
+  <header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong><font size="">Restaurants</font></strong>
+          </h1>
+          <hr>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+
+</body>
+
+
+
+
+
+{%endblock%}

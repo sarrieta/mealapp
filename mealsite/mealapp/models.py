@@ -21,3 +21,25 @@ class Restaurant(models.Model):
     class Meta:
         verbose_name = "Restaurant"
         verbose_name_plural = "Restaurants"
+
+class Preferences(models.Model):
+    # Given hobby [LIST]
+    # Tennis, basketball, running, gym etc
+    preferences = models.CharField(max_length=4096)
+    class Meta:
+        verbose_name = "preference"
+        verbose_name_plural = "preferences"
+
+    def __str__(self):
+        return self.preference
+
+
+class UserProfile(moddels.Model):
+    username = models.CharField(blank=False, default=None,max_length=15)
+    password = models.CharField(blank=False, default=None,max_length=15)
+    preferences = models.ManyToManyField(
+        blank=True,
+        to=Preferences,
+        symmetrical=False,
+        related_name='related_to'
+    )
