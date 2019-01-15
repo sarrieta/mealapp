@@ -8,11 +8,6 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="{% static 'css/stylesheet.css'%}" />
 
-  <!-- Map src script  AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1c-->
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1ce&libraries=places&callback=initMap"
-            async defer></script>
-  <script src="{% static 'scripts/map/scripts.js' %}"></script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
@@ -39,23 +34,19 @@
 
 </style>
 
-
 <body>
-
-
 
 
   {% block content %}
   {% endblock %}
 
 
-
-
 </body>
 
-<!-- Static folder imports-->
+<!-- Map src script  AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1c-->
 
-
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1c&libraries=places&callback=initMap"
+          async defer></script>
+<script src="{% static 'scripts/map/scripts.js' %}"></script>
 
 </html>
