@@ -1,8 +1,5 @@
 from django.db import models
 
-
-
-
 class Menu(models.Model):
     type = models.CharField(blank=True,max_length=15)
     item_name = models.CharField(blank=False, default=None,max_length=15)
@@ -27,14 +24,10 @@ class Preferences(models.Model):
     # Tennis, basketball, running, gym etc
     preferences = models.CharField(max_length=4096)
     class Meta:
-        verbose_name = "preference"
         verbose_name_plural = "preferences"
 
-    def __str__(self):
-        return self.preference
 
-
-class UserProfile(moddels.Model):
+class UserProfile(models.Model):
     username = models.CharField(blank=False, default=None,max_length=15)
     password = models.CharField(blank=False, default=None,max_length=15)
     preferences = models.ManyToManyField(

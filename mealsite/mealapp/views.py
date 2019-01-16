@@ -6,7 +6,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
 from .models import Menu
-
+from .forms import *
 
 
 
@@ -19,9 +19,10 @@ def map(request):
 	return render (request,'map.html')
 
 def login(request):
-
-	return render (request,'login.html')
+	login_form = UserLogInForm()
+	return render (request,'login.html',{'login_form': login_form})
 
 def register(request):
+	reg_form = UserRegForm()
 
-	return render (request,'register.html')
+	return render (request,'register.html',{'reg_form': reg_form})

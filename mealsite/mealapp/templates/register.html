@@ -38,14 +38,14 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
-            <strong><font size="">Login</font></strong>
+            <strong><font size="">Register</font></strong>
           </h1>
           <hr>
-          {% crispy login_form %}
+          {% crispy reg_form %}
           <br>
-          <button type="submit" class='btn btn-primary'value="Submit">Login</button>
+          <button type="submit" class='btn btn-primary'value="Submit">Sign Up</button>
           <br>
-          <p>Don't have an account? <a href="{% url 'register' %}">Click here</a>.</p>
+          <p>Already have an account? <a href="{% url 'login' %}">Click here</a>.</p>
         </div>
 
       </div>
