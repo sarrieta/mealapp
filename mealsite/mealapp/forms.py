@@ -5,15 +5,17 @@ from django.db import models
 from .models import*
 from .forms import *
 
-class UserLogInForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ['username','password']
-
-    widgets = {
-        'password': forms.PasswordInput(),
-
-       }
+class UserLogInForm(forms.Form):
+    username = forms.CharField( min_length=2,max_length=15, widget=forms.TextInput(attrs={
+        'placeholder':'Username',
+        'class':'form-control',
+        'id':'id_log_username'
+        }))
+    password = forms.CharField( min_length=1,max_length=32, widget=forms.PasswordInput(attrs={
+        'placeholder':'Password',
+        'class':'form-control',
+        'id':'id_log_password'
+        }))
 
 class UserRegForm(forms.ModelForm):
     class Meta:
@@ -22,9 +24,14 @@ class UserRegForm(forms.ModelForm):
         labels = {
             }
         widgets = {
-            'password': forms.PasswordInput(),
-            'preferences':forms.Textarea(attrs={'rows':5, 'cols':20, 'readonly':'readonly'})
+            'username':forms.TextInput(attrs={"placeholder":"Enter username"}),
+            'password': forms.PasswordInput(attrs={"placeholder":"Enter password"}),
+
            }
+    re_password = forms.CharField(label='Repeat Password',max_length=32, widget=forms.PasswordInput(attrs={
+    "placeholder":"Repeat password",
+    "name":"re_password"}))
+
 
 
 class PreferencesForm(forms.ModelForm):

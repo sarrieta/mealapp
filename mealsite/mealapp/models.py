@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from multiselectfield import MultiSelectField
 
 class Menu(models.Model):
     type = models.CharField(blank=True,max_length=15)
@@ -20,19 +22,22 @@ class Restaurant(models.Model):
         verbose_name_plural = "Restaurants"
 
 class Preferences(models.Model):
-    # Given hobby [LIST]
-    # Tennis, basketball, running, gym etc
-    preferences = models.CharField(max_length=4096)
+    choices = (('vegan', 'Vegan'),
+                         ('halal', 'Halal'))
+    #preferences = MultiSelectField(choices=choices)
+    preferences= models.CharField(blank=False, default=None,max_length=15)
     class Meta:
         verbose_name_plural = "preferences"
+    def __str__(self):
+        return self.preferences
 
 
-class UserProfile(models.Model):
-    username = models.CharField(blank=False, default=None,max_length=15)
-    password = models.CharField(blank=False, default=None,max_length=15)
+class UserProfile(User):
     preferences = models.ManyToManyField(
         blank=True,
         to=Preferences,
         symmetrical=False,
         related_name='related_to'
     )
+    def __str__(self):
+        return self.username

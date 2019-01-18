@@ -6,14 +6,6 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-       #map {
-         height: 80%;
-         margin-left:100px;
-         margin-right:100px;
-         margin-bottom:200px;
-         float:center;
-
-       }
 
        body{
          background-color:black;
@@ -41,9 +33,20 @@
             <strong><font size="">Register</font></strong>
           </h1>
           <hr>
-          {% crispy reg_form %}
+
+          <form method="POST">
+          {% csrf_token %}
+          {{ registration_form | crispy }}
           <br>
-          <button type="submit" class='btn btn-primary'value="Submit">Sign Up</button>
+
+          <button type="submit" class="btn btn-success">Submit <i class="fas fa-paper-plane"></i></button>
+          <button type="reset"  class="btn btn-primary">Reset <i class="fas fa-undo"></i></button>
+
+          <br>
+
+          </form>
+
+
           <br>
           <p>Already have an account? <a href="{% url 'login' %}">Click here</a>.</p>
         </div>
@@ -60,4 +63,4 @@
 
 
 
-{%endblock%}
+{% endblock %}
