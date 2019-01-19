@@ -1,7 +1,8 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
-from models import Menu
+from models import*
+import String
 
 source = requests.get("https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=07f1e62d-8b95-4d05-9397-8f8d3df73291&p=2&sd=2019-01-11+19%3A00")
 soup = BeautifulSoup(source.text, 'lxml')
@@ -17,9 +18,12 @@ for menu_items in soup.find_all('div', class_="menu-item__2ZxJOnTY"):
     except:
         desc =" "
     try:
+        price=price.translate({ord('£'): None})
         price=float(price)
     except:
         price=0.00
 
-    menu = Menu.objects.create("""type=type,"""item_name=name,item_price=price,item_description=desc,restaurant_name="The Widow's Son")
+
+
+    menu = Menu_Items.objects.create("""type=type,"""item_name=name,item_price=price,item_description=desc,restaurant_name="The Widow's Son")
     menu.save()

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
 
-class Menu(models.Model):
+class Menu_Items(models.Model):
     type = models.CharField(blank=True,max_length=15)
     item_name = models.CharField(blank=False, default=None,max_length=15)
     item_description = models.CharField(blank=False, default=None,max_length=500)
@@ -16,7 +16,7 @@ class Restaurant(models.Model):
     name= models.CharField(blank=False, default=None,max_length=15)
     long = models.DecimalField(max_digits=9, decimal_places=6)
     lat = models.DecimalField(max_digits=9, decimal_places=6)
-    menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    menu = models.ForeignKey(Menu_Items, on_delete=models.CASCADE)
     class Meta:
         verbose_name = "Restaurant"
         verbose_name_plural = "Restaurants"
