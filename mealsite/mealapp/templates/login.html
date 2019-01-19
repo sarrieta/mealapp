@@ -45,8 +45,10 @@
             {% csrf_token %}
             {{ login_form | crispy }}
           <br>
-          <button type="submit" value='submit'class="btn btn-success">Submit <i class="fas fa-paper-plane"></i></button>
-          <button type="reset" value='reset' class="btn btn-primary">Reset <i class="fas fa-undo"></i></button>
+
+          <button type="submit" class="btn btn-success">Submit <i class="fas fa-paper-plane"></i></button>
+          <button type="reset"  class="btn btn-primary">Reset <i class="fas fa-undo"></i></button>
+
           </form>
           <br>
           <p>Don't have an account? <a href="{% url 'register' %}">Click here</a>.</p>

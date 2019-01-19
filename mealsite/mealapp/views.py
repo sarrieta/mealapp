@@ -37,7 +37,7 @@ def loggedin(view):
 def index(request):
 
 	return render (request,'index.html')
-@loggedin
+
 def map(request):
 
 	return render (request,'map.html')

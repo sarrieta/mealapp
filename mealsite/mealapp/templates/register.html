@@ -33,20 +33,16 @@
             <strong><font size="">Register</font></strong>
           </h1>
           <hr>
-
           <form method="POST">
           {% csrf_token %}
           {{ registration_form | crispy }}
           <br>
-
+          
           <button type="submit" class="btn btn-success">Submit <i class="fas fa-paper-plane"></i></button>
           <button type="reset"  class="btn btn-primary">Reset <i class="fas fa-undo"></i></button>
 
-          <br>
 
           </form>
-
-
           <br>
           <p>Already have an account? <a href="{% url 'login' %}">Click here</a>.</p>
         </div>

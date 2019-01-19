@@ -8,12 +8,10 @@ from .forms import *
 class UserLogInForm(forms.Form):
     username = forms.CharField( min_length=2,max_length=15, widget=forms.TextInput(attrs={
         'placeholder':'Username',
-        'class':'form-control',
         'id':'id_log_username'
         }))
     password = forms.CharField( min_length=1,max_length=32, widget=forms.PasswordInput(attrs={
         'placeholder':'Password',
-        'class':'form-control',
         'id':'id_log_password'
         }))
 
