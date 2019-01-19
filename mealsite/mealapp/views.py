@@ -137,6 +137,7 @@ def login(request):
                     if user.is_active:
                         request.session['username'] = username
                         request.session['password'] = password
+                        print("logged in")
                         """form = UserProfile()
                         member_form = MemberProfile()
                         #populates User Profile form with database values
@@ -152,13 +153,14 @@ def login(request):
                             'user': person,
                             'loggedIn': True
                         }
-
+                        print("log in dered")
                         return render(request, 'map.html', context)
                 #returns errors if credentials are invalid
                 else:
+                    print("user is none")
                     context = {
-                        'appname':appname,
-                        'login_form': login_form,
+
+                    'login_form': login_form,
                     }
                     return render(request, 'index.html', context)
             else:
@@ -179,6 +181,6 @@ def login(request):
         }
         return render(request, 'login.html', context)
 @loggedin
-def logout(request, user):
+def logout(request):
 	request.session.flush()
 	return redirect("/")

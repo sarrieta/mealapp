@@ -43,7 +43,7 @@
           <hr>
           <form method="POST">
             {% csrf_token %}
-          {{ login_form | crispy }}
+            {{ login_form | crispy }}
           <br>
           <button type="submit" value='submit'class="btn btn-success">Submit <i class="fas fa-paper-plane"></i></button>
           <button type="reset" value='reset' class="btn btn-primary">Reset <i class="fas fa-undo"></i></button>
