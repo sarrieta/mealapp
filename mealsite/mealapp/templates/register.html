@@ -21,6 +21,10 @@
         margin: 0;
         padding: 0;
       }
+      input, select, textarea{
+      color: black;
+      }
+
 
     </style>
 
@@ -37,7 +41,7 @@
           {% csrf_token %}
           {{ registration_form | crispy }}
           <br>
-          
+
           <button type="submit" class="btn btn-success">Submit <i class="fas fa-paper-plane"></i></button>
           <button type="reset"  class="btn btn-primary">Reset <i class="fas fa-undo"></i></button>
 
