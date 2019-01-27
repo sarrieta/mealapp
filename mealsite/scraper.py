@@ -6,7 +6,7 @@ import String
 
 
 
-    source = requests.get("https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=07f1e62d-8b95-4d05-9397-8f8d3df73291&p=2&sd=2019-01-11+19%3A00")
+    source = requests.get("https://www.opentable.com/r/kilikya-mile-end-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=5f970422-07b4-47e0-823b-bcd5829a7555&p=2&sd=2019-01-20%2019%3A00")
     soup = BeautifulSoup(source.text, 'lxml')
     menu_items = soup.find('div', class_="menu-items__2DRnPKGV")
     """type_items = soup.find('div', class_="menu-section-header__3nfLpHEA")"""
@@ -27,5 +27,5 @@ import String
 
 
 
-        menu = Menu_Items.objects.create("""type=type,"""item_name=name,item_price=price,item_description=desc,restaurant_name="The Widow's Son")
+        menu = Menu_Items.objects.create("""type=type,"""item_name=name,item_price=price,item_description=desc,restaurant_name="Kilikya Mile End")
         menu.save()

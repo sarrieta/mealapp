@@ -40,8 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'rest_framework',
-    'mealapp'
+    'mealapp',
+    'mapwidgets',
+    'widget_tweaks',
+    'django_google_maps'
 ]
+
+
+GOOGLE_MAPS_API_KEY =["AIzaSyAJEPZQ5TxctelE5tj8FZj6duvzhg0tBb4"]
+
 
 
 MIDDLEWARE = [

@@ -1,12 +1,27 @@
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
 var map;
 function initMap() {
 
   var locations = [
-      ['Roosters', 51.5246476, -0.0373948, 4],
-      ['Greedy Cow', 51.5254043, -0.036794, 5],
+      ["The Widow's son", 51.5222585, -0.0201964, 6],
+      ['Roosters', 51.5246476, -0.0373948, 5],
+      ['Greedy Cow', 51.5254043, -0.036794, 4],
       ['Kitchen Pizzeria', 51.5245898, -0.0375992, 3],
-      ['Nandos', 51.522451, -0.0542593, 2],
       ['Kilikya Mile End', 51.5280883, -0.0429117, 1]
     ];
 
@@ -33,3 +48,38 @@ function initMap() {
       })(marker, i));
     }
 }
+
+$(document).ready(function(event){
+        $(".view_menu").click( function(event){
+          var csrftoken=getCookie('csrftoken')
+            var data = {
+              restaurant_name_oncard: $('#restaurant_name_oncard').text(),
+            }
+
+            $.ajax({
+                     type:'POST',
+                     url:'/map/',
+                     data:data,
+                     headers:{
+                            "X-CSRFToken": csrftoken
+                        },
+
+                     success:function(data){
+
+                       console.log($('#restaurant_name_oncard').text())
+
+                       var items = data.items;
+                       for (var i=0;i<items.length;i++) {
+                         console.log(items[i].item_name)
+                         var item = '<div class="col-md-12 Top">'+ JSON.stringify(items[i].item_name) +'</div>'
+
+                         $('#items_table').append(item);
+                       }
+
+
+						}
+
+                      });
+            })
+
+         })

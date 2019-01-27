@@ -2,10 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
+from django.http import JsonResponse
 ####
-from rest_framework import viewsets
 
-from .serializers import *
 # Scraper imports
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -15,10 +14,7 @@ from .forms import *
 
 User = get_user_model()
 
-class ProfileViewSet(viewsets.ModelViewSet):
-    # API endpoint for listing and creating profiles
-    queryset = UserProfile.objects.order_by('user')
-    serializer_class = UserProfileSerializer
+
 
 def loggedin(view):
     def mod_view(request):
@@ -39,8 +35,21 @@ def index(request):
 	return render (request,'index.html')
 
 def map(request):
+    if request.method == "POST":
+        name = request.POST['restaurant_name_oncard']
+        items= Menu_Items.objects.filter(restaurant_name=name).values('item_name','item_description','item_price')
 
-	return render (request,'map.html')
+        return JsonResponse({'items': list(items)})
+
+    else:
+        restaurants= Restaurant.objects.order_by('name')
+        #print(restaurants)
+
+        return render (request,'map.html',{ 'restaurants': restaurants } )
+
+
+
+
 
 
 
