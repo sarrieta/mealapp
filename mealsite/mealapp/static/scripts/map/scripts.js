@@ -14,67 +14,138 @@ function getCookie(name) {
     return cookieValue;
 }
 
-var map;
-function initMap() {
 
-  var locations = [
-      ["The Widow's son", 51.5222585, -0.0201964, 6],
-      ['Roosters', 51.5246476, -0.0373948, 5],
-      ['Greedy Cow', 51.5254043, -0.036794, 4],
-      ['Kitchen Pizzeria', 51.5245898, -0.0375992, 3],
-      ['Kilikya Mile End', 51.5280883, -0.0429117, 1]
-    ];
+var markers = [
+   {
+       "title": 'Kilikya Mile End',
+       "lat": '51.5280916',
+       "lng": '-0.0408652',
+       "description": 'We serve healthy, authentic, good quality Turkish food. We offer a choice of beverages including; various teas and coffees. Kilikya is also a Halal restaurant.'
+   },
+   {
+       "title": 'The Widows Son',
+       "lat": '51.5222618',
+       "lng": '-0.0181499',
+       "description": 'We serve; unusual infusion based cocktails, a mixture of delicious burgers, merged with the classic east end boozer featuring variety of draught beers & bottles'
+   },
+   {
+       "title": 'Palmers',
+       "lat": '51.5300426',
+       "lng": '-0.0430964',
+       "description": "We are a family run restaurant (father and son's) and have been in the business all our lives. Our aim is to satisfy our customers with great food and wine with fantastic value, a warm and friendly service as it should be in a family restaurant"
+   },
+   {
+       "title": 'Sultan',
+       "lat": '51.5341287',
+       "lng": '-0.0267071',
+       "description": 'We are a small family run restaurant who and we invite you to try and love our variety of grills, soups , breads and salads.'
+   },
+   {
+       "title": '90 Degrees',
+       "lat": '51.5222929',
+       "lng": '-0.0449038',
+       "description": 'At 90° MELT, we have a massive passion for simple, but wholesome comfort food and we are constantly bringing vegan and veggie versions – so all the good bits of American Comfort food, sustainably and responsibly.'
+   },
+   {
+       "title": 'Verdi',
+       "lat": '51.5222774',
+       "lng": '-0.0447649',
+       "description": " Named after Parma's most famous son and foodie, we warmly welcome guests into our beautiful family run restaurant, where the focus is on simple yet authentic Italian cuisine.  "
+   },
+   {
+       "title": 'Bacaro',
+       "lat": '51.5314448',
+       "lng": '-0.0380137',
+       "description": 'Bacaro is constantly looking to bring new and exciting dishes to your table, is uniquely designed around seasonal produce from carefully selected suppliers and artisan producers across Italy and the UK. '
+   }
+ ];
 
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 51.520497918, lng: -0.03749985},
-        zoom: 14
-      });
+   window.onload = function () {
+       LoadMap();
+   }
+   function LoadMap() {
 
-    var infowindow = new google.maps.InfoWindow();
+     $.getJSON("data.json", function(json) {
+         console.log(json);
+         alert(json); // this will show the info it in firebug console
+     });
+       var mapOptions = {
+           center: new google.maps.LatLng(51.5257454,-0.0371079),
+           zoom: 8,
+           mapTypeId: google.maps.MapTypeId.ROADMAP
+       };
+       var infoWindow = new google.maps.InfoWindow();
+       var latlngbounds = new google.maps.LatLngBounds();
+       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    var marker, i;
+       for (var i = 0; i < markers.length; i++) {
+           var data = markers[i]
+           var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+           var marker = new google.maps.Marker({
+               position: myLatlng,
+               map: map,
+               title: data.title
+           });
+           (function (marker, data) {
+               google.maps.event.addListener(marker, "click", function (e) {
+                   infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+                   infoWindow.open(map, marker);
 
-    for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
+               });
+           })(marker, data);
+           latlngbounds.extend(marker.position);
+       }
+       var bounds = new google.maps.LatLngBounds();
+       map.setCenter(latlngbounds.getCenter());
+       map.fitBounds(latlngbounds);
+   }
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-}
 
 $(document).ready(function(event){
         $(".view_menu").click( function(event){
+          var id = $(this).parent().attr('id');
+
+
+          var radios = document.getElementsByName('food_type');
+
+
+          for (var i = 0, length = radios.length; i < length; i++) {
+              if (radios[i].checked) {
+                  // do whatever you want with the checked radio
+
+                  radios = radios[i].value
+
+                  break;
+              }
+          }
+
+
           var csrftoken=getCookie('csrftoken')
-            var data = {
-              restaurant_name_oncard: $('#restaurant_name_oncard').text(),
-            }
+
 
             $.ajax({
                      type:'POST',
                      url:'/map/',
-                     data:data,
+                     data:{'id': id, 'food_type':radios },
                      headers:{
                             "X-CSRFToken": csrftoken
                         },
 
                      success:function(data){
 
-                       console.log($('#restaurant_name_oncard').text())
+                       console.log(data)
+                       var list = new Array()
 
                        var items = data.items;
                        for (var i=0;i<items.length;i++) {
                          console.log(items[i].item_name)
-                         var item = '<div class="col-md-12 Top">'+ JSON.stringify(items[i].item_name) +'</div>'
+                         //var item = '<div class="col-md-12 Top">'+ JSON.stringify(items[i].item_name) +'</div>'
+                         var item = '<li class="list-group-item">'+ JSON.stringify(items[i].item_name) +'</li>'
+                         list [i]= item
 
-                         $('#items_table').append(item);
+
                        }
+                       $('#items_table').html(list);
 
 
 						}
@@ -83,3 +154,11 @@ $(document).ready(function(event){
             })
 
          })
+
+/* allow only one radio to be selected*/
+
+$(document).ready(function(){
+    $('input:radio').click(function() {
+        $('input:radio').not(this).prop('checked', false);
+    });
+});

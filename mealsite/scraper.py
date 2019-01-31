@@ -29,3 +29,8 @@ import String
 
         menu = Menu_Items.objects.create("""type=type,"""item_name=name,item_price=price,item_description=desc,restaurant_name="Kilikya Mile End")
         menu.save()
+
+    data = Restaurant.objects.only('name','opening','lat','long')
+    data = serializers.serialize('json', data)
+    with open('data.json', 'w') as outfile:
+        json.dump(data, outfile)

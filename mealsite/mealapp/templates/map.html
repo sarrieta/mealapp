@@ -11,19 +11,9 @@
          margin-right:100px;
          margin-bottom:200px;
          float:center;
-
        }
 
-       body{
-         background-color:black;
-         background-image: url("{%static 'media/img/background/index-header-background.jpg'%}");
-         background-repeat:no-repeat;
-         background-size:cover;
-         background-attachment: fixed;
-         background-position: center;
-       }
-
-       #background,footer {
+       #background,footer,body {
 
         top: 0px;
         left: 0px;
@@ -43,43 +33,29 @@
         padding: 0;
       }
 
-      /* equal card height */
-.row-equal > div[class*='col-'] {
-    display: flex;
-    flex: 1 0 auto;
-}
+      section.carousel_slide{
 
-.row-equal .card {
-   width: 100%;
-}
+        display: flex;
+        margin-left:100px;
 
-/* ensure equal card height inside carousel */
-.carousel-inner>.row-equal.active,
-.carousel-inner>.row-equal.next,
-.carousel-inner>.row-equal.prev {
-    display: flex;
-}
+      }
+      #carousel{
 
-/* prevent flicker during transition */
-.carousel-inner>.row-equal.active.left,
-.carousel-inner>.row-equal.active.right {
-    opacity: 0.5;
-    display: flex;
-}
+display: flex;
+
+      }
+     #items_table{
 
 
-/* control image height */
-.card-img-top-250 {
-    max-height: 250px;
-    overflow:hidden;
-}
+
+     }
 
 
     </style>
 
 
 
-  <header class="masthead text-center text-white d-flex">
+  <header class="text-center text-white d-flex">
     <div class="container my-auto">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -87,11 +63,13 @@
             <strong><font size="">Restaurants</font></strong>
           </h1>
           <hr>
+          <br>
         </div>
 
       </div>
     </div>
   </header>
+  <br>
 
   <div id="map"></div>
 
@@ -113,33 +91,47 @@
   </div>
 
 
-<section class="carousel slide" data-ride="carousel" id="postsCarousel">
+<section class="carousel_slide">
 
+  <div class="card" style="width: 18rem;">
+  <h3 style="text-align:center" > Preferences </h3>
+  <div class="card-body">
+  <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
+  <input type="radio" name="food_type" value="vegan" > Vegan <br>
+  <input type="radio" name="food_type" value="omnivore" checked> All <br><br>
+  <!--<input type="submit" value="Apply">-->
+  </div>
+  </div>
+  <br>
 
-    <div class="container p-t-0 m-t-2 carousel-inner">
-      {% for restaurant in restaurants%}
+    <div id='carousel' class="container p-t-0 m-t-2 carousel-inner">
+      {% for restaurant in restaurants %}
       <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h4 id="restaurant_name_oncard" class="card-title">{{restaurant.name}}</h4>
+              <div id="{{restaurant.id}}" class='iden'>
+              <h4 class="card-title">{{restaurant.name}}</h4>
               <br>
-              <h6 class="card-subtitle mb-2 text-mrestaurant_name_oncarduted">{{restaurant.opening}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{restaurant.opening}}</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" id="view_website" class="card-link"> Website</a>
-              <button class='view_menu'>View Menu</button>
+              <button id='menu_button' class='view_menu'>View Menu</button>
+              </div>
             </div>
-          </div>
-          <br>
+      </div>
+          <br><br>
       {% endfor %}
 
-
-            <div id="items_table">
-
-            </div>
+     </div>
 
 
-
-    </div>
 </section>
+<section class="carousel_slide">
+  <div id="items_table">
+    <ul class="list-group">
+
+    </ul>
+</section>
+
+</div>
 </div>
 <footer>
 </footer>

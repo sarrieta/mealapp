@@ -6,12 +6,6 @@ from .models import*
 from .forms import *
 
 
-
-class Rental(forms.ModelForm):
-    class Meta:
-        model = Rental
-        fields = ['address','geolocation']
-
 class UserLogInForm(forms.Form):
     username = forms.CharField( min_length=2,max_length=15, widget=forms.TextInput(attrs={
         'placeholder':'Username',
