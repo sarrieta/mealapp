@@ -49,10 +49,16 @@ display: flex;
 
 
      }
-
+/* range slider css*/
+div.ui-slider-range.ui-widget-header {
+    background: #0000ff;
+}
 
     </style>
 
+
+<input type="hidden" id="minValue" >
+<input type="hidden" id="maxValue" >
 
 
   <header class="text-center text-white d-flex">
@@ -70,6 +76,11 @@ display: flex;
     </div>
   </header>
   <br>
+
+  <div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input id="submit" type="button" value="Geocode">
+    </div>
 
   <div id="map"></div>
 
@@ -91,18 +102,36 @@ display: flex;
   </div>
 
 
+
+
 <section class="carousel_slide">
 
   <div class="card" style="width: 18rem;">
   <h3 style="text-align:center" > Preferences </h3>
+<hr>
+  <b style="margin-left:17px" >Type :</b>
   <div class="card-body">
   <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
   <input type="radio" name="food_type" value="vegan" > Vegan <br>
   <input type="radio" name="food_type" value="omnivore" checked> All <br><br>
   <!--<input type="submit" value="Apply">-->
+
+  <div id="rangedval">
+  <b>Price:</b>
+  <br>
+ <span id="rangevalmin">0 £ -</span><span id="rangevalmax"> 40 £</span>
+ </div><br>
+  <div id="slider-range"></div>
+  <div id="custom-handle" class="ui-slider-handle"></div>&nbsp;
+
+
+
   </div>
   </div>
   <br>
+
+
+
 
     <div id='carousel' class="container p-t-0 m-t-2 carousel-inner">
       {% for restaurant in restaurants %}
@@ -112,7 +141,7 @@ display: flex;
               <h4 class="card-title">{{restaurant.name}}</h4>
               <br>
               <h6 class="card-subtitle mb-2 text-muted">{{restaurant.opening}}</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text"> content</p>
               <button id='menu_button' class='view_menu'>View Menu</button>
               </div>
             </div>

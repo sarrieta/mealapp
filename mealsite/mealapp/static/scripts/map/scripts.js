@@ -14,6 +14,22 @@ function getCookie(name) {
     return cookieValue;
 }
 
+$(function sliderRange() {
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 50,
+        values: [0, 50],
+        slide: function( event, ui ) {
+      $('#rangeval').html(ui.values[0]+ "£"+ " - "+ui.values[1] + "£");
+    }
+    });
+    var min=$("#range1").val($("#slider-range").slider("values", 0))
+    var max =$("#range2").val($("#slider-range").slider("values", 1))
+
+
+});
+
 
 var markers = [
    {
@@ -66,7 +82,7 @@ var markers = [
    function LoadMap() {
 
      $.getJSON("data.json", function(json) {
-         console.log(json);
+         //console.log(json);
          alert(json); // this will show the info it in firebug console
      });
        var mapOptions = {
@@ -100,15 +116,61 @@ var markers = [
        map.fitBounds(latlngbounds);
    }
 
+   var min;
 
 $(document).ready(function(event){
-        $(".view_menu").click( function(event){
+   $("#slider-range").slider({
+       range: true,
+       min: 0,
+       max: 40,
+       animate: true,
+       step: 0.5,
+       values: [0, 40],
+       slide: function( event, ui ) {
+             $('#rangevalmin').html(ui.values[0]+ " £ -");
+             $('#rangevalmax').html(" " +ui.values[1] + " £");
+           },
+       stop: function( event, ui ) {
+       min = ui.values[0];
+       max = ui.values[1];
+       //console.log(min + " hey")
+       //console.log(max + " hey")
+       $("#minValue").val(min)
+       $("#maxValue").val(max)
+
+     }
+   });
+
+   /*var min = document.getElementById('rangevalmin').innerHTML;
+   var max = document.getElementById('rangevalmax').innerHTML;
+   console.log(min + " hey")
+   console.log(max + " hey")*/
+
+   })
+
+
+$(document).ready(function(event){
+        $(".view_menu").click( function getItems(event){
+
+
           var id = $(this).parent().attr('id');
+
+          min=$("#minValue").val()
+          max=$("#maxValue").val()
+
+          if( min.length==0 || max.length==0)
+          {
+            min=0
+            max=40
+          }
+          else{
+            min=min
+            max=max
+
+          }
 
 
           var radios = document.getElementsByName('food_type');
-
-
           for (var i = 0, length = radios.length; i < length; i++) {
               if (radios[i].checked) {
                   // do whatever you want with the checked radio
@@ -123,22 +185,23 @@ $(document).ready(function(event){
           var csrftoken=getCookie('csrftoken')
 
 
+
             $.ajax({
                      type:'POST',
                      url:'/map/',
-                     data:{'id': id, 'food_type':radios },
+                     data:{'id': id, 'food_type':radios,'min':min,'max':max },
                      headers:{
                             "X-CSRFToken": csrftoken
                         },
 
                      success:function(data){
 
-                       console.log(data)
+
                        var list = new Array()
 
                        var items = data.items;
                        for (var i=0;i<items.length;i++) {
-                         console.log(items[i].item_name)
+                        // console.log(items[i].item_name)
                          //var item = '<div class="col-md-12 Top">'+ JSON.stringify(items[i].item_name) +'</div>'
                          var item = '<li class="list-group-item">'+ JSON.stringify(items[i].item_name) +'</li>'
                          list [i]= item

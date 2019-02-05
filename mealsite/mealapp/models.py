@@ -5,10 +5,11 @@ from multiselectfield import MultiSelectField
 
 class Restaurant(models.Model):
     name= models.CharField(blank=False, default=None,max_length=30)
-    opening= models.CharField(blank=False, default=None,max_length=150)
+    opening= models.TextField(null=True, default=None)
     long = models.DecimalField(null=True,max_digits=15, decimal_places=9)
     lat = models.DecimalField(null=True,max_digits=15, decimal_places=9)
     description= models.TextField(null=True, default=None)
+    address= models.CharField(null=True,blank=True, default=None,max_length=60)
 
     class Meta:
         verbose_name = "Restaurant"

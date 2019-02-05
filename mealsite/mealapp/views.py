@@ -6,6 +6,10 @@ from django.http import JsonResponse
 import json
 from django.core import serializers
 
+#geocoding imports
+import googlemaps
+from datetime import datetime
+gmaps = googlemaps.Client(key='AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1c')
 # Scraper imports
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -77,9 +81,14 @@ def scrape ():
 
         restaurant_desc=soup.find('div', class_="_894dc9d0").text
         description=soup.find(itemprop="description").get_text(separator="\n")
-        print(description)
 
-        restaurant = Restaurant.objects.create(name=restaurant_name,opening=opening,description=description)
+        address=soup.find(itemprop="streetAddress").get_text()
+        geocode_result = gmaps.geocode(address)
+        for v in geocode_result:
+            lat = v['geometry']['location']['lat']
+            lng =  v['geometry']['location']['lng']
+
+        restaurant = Restaurant.objects.create(name=restaurant_name,opening=opening,description=description,long=lng,lat=lat)
         restaurant.save()
 
         menu_items = soup.find('div', class_="menu-items__2DRnPKGV")
@@ -101,7 +110,7 @@ def scrape ():
             try:
                 desc = menu_items.findChildren()[2].text
             except:
-                desc =""
+                desc =" "
 
             if  not name or name.startswith("£"):
                 continue
@@ -109,18 +118,14 @@ def scrape ():
                 menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant)
                 menu.save()
 
-    """restaurantAddItems=Restaurant.objects.get(name=restaurant_name)
-    menuGetItems= Menu_Items.objects.filter(restaurant_name=restaurant)
-    restaurantAddItems.set(menuGetItems)
-    restaurantAddItems.save()"""
 
     data = Menu_Items.objects.only('item_name','item_description','item_price')
-    """print(list(data))"""
 
-    data = serializers.serialize('json', data)
+
+    """data = serializers.serialize('json', data)
     f = open( 'menu_items.json', 'w+')
     f.write(data)
-    f.close()
+    f.close()"""
 
     return data
 
@@ -130,7 +135,8 @@ def train():
     return data
 
 def index(request):
-    scrape()
+    #scrape()
+
     return render (request,'index.html')
 
 def profile(request):
@@ -138,28 +144,29 @@ def profile(request):
     return render (request,'profile.html')
 
 def markers(request):
-    with open('restaurants.json') as json_file:
-        data = json.load(json_file)
-    print(data)
+    if request.method == "POST":
 
-    return JsonResponse({'data': list(data)})
+        restaurants= Restaurants.objects.get().values('name','opening','description','address')
+        print(list(restaurants))
+        return JsonResponse({'restaurants': list(restaurants)})
 
 
 def map(request):
     if request.method == "POST":
         name = request.POST['id']
         type = request.POST['food_type']
-        print(name)
-        print(type)
-        print(name)
-        items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).values('item_name','item_description','item_price')
+        min = request.POST['min']
+        max = request.POST['max']
+
+
+        items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
 
         return JsonResponse({'items': list(items)})
 
     else:
         restaurants= Restaurant.objects.order_by('name')
         #print(restaurants)
-        serialiseRestaurants(request)
+    #    serialiseRestaurants(request)
 
         return render (request,'map.html',{ 'restaurants': restaurants } )
 
