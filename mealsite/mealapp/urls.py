@@ -12,6 +12,6 @@ urlpatterns = [
 	path('login/',views.login, name='login'),
 	path('logout/',views.logout, name='logout'),
 	path('profile/',views.profile, name='profile'),
-	path('markers/',views.markers, name='markers'),
+	path('plotMap/',views.plotMap, name='plotMap'),
 
 ]

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'mealapp',
     'mapwidgets',
     'widget_tweaks',
-    'django_google_maps'
+    'django_google_maps',
+    'dateparser'
 ]
 
 

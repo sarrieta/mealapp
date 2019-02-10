@@ -50,11 +50,11 @@ def loggedin(view):
             return render(request, 'index.html', {'login_form': login_form, 'loggedIn': False})
     return mod_view
 
-def serialiseRestaurants(request):
-    data = Restaurant.objects.only('name','opening','lat','long')
-    data = serializers.serialize('json', data)
+def serialiseRestaurants():
+    data = Restaurant.objects.filter().values('name','lat','long')
+    data=list(data)
 
-    f = open( 'menu_items.json', 'w+')
+    f = open( 'restaurants.json', 'w+')
     f.write(data)
     f.close()
     return JsonResponse(data, safe=False)
@@ -136,23 +136,17 @@ def train():
 
 def index(request):
     #scrape()
-
     return render (request,'index.html')
 
 def profile(request):
     #scrape()
     return render (request,'profile.html')
 
-def markers(request):
-    if request.method == "POST":
-
-        restaurants= Restaurants.objects.get().values('name','opening','description','address')
-        print(list(restaurants))
-        return JsonResponse({'restaurants': list(restaurants)})
 
 
 def map(request):
     if request.method == "POST":
+
         name = request.POST['id']
         type = request.POST['food_type']
         min = request.POST['min']
@@ -163,12 +157,26 @@ def map(request):
 
         return JsonResponse({'items': list(items)})
 
+
     else:
         restaurants= Restaurant.objects.order_by('name')
         #print(restaurants)
     #    serialiseRestaurants(request)
 
         return render (request,'map.html',{ 'restaurants': restaurants } )
+
+def plotMap(request):
+    if request.method == "GET":
+
+        coordinates = Restaurant.objects.filter().values('name','lat','long')
+        print(coordinates)
+
+        """coordinates = serializers.serialize('json', coordinates)
+        f = open( 'rest.json', 'w+')
+        f.write(coordinates)
+        f.close()"""
+    return JsonResponse({'coordinates': list(coordinates)})
+
 
 def register(request):
 
