@@ -14,31 +14,14 @@ function getCookie(name) {
     return cookieValue;
 }
 
-$(function sliderRange() {
-    $("#slider-range").slider({
-        range: true,
-        min: 0,
-        max: 50,
-        values: [0, 50],
-        slide: function( event, ui ) {
-      $('#rangeval').html(ui.values[0]+ "£"+ " - "+ui.values[1] + "£");
-    }
-    });
-    var min=$("#range1").val($("#slider-range").slider("values", 0))
-    var max =$("#range2").val($("#slider-range").slider("values", 1))
-
-
-});
-
-
-
 
    window.onload = function () {
 
      getCoordinates()
+
    }
 
-   $(document).ready(function getCoordinates (event){
+   function getCoordinates (event){
 
 
                $.ajax({
@@ -53,7 +36,7 @@ $(function sliderRange() {
                          });
 
 
-            })
+            }
 
    function LoadMap(markers) {
        var mapOptions = {
@@ -87,6 +70,58 @@ $(function sliderRange() {
        map.setCenter(latlngbounds.getCenter());
        map.fitBounds(latlngbounds);
    }
+   $(".reset").click( function getDirections(event){
+
+     getCoordinates()
+
+   })
+
+    $(".view_route").click( function getDirections(event){
+
+
+      initMap()
+
+    })
+
+          function initMap() {
+
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            var directionsService = new google.maps.DirectionsService;
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 13,
+              center: {lat: 51.5257454, lng: -0.0371079}
+            });
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('right-panel'));
+
+            var control = document.getElementById('floating-panel');
+            control.style.display = 'block';
+            map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+            var onChangeHandler = function() {
+              calculateAndDisplayRoute(directionsService, directionsDisplay);
+            };
+            document.getElementById('start').addEventListener('change', onChangeHandler);
+            document.getElementById('end').addEventListener('change', onChangeHandler);
+          }
+
+          function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+            var start = document.getElementById('start').value;
+
+            var end = document.getElementById('end').value;
+
+            directionsService.route({
+              origin: start,
+              destination: end,
+              travelMode: 'DRIVING'
+            }, function(response, status) {
+              if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+              } else {
+                window.alert('Directions request failed due to ' + status);
+              }
+            });
+          }
 
 
 
@@ -112,11 +147,6 @@ $(document).ready(function(event){
 
      }
    });
-
-   /*var min = document.getElementById('rangevalmin').innerHTML;
-   var max = document.getElementById('rangevalmax').innerHTML;
-   console.log(min + " hey")
-   console.log(max + " hey")*/
 
    })
 
@@ -145,7 +175,6 @@ $(document).ready(function(event){
           var radios = document.getElementsByName('food_type');
           for (var i = 0, length = radios.length; i < length; i++) {
               if (radios[i].checked) {
-                  // do whatever you want with the checked radio
 
                   radios = radios[i].value
 
@@ -177,27 +206,19 @@ $(document).ready(function(event){
                          var item = '<li class="list-group-item">'+ JSON.stringify(items[i].item_name) +'</li>'
 
                            list [i]= item
-                       }
-                       if ( list===" ")
-                       {
-                         alert("not empty")
-                       $('#items_table').html(list);
 
-                     }
-                     else{
-                       alert('empty')
-                       item = "Refine your search parameters"
-                       var item = '<li class="list-group-item">'+ JSON.stringify(item) +'</li>'
-                       $('#items_table').html(item);
+                           $('#items_table').html(list);
 
-                     }
+                                                        }
 
-						}
 
-                      });
-            })
 
+						                                }
+
+                   });
          })
+
+  })
 
 /**/
 

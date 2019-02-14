@@ -13,5 +13,6 @@ urlpatterns = [
 	path('logout/',views.logout, name='logout'),
 	path('profile/',views.profile, name='profile'),
 	path('plotMap/',views.plotMap, name='plotMap'),
+	path('addresses/',views.addresses, name='addresses'),
 
 ]

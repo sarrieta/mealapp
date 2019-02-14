@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'mapwidgets',
     'widget_tweaks',
     'django_google_maps',
-    'dateparser'
+    
 ]
 
 

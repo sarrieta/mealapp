@@ -36,6 +36,7 @@ from nltk.stem.porter import PorterStemmer
 import os
 from sklearn.base import BaseEstimator, TransformerMixin
 
+from django.contrib.gis.geoip2 import GeoIP2
 
 
 def loggedin(view):
@@ -50,14 +51,6 @@ def loggedin(view):
             return render(request, 'index.html', {'login_form': login_form, 'loggedIn': False})
     return mod_view
 
-def serialiseRestaurants():
-    data = Restaurant.objects.filter().values('name','lat','long')
-    data=list(data)
-
-    f = open( 'restaurants.json', 'w+')
-    f.write(data)
-    f.close()
-    return JsonResponse(data, safe=False)
 
 def scrape ():
 
@@ -88,7 +81,7 @@ def scrape ():
             lat = v['geometry']['location']['lat']
             lng =  v['geometry']['location']['lng']
 
-        restaurant = Restaurant.objects.create(name=restaurant_name,opening=opening,description=description,long=lng,lat=lat)
+        restaurant = Restaurant.objects.create(name=restaurant_name,opening=opening,description=description,long=lng,lat=lat,address=address)
         restaurant.save()
 
         menu_items = soup.find('div', class_="menu-items__2DRnPKGV")
@@ -121,12 +114,6 @@ def scrape ():
 
     data = Menu_Items.objects.only('item_name','item_description','item_price')
 
-
-    """data = serializers.serialize('json', data)
-    f = open( 'menu_items.json', 'w+')
-    f.write(data)
-    f.close()"""
-
     return data
 
 def train():
@@ -135,12 +122,17 @@ def train():
     return data
 
 def index(request):
-    #scrape()
+
     return render (request,'index.html')
 
 def profile(request):
     #scrape()
     return render (request,'profile.html')
+
+def addresses (request):
+    addresses = Restaurant.objects.order_by('name').values('name','address')
+    print(list(addresses))
+    return JsonResponse({'addresses': list(addresses)})
 
 
 
@@ -152,29 +144,31 @@ def map(request):
         min = request.POST['min']
         max = request.POST['max']
 
+        print(name)
+        print(type)
+        print(min)
+        print(max)
 
         items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
-
+        print(list(items))
         return JsonResponse({'items': list(items)})
 
 
     else:
         restaurants= Restaurant.objects.order_by('name')
+
+        addresses = Restaurant.objects.order_by('name').values('name','address')
+        print(list(addresses))
         #print(restaurants)
     #    serialiseRestaurants(request)
 
-        return render (request,'map.html',{ 'restaurants': restaurants } )
+        return render (request,'map.html',{ 'restaurants': restaurants, 'addresses': addresses } )
 
 def plotMap(request):
     if request.method == "GET":
 
         coordinates = Restaurant.objects.filter().values('name','lat','long')
-        print(coordinates)
 
-        """coordinates = serializers.serialize('json', coordinates)
-        f = open( 'rest.json', 'w+')
-        f.write(coordinates)
-        f.close()"""
     return JsonResponse({'coordinates': list(coordinates)})
 
 

@@ -44,16 +44,51 @@
 display: flex;
 
       }
-     #items_table{
 
-
-
-     }
 /* range slider css*/
 div.ui-slider-range.ui-widget-header {
     background: #0000ff;
 }
 
+      #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+        background-color:white;
+
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      #right-panel {
+        height: 100%;
+        float: right;
+        width: 390px;
+        overflow: auto;
+      }
+      #map {
+        margin-right: 400px;
+      }
+
+      @media print {
+        #map {
+          height: 500px;
+          margin: 0;
+        }
+        #right-panel {
+          float: none;
+          width: auto;
+        }
+      }
     </style>
 
 
@@ -77,12 +112,23 @@ div.ui-slider-range.ui-widget-header {
   </header>
   <br>
 
-  <div id="floating-panel" class="hidden">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input id="submit" type="button" value="Geocode">
+
+    <div id="floating-panel">
+      <strong>Start:</strong>
+
+        <input type="text" id="start"></input>
+
+      <br>
+      <strong>End:</strong>
+      <select id="end">
+        {% for add in addresses %}
+        <option value="{{add.address}}"">{{add.address}}</option>
+        {% endfor %}
+      </select>
     </div>
-
-
+  <button  class='view_route'> Get directions </button>
+  <button  class='reset'> Reset </button>
+    <div id="right-panel"></div>
   <div id="map"></div>
 
 
