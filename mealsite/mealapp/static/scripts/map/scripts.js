@@ -107,6 +107,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
               });
               (function (marker, data) {
                   google.maps.event.addListener(marker, "click", function (e) {
+                       e.preventDefault();
                       infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.name + "</div>");
                       infoWindow.open(map, marker);
 
@@ -114,9 +115,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
               })(marker, data);
               latlngbounds.extend(marker.position);
 
-
             }
-
 
          }
 
@@ -125,6 +124,11 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
        });
 
      }
+
+    else{
+
+      console.log('no location')
+    }
 
 
    }
@@ -242,6 +246,8 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
           } else {
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
+
+
           }
 
 
@@ -292,9 +298,9 @@ $(document).ready(function(event){
 
 
 $(document).ready(function(event){
-        $(".view_menu").click( function getItems(event){
+        //$(".view_menu").click( function getItems(event){
+        $(".view_menu").on("click", function getItems(event){
 
-        alert('menu')
 
 
           var id = $(this).parent().attr('id');
@@ -313,12 +319,8 @@ $(document).ready(function(event){
 
           }
 
-
           var radios =radioVal('food_type')
-
-
           var csrftoken=getCookie('csrftoken')
-
 
 
             $.ajax({
@@ -335,46 +337,55 @@ $(document).ready(function(event){
 
                        var items = data.items;
                        for (var i=0;i<items.length;i++) {
-                        // console.log(items[i].item_name)
-                         //var item = '<div class="col-md-12 Top">'+ JSON.stringify(items[i].item_name) +'</div>'
-                         var item = '<li class="list-group-item">'+ JSON.stringify(items[i].item_name) +'</li>'
+                         name = JSON.stringify(items[i].item_name)
+                         pName= name.replace(/['"]+/g, '');
 
-                           list [i]= item
+                         desc = JSON.stringify(items[i].item_description)
+                         pDesc= desc.replace(/['"]+/g, '');
 
-                           $('#items_table').html(list);
-
-                                                        }
-
+                         price = JSON.stringify(items[i].item_price)
+                         pPrice= price.replace(/['"]+/g, '');
 
 
-						                                }
+                           var $tr = $('<tr/>');
+                            $tr.append($('<td/>').html(pName));
+                            $tr.append($('<td/>').html(pDesc));
+                            $tr.append($('<td/>').html(pPrice));
+                            $('.table-wrapper-scroll-y tr:last').after($tr);
+                              }
+                        }
 
                    });
          })
 
   })
+  $(document).ready(function(){
 
-/**/
-$(document).ready(function(){
-  $('.carousel[data-type="multi"] .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
+    var $rows = $('#myTable tr');
+      $('#search').keyup(function() {
+        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 
-  for (var i=0;i<2;i++) {
-    next=next.next();
-    if (!next.length) {
-    	next = $(this).siblings(':first');
-  	}
+        $rows.show().filter(function() {
+            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+        }).hide();
+      });
+  });
 
-    next.children(':first-child').clone().appendTo($(this));
-  }
-});
-});
 
-/* allow only one radio to be selected*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $(document).ready(function(){
     $('input:radio').click(function() {

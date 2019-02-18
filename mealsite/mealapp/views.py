@@ -36,7 +36,8 @@ from nltk.stem.porter import PorterStemmer
 import os
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from django.contrib.gis.geoip2 import GeoIP2
+#calculate distance import
+import geopy.distance
 
 
 def loggedin(view):
@@ -74,6 +75,12 @@ def scrape ():
 
         restaurant_desc=soup.find('div', class_="_894dc9d0").text
         description=soup.find(itemprop="description").get_text(separator="\n")
+
+        neighbourhood= soup.find_all("div", class_="_16c8fd5e _1f1541e1")
+        d = neighbourhood = soup.find_all("a", class_="f3bf9165")
+
+        print(d)
+
 
         address=soup.find(itemprop="streetAddress").get_text()
         geocode_result = gmaps.geocode(address)
@@ -126,13 +133,21 @@ def index(request):
     return render (request,'index.html')
 
 def profile(request):
-    #scrape()
+
+
+    coords_1 = (51.531441500, -0.037871500)
+    coords_2 = (51.4553169, -0.0130913)
+    d = geopy.distance.distance(coords_1, coords_2).km
+    print('distance')
+    print(d)
+
     return render (request,'profile.html')
 
 def addresses (request):
     addresses = Restaurant.objects.order_by('name').values('name','address')
     print(list(addresses))
     return JsonResponse({'addresses': list(addresses)})
+
 
 
 
