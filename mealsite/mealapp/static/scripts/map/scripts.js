@@ -56,13 +56,15 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
              zoom: 13,
              mapTypeId: google.maps.MapTypeId.ROADMAP
          };
+
          var infoWindow = new google.maps.InfoWindow();
          var latlngbounds = new google.maps.LatLngBounds();
          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
          val='limit'
          radius = radioVal(val)
-         console.log(radius)
+
 
 
          if (radius)
@@ -75,7 +77,13 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
          limit = 5;
 
           }
-
+          circleRadius= limit * 1000
+          var circle = new google.maps.Circle({
+             map: map,
+             radius: circleRadius,    // 10 miles in metres
+             center: new google.maps.LatLng(pos.lat,pos.lng) ,
+             fillColor: '#AA0000'
+           });
 
          for (var i = 0; i < markers.coordinates.length; i++) {
              var data = markers.coordinates[i]
@@ -83,15 +91,13 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
 
             var radius = parseInt(limit, 10)*1000;
-            console.log(radius)
-            console.log('is the radios')
+
 
             var d = calcDistance(data.lat,data.long,pos.lat,pos.lng)
-            console.log(d)
-            console.log('is the distance')
+
 
             if (d<=radius){
-              console.log('within radius')
+
 
               var marker = new google.maps.Marker({
                   position: myLatlng,
@@ -288,6 +294,8 @@ $(document).ready(function(event){
 $(document).ready(function(event){
         $(".view_menu").click( function getItems(event){
 
+        alert('menu')
+
 
           var id = $(this).parent().attr('id');
 
@@ -347,7 +355,24 @@ $(document).ready(function(event){
   })
 
 /**/
+$(document).ready(function(){
+  $('.carousel[data-type="multi"] .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
 
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+});
 
 /* allow only one radio to be selected*/
 
