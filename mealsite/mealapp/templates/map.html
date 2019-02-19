@@ -3,7 +3,7 @@
 {% block content %}
 
     <style>
-  
+
 
     </style>
 
@@ -34,14 +34,17 @@
       <strong>End:</strong>
       <select id="end">
         {% for add in addresses %}
-        <option value="{{add.address}}"">{{add.address}}</option>
+        <option value="{{add.address}}">{{add.address}}</option>
         {% endfor %}
       </select>
     </div>
 
-  <button  class='reset'> Reset </button>
+
+
+
     <div id="right-panel"></div>
 
+    <button  class='reset'> Reset </button>
     <div class="card" style="width: 18rem;">
     <b style="margin-left:17px" >Radius :</b>
     <div class="card-body">
@@ -53,7 +56,7 @@
     </div>
 
 
-  <div id="map"></div>
+  <div id="mape"></div>
 
 
   <!------ Include the above in your HEAD tag ---------->
@@ -134,11 +137,6 @@
 
   </div>
 
-
-
-
-
-
 </section>
 <section>
 
@@ -160,8 +158,7 @@
 
   </div>
 
-  </section>
-<section class="carousel_slide">
+  
   <div id="items_table">
     <ul class="list-group">
 
