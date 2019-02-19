@@ -1,8 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 
    <!--- basic page needs
@@ -86,6 +84,28 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+.box.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  padding: .5rem;
+  height: 300px;
+
+
+  color: #84613D;
+  font-family: "Lucida Console", Monaco, monospace;
+
+}
+
+.box p {
+  max-width: 125px;
+  text-align: center;
+
+  margin: .25rem;
+  padding: .25rem;
+}
 
 </style>
 
@@ -106,10 +126,10 @@
 
     <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
   <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <!-- Use any element to open the sidenav -->
@@ -221,7 +241,7 @@
 
 	      	<div class="bgrid service-item animate-this">
 
-	      		<span class="icon"><i class="icon-paint-brush"></i></span>
+	      		<span class="icon"><i class="icon-earth"></i></span>
 
 	            <div class="service-content">
 	            	<h3 class="h05">Maps</h3>
@@ -234,7 +254,7 @@
 
 				<div class="bgrid service-item animate-this">
 
-					<span class="icon"><i class="icon-earth"></i></span>
+					<span class="icon"><i class="icon-paint-brush"></i></span>
 
 	            <div class="service-content">
 	            	<h3 class="h05">Filtering</h3>
@@ -260,7 +280,7 @@
 
 				<div class="bgrid service-item animate-this">
 
-					<span class="icon"><i class="icon-megaphone"></i></span>
+					<span class="icon"><i class="icon-network"></i></span>
 
 	            <div class="service-content">
 	            	<h3 class="h05">Directions</h3>
@@ -282,12 +302,14 @@
    ================================================== -->
    <section id="portfolio">
 
+
+
    	<div class="intro-wrap">
 
    		<div class="row narrow section-intro with-bottom-sep animate-this">
 	   		<div class="col-twelve">
-	   			<h3>Showcase</h3>
-		   		<h1>See Our Featured Projects.</h1>
+	   			<h3>Sources</h3>
+		   		<h1>We are reliable</h1>
 
 		   		<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
 	   		</div>
@@ -298,138 +320,6 @@
    	<div class="row portfolio-content">
    		<div class="col-twelve">
    			<div id="folio-wrap" class="bricks-wrapper">
-
-   				<div class="brick folio-item">
-	               <div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-shutterbug.jpg" data-sub-html="#01" >
-	                  <a href="#" class="overlay">
-	                  	<img src="images/portfolio/shutterbug.jpg" alt="Skaterboy">
-	                     <div class="item-text">
-	                     	<span class="folio-types">
-		     					      Web Development
-		     					   </span>
-		     					   <h3 class="folio-title">Shutterbug</h3>
-		     					</div>
-	                  </a>
-	                  <a href="https://www.behance.net/" class='details-link' title="details">
-	                  	<i class="icon-link"></i>
-	                  </a>
-	               </div> <!-- end item-wrap -->
-
-						<div id="01" class='hide'>
-							<h4>Shutterbug</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
-						</div>
-	        		</div> <!-- end folio-item -->
-
-	        		<div class="brick folio-item">
-	               <div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-yellowwall.jpg" data-sub-html="#02">
-	                  <a href="#" class="overlay">
-	                  	<img src="images/portfolio/yellowwall.jpg" alt="Shutterbug">
-	                     <div class="item-text">
-	                     	<span class="folio-types">
-		     					      Marketing
-		     					   </span>
-		     					   <h3 class="folio-title">Yellow Wall</h3>
-		     					</div>
-	                  </a>
-	                  <a href="https://www.behance.net/" class='details-link' title="details">
-	                  	<i class="icon-link"></i>
-	                  </a>
-	               </div> <!-- end item-wrap -->
-
-	               <div id="02" class='hide'>
-							<h4>Yellow Wall</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
-						</div>
-	        		</div> <!-- end folio-item -->
-
-	        		<div class="brick folio-item">
-	               <div class="item-wrap animate-this" data-src="images/portfolio/gallery/g-architecture.jpg" data-sub-html="#03" >
-	                  <a href="#" class="overlay">
-	                  	<img src="images/portfolio/architecture.jpg" alt="Explore">
-	                     <div class="item-text">
-		     					   <span class="folio-types">
-		     					      Web Design
-		     					   </span>
-		     					   <h3 class="folio-title">Architecture</h3>
-		     					</div>
-	                  </a>
-	                  <a href="https://www.behance.net/" class='details-link' title="details">
-	                  	<i class="icon-link"></i>
-	                  </a>
-	               </div> <!-- end item-wrap -->
-
-	               <div id="03" class='hide'>
-							<h4>Architecture</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
-						</div>
-	        		</div> <!-- end folio-item -->
-
-					<div class="brick folio-item">
-	               <div class="item-wrap animate-this"  data-src="images/portfolio/gallery/g-minimalismo.jpg"  data-sub-html="#04" >
-	                  <a href="#" class="overlay">
-	                  	<img src="images/portfolio/minimalismo.jpg" alt="Minimalismo">
-	                     <div class="item-text">
-		     					   <span class="folio-types">
-		     					      Web Design
-		     					   </span>
-		     					   <h3 class="folio-title">Minimalismo</h3>
-		     					</div>
-	                  </a>
-	                  <a href="https://www.behance.net/" class='details-link' title="details">
-	                  	<i class="icon-link"></i>
-	                  </a>
-	               </div> <!-- end item-wrap -->
-
-	               <div id="04" class='hide'>
-							<h4>Minimalismo</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
-						</div>
-	        		</div> <!-- end folio-item -->
-
-					<div class="brick folio-item">
-	               <div class="item-wrap animate-this"  data-src="images/portfolio/gallery/g-skaterboy.jpg"  data-sub-html="#05" >
-	                  <a href="#" class="overlay">
-	                  	<img src="images/portfolio/skaterboy.jpg" alt="Bicycle">
-	                     <div class="item-text">
-		     					   <span class="folio-types">
-		     					      Branding
-		     					   </span>
-		     					   <h3 class="folio-title">Skaterboy</h3>
-		     					</div>
-	                  </a>
-	                  <a href="https://www.behance.net/" class='details-link' title="details">
-	                  	<i class="icon-link"></i>
-	                  </a>
-	               </div> <!-- end item-wrap -->
-
-	               <div id="05" class='hide'>
-							<h4>Skaterboy</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="https://www.behance.net/">Details</a></p>
-						</div>
-	        		</div> <!-- end folio-item -->
-
-					<div class="brick folio-item">
-	               <div class="item-wrap animate-this"  data-src="images/portfolio/gallery/g-salad.jpg"  data-sub-html="#06">
-	                  <a href="#" class="overlay">
-	                  	<img src="images/portfolio/salad.jpg" alt="Salad">
-	                     <div class="item-text">
-		     					   <span class="folio-types">
-		     					      Branding
-		     					   </span>
-		     					   <h3 class="folio-title">Salad</h3>
-		     					</div>
-	                  </a>
-	                  <a href="https://www.behance.net/" class='details-link' title="details">
-	                  	<i class="icon-link"></i>
-	                  </a>
-	               </div> <!-- end item-wrap -->
-
-	               <div id="06" class='hide'>
-							<h4>Salad</h4>
-							<p>Lorem ipsum Dolor deserunt labore sint officia. Magna et aute enim proident tempor sunt quis nulla voluptate fugiat velit. <a href="www.behance.net">Details</a></p>
-						</div>
-	        		</div> <!-- end folio-item -->
 
    			</div> <!-- end folio-wrap -->
    		</div> <!-- end twelve -->
@@ -464,27 +354,11 @@
                   <div class="testimonial-author">
                     	<img src="images/avatars/user-02.jpg" alt="Author image">
                     	<div class="author-info">
-                    		Steve Jobs
-                    		<span class="position">CEO, Apple.</span>
+                    		Sergio Arrieta
+                    		<span class="position">Developer.</span>
                     	</div>
                   </div>
              	</li> <!-- end slide -->
-
-               <li>
-                  <p>
-                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                  </p>
-
-               	<div class="testimonial-author">
-                    	<img src="images/avatars/user-03.jpg" alt="Author image">
-                    	<div class="author-info">
-                    		John Doe
-                    		<span>CEO, ABC Corp.</span>
-                    	</div>
-                  </div>
-               </li> <!-- end slide -->
 
             </ul> <!-- end slides -->
 
@@ -697,6 +571,7 @@ that can be used to contact or identify you.</p>
      document.getElementById("mySidenav").style.width = "0";
    }
    </script>
+
 
 </body>
 
