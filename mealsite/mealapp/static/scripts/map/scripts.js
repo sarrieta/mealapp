@@ -24,6 +24,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
      getCoordinates()
 
+
    }
 
 
@@ -41,6 +42,8 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
             }
 
    function LoadMap(markers) {
+
+
 
      if (navigator.geolocation) {
 
@@ -217,7 +220,6 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
                       var start = currenLoc
 
-
                       var end = document.getElementById('end').value;
 
                       directionsService.route({
@@ -263,7 +265,10 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
    }
    $(".reset").click( function getDirections(event){
 
+
      getCoordinates()
+
+
 
    })
 
