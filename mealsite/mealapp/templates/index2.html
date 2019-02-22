@@ -2,10 +2,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <!-- -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
    <!--- basic page needs
    ================================================== -->
@@ -33,32 +29,6 @@
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-
-<!-- old base imports-->
-<link rel="stylesheet" type="text/css" media="all" href="{% static 'css/styles.css'%}">
-<link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Acme">
-
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.0.2/css/creative.min.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.0.2/js/creative.min.js'></script>
-
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
 
@@ -114,23 +84,27 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.carousel{
-    background: #2f4357;
-    margin-top: 20px;
-    width:50%;
+.box.flex {
+  display: flex;
+  justify-content: center;
 }
-.carousel .item{
-    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
-    float:center;
+
+.box {
+  padding: .5rem;
+  height: 300px;
+
+
+  color: #84613D;
+  font-family: "Lucida Console", Monaco, monospace;
+
 }
-.carousel .item p{
-  align:right;
-}
-.carousel .item img{
-    margin: 0 auto; /* Align slide image horizontally center */
-}
-.bs-example{
-	margin: 20px;
+
+.box p {
+  max-width: 125px;
+  text-align: center;
+
+  margin: .25rem;
+  padding: .25rem;
 }
 
 </style>
@@ -358,6 +332,39 @@
    ================================================== -->
    <section id="testimonials">
 
+   	<div class="row">
+   		<div class="col-twelve">
+   			<h2 class="animate-this">What They Say About Us.</h2>
+   		</div>
+   	</div>
+
+      <div class="row flex-container">
+
+         <div id="testimonial-slider" class="flex-slider animate-this">
+
+            <ul class="slides">
+
+               <li>
+                  <p>
+                  Your work is going to fill a large part of your life, and the only way to be truly satisfied is
+                  to do what you believe is great work. And the only way to do great work is to love what you do.
+                  If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
+                  </p>
+
+                  <div class="testimonial-author">
+                    	<img src="images/avatars/user-02.jpg" alt="Author image">
+                    	<div class="author-info">
+                    		Sergio Arrieta
+                    		<span class="position">Developer.</span>
+                    	</div>
+                  </div>
+             	</li> <!-- end slide -->
+
+            </ul> <!-- end slides -->
+
+         </div> <!-- end testimonial-slider -->
+
+      </div> <!-- end flex-container -->
 
    </section> <!-- end testimonials -->
 
@@ -470,128 +477,84 @@
 	<!-- footer
    ================================================== -->
 	<footer>
+     	<div class="footer-main">
 
-    <input type="hidden" id="minValue" >
-    <input type="hidden" id="maxValue" >
+   		<div class="row">
 
+	      	<div class="col-five tab-full footer-about">
 
-    <div id="floating-panel">
+	            <h4 class="h05">Privacy policy.</h4>
 
-      <strong>End:</strong>
-      <select id="end">
-        {% for add in addresses %}
-        <option value="{{add.address}}">{{add.address}}</option>
-        {% endfor %}
-      </select>
-    </div>
+	            <p>We use your Personal Information only for providing and improving the Site. By using the Site, you
+agree to the collection and use of information in accordance with this policy.
+Information Collection And Use
+While using our Site, we may ask you to provide us with certain personally identifiable information
+that can be used to contact or identify you.</p>
 
-    
-      <div id="right-panel"></div>
+		      </div> <!-- end footer-about -->
 
-      <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-      <b style="margin-left:17px" >Radius :</b>
-      <div class="card-body">
-      <input type="radio"  name="limit" value="1"> 1 KM<br>
-      <input type="radio"  name="limit" value="5" > 5 KM <br>
-      <input type="radio"  name="limit" value="10" checked> 10 KM <br>
-      <input type="radio"  name="limit" value="15" > 15 KM <br>
-      </div>
-      </div>
+	      	<div class="col-three tab-full footer-social">
 
-      <div id="map"></div>
+	      		<h4 class="h05">Follow Us.</h4>
 
-      <section class="carousel_slide">
+	      		<ul class="list-links">
+	      			<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Instagram</a></li>
 
-        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-        <h3 style="text-align:center" > Preferences </h3>
-      <hr>
-        <b style="margin-left:17px" >Type :</b>
-        <div class="card-body">
-        <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
-        <input type="radio" name="food_type" value="vegan" checked > Vegan <br>
-        <input type="radio" name="food_type" value="omnivore" > All <br><br>
-        <!--<input type="submit" value="Apply">-->
+					</ul>
 
-        <div id="rangedval">
-        <b>Price:</b>
-        <br>
-       <span id="rangevalmin">0 £ -</span><span id="rangevalmax"> 40 £</span>
-       </div><br>
-        <div id="slider-range"></div>
-        <div id="custom-handle" class="ui-slider-handle"></div>&nbsp;
+	      	</div> <!-- end footer-social -->
 
-        </div>
-        </div>
+	      	<div class="col-four tab-full footer-subscribe end">
 
+	      		<h4 class="h05">Get Notified.</h4>
 
+	      		<p> Enter your email below to subscribe to our newsletter</p>
 
-      </section>
-<section>
-  <div class="bs-example">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Carousel indicators -->
-          <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-          <!-- Wrapper for carousel items -->
-          <div class="carousel-inner">
-              <div class="item active">
-                  <img src="/examples/images/slide1.png" alt="First Slide">
-              </div>
-              {% for restaurant in restaurants %}
+	      		<div class="subscribe-form">
 
-              <div class="item">
-                <div id="{{restaurant.id}}" class='iden'>
-                  <h4 class="card-title">{{restaurant.name}}</h4>
-                  <p class="card-body">{{restaurant.opening}}</p>
-                  <button id='menu_button' class='view_menu'>View Menu</button>
-                </div>
-              </div>
-              {% endfor %}
+	      			<form id="mc-form" class="group" novalidate="true">
 
-          </div>
-          <!-- Carousel controls -->
-          <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="carousel-control right" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-      </div>
-  </div>
+							<input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Enter email" required="">
 
-</section>
+			   			<!-- <input type="submit" name="subscribe" > -->
+			   			<button><i class="icon-mail"></i></button>
 
+		   				<label for="mc-email" class="subscribe-message"></label>
 
-   <section>
+						</form>
 
-     <input type="text" id="search" placeholder="Type to search">
-     <div class="table-wrapper-scroll-y">
-       <table id='myTable' class="table table-bordered table-striped">
-         <thead>
-           <tr>
-             <th scope="col">Name</th>
-             <th scope="col">Description</th>
-             <th scope="col">Price (£)</th>
-           </tr>
+	      		</div>
 
-         </thead>
-         <tbody>
+	      	</div> <!-- end footer-subscribe -->
 
-         </tbody>
-       </table>
+	      </div> <!-- end row -->
 
-     </div>
+   	</div> <!-- end footer-main -->
 
+   	<div class="footer-bottom">
 
-     <div id="items_table">
-       <ul class="list-group">
+      	<div class="row">
 
-       </ul>
-   </section>
-</footer>
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>© Copyright Infinity 2016.</span>
+		         	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
+		         </div>
+	      	</div>
+
+      	</div>
+
+      </div> <!-- end footer-bottom -->
+
+      <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#top">
+		   	<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+		   </a>
+		</div>
+   </footer>
+
    <div id="preloader">
     	<div id="loader"></div>
    </div>
@@ -608,25 +571,6 @@
      document.getElementById("mySidenav").style.width = "0";
    }
    </script>
-
-   <!-- -->
-   <!-- Map src script  AIzaSyCpFC94xiuIL1vHEBiGv43sgVga7aJTA1c-->
-   <!-- Map src script  AIzaSyAJEPZQ5TxctelE5tj8FZj6duvzhg0tBb4-->
-    <!-- Map src script  AIzaSyBxpCB_Q2b134k5GDY0_6il-9-VYzGYGCg-->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEPZQ5TxctelE5tj8FZj6duvzhg0tBb4&libraries=geometry"
-             async defer></script>
-   <script src="{% static 'scripts/map/scripts.js' %}"></script>
-
-     <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
-     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-   <!-- Ajax imports-->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-
-   <!-- slider imports -->
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
-
 
 
 </body>

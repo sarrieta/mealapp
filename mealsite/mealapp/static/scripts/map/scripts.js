@@ -24,7 +24,6 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
      getCoordinates()
 
-
    }
 
 
@@ -86,8 +85,6 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
              fillColor: '#AA0000'
            });
 
-
-
          for (var i = 0; i < markers.coordinates.length; i++) {
              var data = markers.coordinates[i]
              var myLatlng = new google.maps.LatLng(data.lat, data.long);
@@ -135,12 +132,6 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
 
    }
-
-   $(document).ready(function() {
-
-     
-
-   });
 
    $(document).ready(function() {
     $('input:radio[name=limit]').change(function() {
@@ -274,7 +265,6 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
      getCoordinates()
 
-
    })
 
 
@@ -310,7 +300,7 @@ $(document).ready(function(event){
 $(document).ready(function(event){
         //$(".view_menu").click( function getItems(event){
         $(".view_menu").on("click", function getItems(event){
-          alert('33')
+
 
 
           var id = $(this).parent().attr('id');

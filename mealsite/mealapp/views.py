@@ -130,7 +130,7 @@ def train():
 
 def index(request):
 
-    return render (request,'index2.html')
+    return render (request,'index.html')
 
 def index2(request):
 
@@ -181,7 +181,7 @@ def map(request):
         #print(restaurants)
     #    serialiseRestaurants(request)
 
-        return render (request,'index2.html',{ 'restaurants': restaurants, 'addresses': addresses } )
+        return render (request,'map.html',{ 'restaurants': restaurants, 'addresses': addresses } )
 
 def plotMap(request):
     if request.method == "GET":
