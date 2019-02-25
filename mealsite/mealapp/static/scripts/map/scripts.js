@@ -341,6 +341,8 @@ $(document).ready(function(event){
                        var list = new Array()
 
                        var items = data.items;
+
+
                        for (var i=0;i<items.length;i++) {
                          name = JSON.stringify(items[i].item_name)
                          pName= name.replace(/['"]+/g, '');
@@ -353,9 +355,10 @@ $(document).ready(function(event){
 
 
                            var $tr = $('<tr/>');
-                            $tr.append($('<td/>').html(pName));
-                            $tr.append($('<td/>').html(pDesc));
-                            $tr.append($('<td/>').html(pPrice));
+                            $tr.append($('<td scope="col" style="color:black"/>').text(pName));
+                            $tr.append($('<td scope="col" style="color:black"/>').text(pDesc));
+                            $tr.append($('<td scope="col" style="color:black"/>').text(pPrice));
+
                             $('.table-wrapper-scroll-y tr:last').after($tr);
                               }
                         }
@@ -363,9 +366,30 @@ $(document).ready(function(event){
                    });
          })
 
-  })
-  $(document).ready(function(){
+  });
 
+    $(document).ready(function(){
+      $(function () {
+    var firstTime = true;
+
+    $("#myselction").change(function (e) {
+        var neData = $("#myselction").val();
+
+        if (firstTime) {
+            $("table.data thead tr").append("<th>Idea</th>");
+            $("table.data tr:gt(0)").append("<td>" + neData + "</td>");
+            firstTime = false;
+        } else {
+            $("table.data tr:gt(0) td:last-child").html(neData);
+        }
+    });
+});
+
+        });
+
+
+  $(document).ready(function(){
+/*
     var $rows = $('#myTable tr');
       $('#search').keyup(function() {
         var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
@@ -374,19 +398,8 @@ $(document).ready(function(event){
             var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
         }).hide();
-      });
+      });*/
   });
-
-
-
-
-
-
-
-
-
-
-
 
 
 

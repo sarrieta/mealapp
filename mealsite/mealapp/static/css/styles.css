@@ -129,6 +129,25 @@ transform: translateX(-33.33%)
 transform: translateX(0);
 }
 
+
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
+}
+
+
+
+
+
 .table-wrapper-scroll-y {
 display: block;
 max-height: 200px;
@@ -201,7 +220,7 @@ margin-bottom: 12px; /* Add some space below the input */
   .sidenav a {font-size: 18px;}
 }
 
-#radiusDiv{
+#radiusDiv,#typeDiv{
 top: 3px;
 left: 25px;
 width:160px;
