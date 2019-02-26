@@ -42,22 +42,22 @@ class Coookings:
 
 	def __init__(self):
 
-		self.train_data = pd.read_json('data/train.json', orient='records')
-		self.test_data = pd.read_json('data/test.json', orient='records')
+		self.train_data = pd.read_json('data/testfile.txt', orient='records')
+		self.test_data = pd.read_json('data/test.txt', orient='records')
 
 	def split(self):
 
 		X = self.train_data['ingredients'].str.join('. ')
 		y = self.train_data['cuisine']
 
-		self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, 
+		self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y,
 					test_size=0.25, random_state=111, stratify=y)
 
 		return self
 
 	def train_model(self):
 
-		self.pipeline = make_pipeline(CountVectorizer(tokenizer=Lemmatizer(), strip_accents='ascii', 
+		self.pipeline = make_pipeline(CountVectorizer(tokenizer=Lemmatizer(), strip_accents='ascii',
 											analyzer='word', ngram_range=(1,2)),
 												LogisticRegression())
 		print('fitting pipeline...')
@@ -73,9 +73,10 @@ class Coookings:
 		self.y_pred = self.pipeline.predict(self.X_test)
 
 		print('creating submission..')
-		yhat = pd.Series(self.pipeline.predict(self.test_data['ingredients'].str.join('. ')), 
-													name='cuisine', 
+		yhat = pd.Series(self.pipeline.predict(self.test_data['ingredients'].str.join('. ')),
+													name='cuisine',
 														index=self.test_data['id'])
+		print(yhat)
 
 		if not os.path.exists('submission'):
 			os.mkdir('submission')
@@ -85,7 +86,7 @@ class Coookings:
 		return self
 
 
-		
+
 
 	def get_metrics(self):
 

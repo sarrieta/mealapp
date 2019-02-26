@@ -1,7 +1,7 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
  #map{
-   height: 60%;
+   height: 80%;
    left: 50px;
    float:center;
  }
@@ -90,14 +90,14 @@ font-size: 15px;
 }
 
 #right-panel select {
-width: 50%;
+width: 10%;
 }
 
 #right-panel i {
 font-size: 12px;
 }
 #right-panel {
-height: 50%;
+height: 80%;
 float: right;
 width: 390px;
 overflow: auto;
@@ -145,13 +145,10 @@ transform: translateX(0);
 }
 
 
-
-
-
 .table-wrapper-scroll-y {
 display: block;
-max-height: 200px;
-margin-left:500px;
+max-height: 500px;
+margin-left:400px;
 max-width: 50%;
 background-color:white;
 overflow-y: auto;

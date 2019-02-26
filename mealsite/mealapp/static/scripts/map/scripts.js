@@ -77,7 +77,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
          }
          else{
-         limit = 5;
+         limit = 3;
 
           }
           circleRadius= limit * 1000
@@ -138,27 +138,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
    $(document).ready(function() {
     $('input:radio[name=limit]').change(function() {
-        if (this.value == '1') {
-              radius=1;
-            //  alert(radius)
-             getCoordinates(radius)
-        }
-        else if (this.value == '5') {
-              radius=5;
-              //alert(radius)
-             getCoordinates(radius)
-        }
-        else if (this.value == '10') {
-            radius=10;
-            //alert(radius)
-             getCoordinates(radius)
-        }
-        else {
-            radius=15;
-            //alert(radius)
-             getCoordinates(radius)
-        }
-
+        getCoordinates()
 
     });
 });
@@ -188,7 +168,6 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
      directionsDisplay.setPanel(document.getElementById('right-panel'));
 
      var control = document.getElementById('floating-panel');
-     control.style.display = 'block';
      map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
      var onChangeHandler = function() {
