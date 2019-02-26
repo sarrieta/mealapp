@@ -40,6 +40,10 @@ from sklearn.base import BaseEstimator, TransformerMixin
 #calculate distance import
 import geopy.distance
 
+#whastcooking imports#
+from whatscooking.whatscooking import*
+
+
 
 def loggedin(view):
     def mod_view(request):
@@ -147,6 +151,9 @@ def train():
 
 
 def index(request):
+
+
+    cook = Coookings().split().train_model().predict().get_metrics()
 
     return render (request,'index.html')
 

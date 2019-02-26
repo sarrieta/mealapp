@@ -1,0 +1,9 @@
+[
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787, 
+      "ingredients":{
+         "item_description":"chickpeas pur\u00e9e, tahini, garlic and lemon juice"
+      }
+   }
+]

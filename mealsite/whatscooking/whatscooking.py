@@ -40,12 +40,10 @@ class Lemmatizer:
 
 class Coookings:
 
-	def __init__(self):
-
-		self.train_data = pd.read_json('data/testfile.txt', orient='records')
-		self.test_data = pd.read_json('data/test.txt', orient='records')
-
 	def split(self):
+
+		self.train_data = pd.read_json('whatscooking/train2.txt', orient='records')
+		self.test_data = pd.read_json('whatscooking/test2.txt', orient='records')
 
 		X = self.train_data['ingredients'].str.join('. ')
 		y = self.train_data['cuisine']
@@ -72,11 +70,19 @@ class Coookings:
 		# note: prediction is a numpy array
 		self.y_pred = self.pipeline.predict(self.X_test)
 
+
+
 		print('creating submission..')
 		yhat = pd.Series(self.pipeline.predict(self.test_data['ingredients'].str.join('. ')),
 													name='cuisine',
-														index=self.test_data['id'])
-		print(yhat)
+														index=self.test_data['pk'])
+
+		p= (self.pipeline.predict(self.test_data['ingredients'].str.join('. ')))
+		p = str(p)
+		p = p.replace("'", '')
+		p = p.replace("[", '')
+		p = p.replace("]", '')
+		print (p)
 
 		if not os.path.exists('submission'):
 			os.mkdir('submission')
