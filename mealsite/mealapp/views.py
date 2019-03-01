@@ -42,6 +42,7 @@ import geopy.distance
 
 #whastcooking imports#
 from whatscooking.whatscooking import*
+import csv
 
 
 
@@ -84,7 +85,6 @@ def scrape ():
         neighbourhood= soup.find_all("div", class_="_16c8fd5e _1f1541e1")
         d = neighbourhood = soup.find_all("a", class_="f3bf9165")
 
-        print(d)
 
 
         address=soup.find(itemprop="streetAddress").get_text()
@@ -128,38 +128,55 @@ def scrape ():
 
     return data
 
-def train():
+def runML():
+
+    cook = Coookings().split().train_model().predict().get_metrics()
+
+    return HttpResponse('')
+
+def itemsToJSON():
 
     data = serializers.serialize('json', Menu_Items.objects.filter(restaurant_name=101), fields=('item_description'))
 
-    #for v in data:
+    file = open('whatscooking/test2.txt','w')
+    file.write(data)
+    file.close()
 
-    #    print (v['fields']['item_description'])
+    return HttpResponse('')
 
+def updateItemsModel():
+    f = open('submission.csv')
+    csv_f = csv.reader(f)
 
+    for column in csv_f:
+            pk= column[0]
+            t = column[1]
 
+            try:
+                pk = int(pk)
+                item= Menu_Items.objects.get(pk=pk)
+                print(item.item_name)
+                item.type= str(t)
+                item.save()
 
-    #data = data.split(',')
-    #print(data)
+            except:
+                continue
 
-    #file = open('testfile.txt','w')
-    #file.write(data)
-    #file.close()
-
-    return data
-
+    return HttpResponse('')
 
 
 def index(request):
+    itemsToJSON()
+    runML()
+    updateItemsModel()
 
-
-    cook = Coookings().split().train_model().predict().get_metrics()
 
     return render (request,'index.html')
 
 def index2(request):
 
     train()
+    cook = Coookings().split().train_model().predict().get_metrics()
 
     return render (request,'index2.html')
 
@@ -169,14 +186,12 @@ def profile(request):
     coords_1 = (51.531441500, -0.037871500)
     coords_2 = (51.4553169, -0.0130913)
     d = geopy.distance.distance(coords_1, coords_2).km
-    print('distance')
-    print(d)
 
     return render (request,'profile.html')
 
 def addresses (request):
     addresses = Restaurant.objects.order_by('name').values('name','address')
-    print(list(addresses))
+    #print(list(addresses))
     return JsonResponse({'addresses': list(addresses)})
 
 
@@ -188,13 +203,10 @@ def map(request):
         min = request.POST['min']
         max = request.POST['max']
 
-        print(name)
-        print(type)
-        print(min)
-        print(max)
+
 
         items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
-        print(list(items))
+
         return JsonResponse({'items': list(items)})
 
 
@@ -202,9 +214,7 @@ def map(request):
         restaurants= Restaurant.objects.order_by('name')
 
         addresses = Restaurant.objects.order_by('name').values('name','address')
-        print(list(addresses))
-        #print(restaurants)
-    #    serialiseRestaurants(request)
+
 
         return render (request,'index2.html',{ 'restaurants': restaurants, 'addresses': addresses } )
 

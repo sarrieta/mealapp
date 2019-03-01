@@ -204,6 +204,35 @@ margin-bottom: 12px; /* Add some space below the input */
   font-size: 36px;
   margin-left: 50px;
 }
+#right-item-panel{
+
+width:100%;
+
+
+
+}
+#result_panel{
+
+width:70%;
+margin-left:300px;
+
+}
+
+.list-group{
+    max-height: 300px;
+    width:70%;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.list-group2{
+    max-height: 200px;
+    margin-right:100px;
+    width:90%;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
@@ -224,4 +253,38 @@ width:160px;
 height:220px;
 float: left;
 
+}
+
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#item_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#item_list li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#item_list li a:hover:not(.header) {
+  background-color: #eee;
 }

@@ -8,13 +8,18 @@
 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
+
+
   <!-- navbar-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!--  1 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 <link href="animated-sticky-header.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="animated-sticky-header.js"></script>
+
+<!--list group -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
 
 
@@ -34,7 +39,7 @@
 
 <!--Carousel imports -->
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!--  2 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!-- favicon imports -->
@@ -207,7 +212,7 @@ th, td {
    				<h3>Services</h3>
    			   <h1>What We Do.</h1>
 
-   			   <p class="lead">There are many people that have different dietary requirements and on a daily basis struggle to find a place that suits their needs. The source of these need may be cultural, social or religious, among others, but irrespective of their origin, this application aims to help them meet these.</p>
+   			   <p class="lead" style='color:white;font-family:librebaskerville-bold' >There are many people that have different dietary requirements and on a daily basis struggle to find a place that suits their needs. The source of these need may be cultural, social or religious, among others, but irrespective of their origin, this application aims to help them meet these.</p>
 
    	   </div> <!-- end col-full -->
    	</div> <!-- end row -->
@@ -221,9 +226,9 @@ th, td {
 	      		<span class="icon"><i class="icon-earth"></i></span>
 
 	            <div class="service-content">
-	            	<h3 class="h05">Maps</h3>
+	            	<h3 class="h05" style='color:white'>Maps</h3>
 
-		            <p>The integrated map will display the locations of the nearby restaurants
+		            <p style='color:white'>The integrated map will display the locations of the nearby restaurants
 	         		</p>
 	         	</div>
 
@@ -236,7 +241,7 @@ th, td {
 	            <div class="service-content">
 	            	<h3 class="h05">Filtering</h3>
 
-		            <p>Make use of our keywords to filter out based on your preferences
+		            <p style='color:white'>Make use of our keywords to filter out based on your preferences
 	         		</p>
 	            </div>
 
@@ -249,7 +254,7 @@ th, td {
 	            <div class="service-content">
 	            	<h3 class="h05">Menu</h3>
 
-		            <p> Search returns the dishes available to the user from the menu
+		            <p style='color:white'> Search returns the dishes available to the user from the menu
 	        			</p>
 	            </div>
 
@@ -262,7 +267,7 @@ th, td {
 	            <div class="service-content">
 	            	<h3 class="h05">Directions</h3>
 
-		            <p> Makes use of our Geolocation services to show directions to the restaurants.
+		            <p style='color:white'> Makes use of our Geolocation services to show directions to the restaurants.
 	         		</p>
 	            </div>
 
@@ -288,6 +293,7 @@ th, td {
 		   		<h1>We are reliable</h1>
 
 		   		<p class="lead"> We pride ourselves on obtaining out information from the most trustworthy and accurate resources</p>
+          <hr>
 	   		</div>
 	   	</div> <!-- end row section-intro -->
 
@@ -296,6 +302,15 @@ th, td {
    	<div class="row portfolio-content">
    		<div class="col-twelve">
    			<div id="folio-wrap" class="bricks-wrapper">
+
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+                              <img src="{% static 'media/img/icons/opentable.png'%}" height=90%; width=90%;  class="img-fluid">
+          </div>
+
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+                              <img src="{% static 'media/img/icons/GOOGLE.png'%}"  height=100%; width=100%; class="img-fluid">
+          </div>
+
 
    			</div> <!-- end folio-wrap -->
    		</div> <!-- end twelve -->
@@ -376,7 +391,7 @@ th, td {
 
        </div>
    </div>
-
+<!--
    <div class="container text-center my-3">
 
        <div class="row mx-auto my-auto">
@@ -415,7 +430,7 @@ th, td {
 
 
 <div id='searchTable'>
-      <!--<input type="text" id="search" placeholder="Type to search">-->
+    <input type="text" id="search" placeholder="Type to search">
       <div class="table-wrapper-scroll-y">
         <table id='myTable' class="table table-bordered table-striped">
 
@@ -434,7 +449,70 @@ th, td {
           </tbody>
         </table>
       </div>
+  </div>-->
+
+
+<div class="panel panel-primary" id="result_panel" >
+    <div class="panel-heading"><h3 class="panel-title">Result List</h3>
+    </div>
+    <div id='inner' style="display:flex">
+    <div class="panel-body">
+        <ul class="list-group">
+
+          {% for restaurant in restaurants %}
+            <li class="list-group-item">
+
+
+                <div id="{{restaurant.id}}" class='iden'>
+                <h4 class="card-title">{{restaurant.name}}</h4>
+                <br>
+                <h6 class="card-subtitle mb-2 text-muted">{{restaurant.opening}}</h6>
+                <p class="card-text"> content</p>
+                <button id='menu_button' class='view_menu'>View Menu</button>
+                </div>
+
+
+
+            </li>
+          {% endfor %}
+
+        </ul>
+    </div>
+
+
+    <div id='right-item-panel'class="panel-body">
+
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+      <ul id='item_list' class="list-group2">
+      <!--  <li style='color:black;text-align:left'><strong>Name</strong>&nbsp<strong>Description</strong>&nbsp<strong>Price</strong</li>-->
+
+        </ul>
+
+
+        <!--\  <div class="menu_items_list">
+          <table id='myTable' class="table table-bordered table-striped">
+
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price (£)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+
+              </tr>
+
+            </tbody>
+          </table>
+
+        -->
+
+
+    </div>
   </div>
+</div>
 
 
 
@@ -644,6 +722,24 @@ that can be used to contact or identify you.</p>
      document.getElementById("mySidenav").style.width = "0";
    }
    </script>
+   <script>
+function myFunction() {
+   var input, filter, ul, li, a, i, txtValue;
+   input = document.getElementById("myInput");
+   filter = input.value.toUpperCase();
+   ul = document.getElementById("item_list");
+   li = ul.getElementsByTagName("li");
+   for (i = 0; i < li.length; i++) {
+       a = li[i].getElementsByTagName("a")[0];
+       txtValue = a.textContent || a.innerText;
+       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+           li[i].style.display = "";
+       } else {
+           li[i].style.display = "none";
+       }
+   }
+}
+</script>
 
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEPZQ5TxctelE5tj8FZj6duvzhg0tBb4&libraries=geometry"
              async defer></script>
@@ -660,7 +756,7 @@ that can be used to contact or identify you.</p>
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 
    <!-- slider imports -->
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <!--  1<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 

@@ -333,12 +333,20 @@ $(document).ready(function(event){
                          pPrice= price.replace(/['"]+/g, '');
 
 
-                           var $tr = $('<tr/>');
+                          /* var $tr = $('<tr/>');
                             $tr.append($('<td scope="col" style="color:black"/>').text(pName));
                             $tr.append($('<td scope="col" style="color:black"/>').text(pDesc));
                             $tr.append($('<td scope="col" style="color:black"/>').text(pPrice));
 
-                            $('.table-wrapper-scroll-y tr:last').after($tr);
+                            $('.menu_items_list tr:last').after($tr);*/
+
+                            $("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pName + ' '+ pDesc + ' ' + pPrice + "</a></li>");
+                            //$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pDesc + "</a></li>");
+                            //$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pPrice + "</a></li>");
+
+
+
+
                               }
                         }
 

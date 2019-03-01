@@ -45,7 +45,7 @@ class Coookings:
 		self.train_data = pd.read_json('whatscooking/train2.txt', orient='records')
 		self.test_data = pd.read_json('whatscooking/test2.txt', orient='records')
 
-		X = self.train_data['ingredients'].str.join('. ')
+		X = self.train_data['fields'].str.join('. ')
 		y = self.train_data['cuisine']
 
 		self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y,
@@ -73,21 +73,23 @@ class Coookings:
 
 
 		print('creating submission..')
-		yhat = pd.Series(self.pipeline.predict(self.test_data['ingredients'].str.join('. ')),
+		yhat = pd.Series(self.pipeline.predict(self.test_data['fields'].str.join('. ')),
 													name='cuisine',
 														index=self.test_data['pk'])
 
-		p= (self.pipeline.predict(self.test_data['ingredients'].str.join('. ')))
+		p= (self.pipeline.predict(self.test_data['fields'].str.join('. ')))
 		p = str(p)
 		p = p.replace("'", '')
 		p = p.replace("[", '')
 		p = p.replace("]", '')
 		print (p)
+		#print(yhat)
+		print(self.test_data['pk'])
 
 		if not os.path.exists('submission'):
 			os.mkdir('submission')
 
-		yhat.to_csv('submission/submission.csv', header=True)
+		yhat.to_csv('submission.csv', header=True)
 
 		return self
 
