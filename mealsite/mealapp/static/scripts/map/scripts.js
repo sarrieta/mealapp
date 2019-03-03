@@ -333,16 +333,16 @@ $(document).ready(function(event){
                          pPrice= price.replace(/['"]+/g, '');
 
 
-                          /* var $tr = $('<tr/>');
-                            $tr.append($('<td scope="col" style="color:black"/>').text(pName));
-                            $tr.append($('<td scope="col" style="color:black"/>').text(pDesc));
-                            $tr.append($('<td scope="col" style="color:black"/>').text(pPrice));
 
-                            $('.menu_items_list tr:last').after($tr);*/
+                            /*$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pName + ' '+ pDesc + ' ' + pPrice +'£'
+                            + " </a></li>");*/
 
-                            $("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pName + ' '+ pDesc + ' ' + pPrice + "</a></li>");
-                            //$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pDesc + "</a></li>");
-                            //$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pPrice + "</a></li>");
+                            demo =i;
+
+                            $("#item_list").append("<li style='color:black;text-align:left'><a> <button type='button' class='btn btn-info' data-toggle='collapse' data-target=#" + demo +">" + pName + '</button>' + '</a></li><br>');
+                            $("#item_list").append("<div id='"+ demo+ "' class='collapse' style='color:black;text-align:left'>" + pDesc + ' ' + pPrice+ '</div></li>');
+                            //$("#item_list").append("<li style='color:black;text-align:left'>"+pDesc+"</li>");
+
 
 
 

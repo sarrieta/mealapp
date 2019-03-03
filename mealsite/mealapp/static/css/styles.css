@@ -2,6 +2,7 @@
  * element that contains the map. */
  #map{
    height: 80%;
+   width: 60%;
    left: 50px;
    float:center;
  }
@@ -55,35 +56,8 @@ height: 100%;
 margin: 0;
 padding: 0;
 }
-/*
-#floating-panel {
-position: absolute;
-top: 10px;
-left: 25%;
-z-index: 5;
-background-color: #fff;
-padding: 5px;
-border: 1px solid #999;
-text-align: center;
-font-family: 'Roboto','sans-serif';
-line-height: 30px;
-padding-left: 10px;
-}
-#floating-panel {
-background: #fff;
-padding: 5px;
-font-size: 14px;
-font-family: Arial;
-border: 1px solid #ccc;
-box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-display: none;
-}
-*/
-#right-panel {
-font-family: 'Roboto','sans-serif';
-line-height: 30px;
-padding-left: 10px;
-}
+
+
 
 #right-panel select, #right-panel input {
 font-size: 15px;
@@ -99,7 +73,7 @@ font-size: 12px;
 #right-panel {
 height: 80%;
 float: right;
-width: 390px;
+width: 20%;
 overflow: auto;
 }
 
@@ -204,11 +178,14 @@ margin-bottom: 12px; /* Add some space below the input */
   font-size: 36px;
   margin-left: 50px;
 }
+#inner{
+
+height:550px;
+
+}
 #right-item-panel{
 
 width:100%;
-
-
 
 }
 #result_panel{
@@ -219,14 +196,14 @@ margin-left:300px;
 }
 
 .list-group{
-    max-height: 300px;
+    max-height: 500px;
     width:70%;
     margin-bottom: 10px;
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
 }
 .list-group2{
-    max-height: 200px;
+    max-height:400px;
     margin-right:100px;
     width:90%;
     margin-bottom: 10px;
@@ -268,22 +245,6 @@ float: left;
   margin-bottom: 12px;
 }
 
-#item_list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#item_list li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
-}
 
 #item_list li a:hover:not(.header) {
   background-color: #eee;

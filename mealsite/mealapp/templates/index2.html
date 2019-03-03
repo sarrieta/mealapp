@@ -110,7 +110,8 @@ th, td {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#about">About</a>
   <a href="#services">Services</a>
-  <a href="#">Clients</a>
+  <a href="#portfolio">Maps</a>
+  <a href="portfolio">Maps</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -133,6 +134,7 @@ th, td {
 		   		<div class="col-twelve">
 
 			  				<h3 class="animate-intro">MealDr</h3>
+
 				  			<h1 class="animate-intro">
 							Fullfil your dietary demands effortlessly  <br>
 
@@ -292,8 +294,8 @@ th, td {
 	   			<h3>Sources</h3>
 		   		<h1>We are reliable</h1>
 
-		   		<p class="lead"> We pride ourselves on obtaining out information from the most trustworthy and accurate resources</p>
-          <hr>
+		   		<p class="lead"> We pride ourselves on obtaining out information from trustworthy and accurate sources</p>
+
 	   		</div>
 	   	</div> <!-- end row section-intro -->
 
@@ -316,12 +318,14 @@ th, td {
    		</div> <!-- end twelve -->
    	</div> <!-- end portfolio-content -->
 
+
+
    </section>  <!-- end portfolio -->
 
 
    <!-- Testimonials Section
    ================================================== -->
-   <footer id="portfolio">
+   <footer class='mapSection'id="portfolio">
 
         <h1 style="margin-left:600px;" >Maps</h1>
 
@@ -353,7 +357,7 @@ th, td {
 
    </footer> <!-- end testimonials -->
 
-   <footer id="testimonials">
+   <section id="testimonials">
 
      <div class="overlay"></div>
 
@@ -453,7 +457,7 @@ th, td {
 
 
 <div class="panel panel-primary" id="result_panel" >
-    <div class="panel-heading"><h3 class="panel-title">Result List</h3>
+    <div class="panel-heading"><h3 class="panel-title">Restaurants</h3>
     </div>
     <div id='inner' style="display:flex">
     <div class="panel-body">
@@ -471,8 +475,6 @@ th, td {
                 <button id='menu_button' class='view_menu'>View Menu</button>
                 </div>
 
-
-
             </li>
           {% endfor %}
 
@@ -480,35 +482,14 @@ th, td {
     </div>
 
 
+
+
     <div id='right-item-panel'class="panel-body">
 
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
       <ul id='item_list' class="list-group2">
-      <!--  <li style='color:black;text-align:left'><strong>Name</strong>&nbsp<strong>Description</strong>&nbsp<strong>Price</strong</li>-->
 
         </ul>
-
-
-        <!--\  <div class="menu_items_list">
-          <table id='myTable' class="table table-bordered table-striped">
-
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price (£)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-
-
-              </tr>
-
-            </tbody>
-          </table>
-
-        -->
-
 
     </div>
   </div>
@@ -517,7 +498,7 @@ th, td {
 
 
 
-  </footer>
+</section>
 
 	<!-- contact
    ================================================== -->
@@ -722,16 +703,20 @@ that can be used to contact or identify you.</p>
      document.getElementById("mySidenav").style.width = "0";
    }
    </script>
+
    <script>
 function myFunction() {
+
    var input, filter, ul, li, a, i, txtValue;
    input = document.getElementById("myInput");
    filter = input.value.toUpperCase();
    ul = document.getElementById("item_list");
    li = ul.getElementsByTagName("li");
    for (i = 0; i < li.length; i++) {
+
        a = li[i].getElementsByTagName("a")[0];
        txtValue = a.textContent || a.innerText;
+
        if (txtValue.toUpperCase().indexOf(filter) > -1) {
            li[i].style.display = "";
        } else {
@@ -740,6 +725,7 @@ function myFunction() {
    }
 }
 </script>
+
 
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEPZQ5TxctelE5tj8FZj6duvzhg0tBb4&libraries=geometry"
              async defer></script>

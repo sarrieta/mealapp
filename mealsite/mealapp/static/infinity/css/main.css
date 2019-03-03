@@ -1776,7 +1776,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  *
  * ------------------------------------------------------------------- */
 #about {
-  
+
+
 
   position: relative;
   padding: 4.2rem 0 12rem;
@@ -1992,6 +1993,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   min-height: 800px;
   position: relative;
   padding: 0;
+    margin: 0;
+
 }
 #portfolio .intro-wrap {
   padding: 15rem 0 21rem;
