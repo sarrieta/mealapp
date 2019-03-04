@@ -175,8 +175,7 @@ def index(request):
 
 def index2(request):
 
-    train()
-    cook = Coookings().split().train_model().predict().get_metrics()
+
 
     return render (request,'index2.html')
 
@@ -206,7 +205,7 @@ def map(request):
 
 
         items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
-
+        print(list(items))
         return JsonResponse({'items': list(items)})
 
 
@@ -221,6 +220,6 @@ def map(request):
 def plotMap(request):
     if request.method == "GET":
 
-        coordinates = Restaurant.objects.filter().values('name','lat','long')
-
+        coordinates = Restaurant.objects.filter().values('name','lat','long','opening','id')
+        print(list(coordinates))
     return JsonResponse({'coordinates': list(coordinates)})

@@ -23,6 +23,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
    window.onload = function () {
 
      getCoordinates()
+     getRestaurants()
 
 
    }
@@ -281,11 +282,11 @@ $(document).ready(function(event){
    })
 
 
-$(document).ready(function(event){
+
         //$(".view_menu").click( function getItems(event){
-        $(".view_menu").on("click", function getItems(event){
+        $(document).on('click', '.view_menu', function getItems(event){
 
-
+        
 
           var id = $(this).parent().attr('id');
 
@@ -351,42 +352,49 @@ $(document).ready(function(event){
                         }
 
                    });
-         })
+
 
   });
 
-    $(document).ready(function(){
-      $(function () {
-    var firstTime = true;
-
-    $("#myselction").change(function (e) {
-        var neData = $("#myselction").val();
-
-        if (firstTime) {
-            $("table.data thead tr").append("<th>Idea</th>");
-            $("table.data tr:gt(0)").append("<td>" + neData + "</td>");
-            firstTime = false;
-        } else {
-            $("table.data tr:gt(0) td:last-child").html(neData);
-        }
-    });
-});
-
-        });
 
 
-  $(document).ready(function(){
-/*
-    var $rows = $('#myTable tr');
-      $('#search').keyup(function() {
-        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 
-        $rows.show().filter(function() {
-            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(val);
-        }).hide();
-      });*/
-  });
+        function getRestaurants (event){
+                  $.ajax({
+                           type:'GET',
+                           url:'/plotMap/',
+                           success:function(data){
+                             var markers = data
+
+
+
+                          for (var i = 0; i < markers.coordinates.length; i++) {
+                                 var data = markers.coordinates[i]
+                               console.log(data.id)
+                               console.log(data.name)
+                               console.log(data.opening)
+                               $("#rest_list").append("<li class='list-group-item'><a>"+
+                               "<div id='" + data.id + "' class='iden'>" +
+                               "<h4 class='card-title'>"+ data.name +"</h4>"+
+                               "<br>"+
+                               "<h6 class='card-subtitle mb-2 text-muted'>"+ data.opening +"</h6>"+
+                               "<p class='card-text'> </p>"+
+                               "<button id='menu_button' class='view_menu'>View Menu</button>"+ "</div>"
+                                +" </a></li><br>");
+
+
+
+
+
+
+
+
+
+                             }
+      						}
+                            });
+
+               }
 
 
 
