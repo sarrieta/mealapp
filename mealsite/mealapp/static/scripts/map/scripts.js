@@ -342,12 +342,9 @@ $(document).ready(function(event){
 
                             demo =i;
 
-                            $("#item_list").append("<li style='color:black;text-align:left'><a> <button type='button' class='btn btn-info' data-toggle='collapse' data-target=#" + demo +">" + pName + '</button>' + '</a></li><br>');
-                            $("#item_list").append("<div id='"+ demo+ "' class='collapse' style='color:black;text-align:left'>" + pDesc + ' ' + pPrice+ '</div></li>');
-                            //$("#item_list").append("<li style='color:black;text-align:left'>"+pDesc+"</li>");
-
-
-
+                            $("#item_list").append("<li id='"+pName+"'style='color:black;text-align:left'><a> <button name='john' type='button' class='btn btn-info' data-toggle='collapse' data-target=#" + demo +">" + pName + '</button>' + '</a>' + "<button id='addSummary' value='"+pName+"' name='"+pPrice+"' type='button' class='btn-xs'> Add </button></li><br>");
+                            $("#item_list").append("<div id='"+ demo+ "' class='collapse' style='color:black;text-align:left'>" + pDesc + ' ' + pPrice+ "</div> </li>");
+                            //$("#item_list").append("<li class='summaryInfo'style='display:none;'><a>" + pName + '</a>' + "</li><br>");
 
 
                               }
@@ -357,6 +354,35 @@ $(document).ready(function(event){
 
 
   });
+
+  $(document).on('click', '#addSummary', function getItems(event){
+
+    name = $(this).val();//if you are trying to get value of 'value' attribute
+    price =$(this).attr('name');
+
+/*
+    var $tds = $('#modal_cart tr > td:nth-child(2)').filter(function () {
+    return $.trim($(this).text()) == VALUE;
+    });
+    if ($tds.length != 0) {
+        alert("Please enter a unique row number.");
+    }*/
+
+    $('#modal_cart tbody').append('<tr><td>'+ name +'</td><td>'+ price +'<td><a><i class="fas fa-times"></i></a></td></tr>');
+
+
+
+
+});
+
+
+
+/*$( "#cartInput" ).keyup(function() {
+  alert( "Handler for .keyup() called." );
+});*/
+
+
+
 
 
 
