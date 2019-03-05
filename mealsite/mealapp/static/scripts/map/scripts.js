@@ -109,6 +109,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
                   title: data.name
 
               });
+
               (function (marker, data) {
                   google.maps.event.addListener(marker, "click", function (e) {
                        e.preventDefault();
@@ -286,7 +287,7 @@ $(document).ready(function(event){
         //$(".view_menu").click( function getItems(event){
         $(document).on('click', '.view_menu', function getItems(event){
 
-        
+
 
           var id = $(this).parent().attr('id');
 
@@ -322,6 +323,7 @@ $(document).ready(function(event){
 
                        var items = data.items;
 
+                       $("#item_list").empty()
 
                        for (var i=0;i<items.length;i++) {
                          name = JSON.stringify(items[i].item_name)
@@ -373,6 +375,7 @@ $(document).ready(function(event){
                                console.log(data.id)
                                console.log(data.name)
                                console.log(data.opening)
+
                                $("#rest_list").append("<li class='list-group-item'><a>"+
                                "<div id='" + data.id + "' class='iden'>" +
                                "<h4 class='card-title'>"+ data.name +"</h4>"+
@@ -383,14 +386,9 @@ $(document).ready(function(event){
                                 +" </a></li><br>");
 
 
-
-
-
-
-
-
-
                              }
+
+
       						}
                             });
 
