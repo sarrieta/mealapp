@@ -355,6 +355,22 @@ $(document).ready(function(event){
 
   });
 
+  function myFunctionX() {
+
+      var sum=0;
+
+      var x = document.getElementsByClassName("totalPrice");
+      var i;
+      for (i = 0; i < x.length; i++) {
+        total = x[i].innerHTML
+
+        sum = parseFloat(sum) + parseFloat(total)
+
+      }
+      console.log(sum)
+      $("#spanCart span").text('Total:' + ' ' +sum + ' ' + '£');
+  }
+
   $(document).on('click', '#addSummary', function getItems(event){
 
     name = $(this).val();//if you are trying to get value of 'value' attribute
@@ -367,13 +383,16 @@ $(document).ready(function(event){
     if ($tds.length != 0) {
         alert("Please enter a unique row number.");
     }*/
+    var total=0;
 
-    $('#modal_cart tbody').append('<tr><td>'+ name +'</td><td>'+ price +'<td><a><i class="fas fa-times"></i></a></td></tr>');
+    $('#modal_cart tbody').append('<tr><td>'+ name +'</td><td class="totalPrice">'+ price +'</td><td><a><i class="fas fa-times"></i></a></td></tr>');
+
+    myFunctionX();
 
 
 
 
-});
+      });
 
 
 

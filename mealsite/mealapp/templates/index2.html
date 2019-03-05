@@ -485,19 +485,22 @@ th, td {
 
 
     <div id='right-item-panel'class="panel-body">
-
+      <div style='display:flex'>
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+      <button type="button" class="btn btn-primary" style="margin-left:20px;"data-toggle="modal" data-target="#modalCart"><i class="fa fa-pound-sign"> Summary</i></button>
+    </div>
       <ul id='item_list' class="list-group2">
 
         </ul>
 
     </div>
+
   </div>
 </div>
 
 
 <!-- Button trigger modal-->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">Launch modal</button>
+
 
 <!-- Modal: modalCart -->
 <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -532,10 +535,11 @@ th, td {
         </table>
 
       </div>
+      <div id ='spanCart'class="modal-title"><span>Total:</span></div><br>
       <!--Footer-->
       <div class="modal-footer">
-        <h4 class="modal-title">Total:</h4><br>
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 
         <!--<button class="btn btn-primary">Checkout</button>-->
       </div>
