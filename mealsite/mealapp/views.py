@@ -155,7 +155,7 @@ def updateItemsModel():
             try:
                 pk = int(pk)
                 item= Menu_Items.objects.get(pk=pk)
-                print(item.item_name)
+                #print(item.item_name)
                 item.type= str(t)
                 item.save()
 
@@ -190,7 +190,7 @@ def profile(request):
 
 def addresses (request):
     addresses = Restaurant.objects.order_by('name').values('name','address')
-    #print(list(addresses))
+    ##print(list(addresses))
     return JsonResponse({'addresses': list(addresses)})
 
 
@@ -205,7 +205,7 @@ def map(request):
 
 
         items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
-        print(list(items))
+        #print(list(items))
         return JsonResponse({'items': list(items)})
 
 
@@ -221,5 +221,5 @@ def plotMap(request):
     if request.method == "GET":
 
         coordinates = Restaurant.objects.filter().values('name','lat','long','opening','id')
-        print(list(coordinates))
+        #print(list(coordinates))
     return JsonResponse({'coordinates': list(coordinates)})

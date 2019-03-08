@@ -86,7 +86,9 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
              map: map,
              radius: circleRadius,    // 10 miles in metres
              center: new google.maps.LatLng(pos.lat,pos.lng) ,
-             fillColor: '#AA0000'
+             //fillColor: '#AA0000',
+            // strokeColor: '#FF0000',
+             strokeOpacity: 0.8,
            });
 
          for (var i = 0; i < markers.coordinates.length; i++) {
@@ -417,9 +419,7 @@ $(document).ready(function(event){
 
                           for (var i = 0; i < markers.coordinates.length; i++) {
                                  var data = markers.coordinates[i]
-                               console.log(data.id)
-                               console.log(data.name)
-                               console.log(data.opening)
+
 
                                $("#rest_list").append("<li class='list-group-item'><a>"+
                                "<div id='" + data.id + "' class='iden'>" +
