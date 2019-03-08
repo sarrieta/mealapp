@@ -20,6 +20,7 @@ class Restaurant(models.Model):
 
 class Menu_Items(models.Model):
     type = models.CharField(blank=True,max_length=30)
+    cuisine = models.CharField(blank=True,max_length=30)
     item_name = models.CharField(blank=False, default=None,max_length=100)
     item_description = models.TextField(null=True, default=None)
     item_price = models.FloatField(max_length=2,blank=False, default=None)

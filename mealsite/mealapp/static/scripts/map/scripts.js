@@ -147,6 +147,8 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
     });
 });
 
+
+
    function radioVal(val){
 
      var radios = document.getElementsByName(val);
@@ -308,13 +310,15 @@ $(document).ready(function(event){
           }
 
           var radios =radioVal('food_type')
+          var cuisine =radioVal('cuisine')
+
           var csrftoken=getCookie('csrftoken')
 
 
             $.ajax({
                      type:'POST',
                      url:'/map/',
-                     data:{'id': id, 'food_type':radios,'min':min,'max':max },
+                     data:{'id': id, 'food_type':radios,'min':min,'max':max, 'cuisine':cuisine },
                      headers:{
                             "X-CSRFToken": csrftoken
                         },
@@ -402,6 +406,14 @@ $(document).ready(function(event){
   alert( "Handler for .keyup() called." );
 });*/
 
+$(document).ready(function(){
+$("input").click(function(){
+        $(this).next().show();
+        $(this).next().hide();
+    });
+
+});
+
 
 
 
@@ -443,8 +455,8 @@ $(document).ready(function(event){
 
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     $('input:radio').click(function() {
         $('input:radio').not(this).prop('checked', false);
     });
-});
+});*/

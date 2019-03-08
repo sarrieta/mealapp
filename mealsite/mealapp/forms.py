@@ -19,7 +19,7 @@ class UserLogInForm(forms.Form):
 class UserRegForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['username','password','preferences']
+        fields = ['username','password']
         labels = {
             }
         widgets = {

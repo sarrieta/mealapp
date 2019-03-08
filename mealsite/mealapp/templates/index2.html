@@ -328,7 +328,7 @@ th, td {
 
         <h1 style="margin-left:600px;" >Maps</h1>
 
-       <div id='radiusDiv'class="card text-white bg-dark mb-" style="width: 10rem;">
+       <div id='radiusDiv'class="card text-white bg-dark mb-" style="width: 12rem;">
        <b style="margin-left:17px" >Radius :</b>
        <div class="card-body">
        <input type="radio"  name="limit" value="0.5"> 500 m<br>
@@ -336,10 +336,18 @@ th, td {
        <input type="radio"  name="limit" value="3" > 3 KM <br>
        <input type="radio"  name="limit" value="5" > 5 KM <br>
         <input type="radio"  name="limit" value="10" checked> 10 KM <br>
+      </div>
+       <b style="margin-left:17px" > Transport:</b>
+       <div class="card-body">
+       <input type="radio"  name="transport" value="WALKING" checked> Walk<br>
+       <input type="radio"  name="transport" value="BICYCLING" > Cycle <br>
+       <input type="radio"  name="transport" value="DRIVING" > Drive<br>
+       <input type="radio"  name="transport" value="TRANSIT" > Transit <br>
+
        </div>
        </div>
 
-       <div id="floating-panel">
+       <div style='margin-left:500px'>
 
          <strong style="color:black">Destination:</strong>
          <select id="end">
@@ -349,7 +357,7 @@ th, td {
          </select>
        </div>
 
-        <div id="right-panel" class="embed-responsive-item" style="border: 1px solid black"><strong style="color:black" style="margin-left:20px" >Directions:</strong></div>
+      <!--  <div id="right-panel" class="embed-responsive-item" style="border: 1px solid black"><strong style="color:black" style="margin-left:20px" >Directions:</strong></div>-->
 
        <div id="map"class="embed-responsive-item" style="border: 1px solid black"></div>
 
@@ -382,6 +390,14 @@ th, td {
          <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
          <input type="radio" name="food_type" value="vegan" checked > Vegan <br>
          <input type="radio" name="food_type" value="omnivore" > All <br><br>
+
+         <b style="margin-left:17px" >Cusine :</b><br>
+
+           <input type="radio" name="cuisine" value="brazilian"> brazilian<br>
+           <input type="radio" name="cuisine" value="spanish"  > spanish <br>
+           <input type="radio" name="cuisine" value="mexican"  > mexican <br>
+           <input type="radio" name="cuisine" value="indian" checked > indian <br>
+           <input type="radio" name="cuisine" value="chinese" > chinese <br><br>
 
          <div id="rangedval">
              <b>Price:</b>

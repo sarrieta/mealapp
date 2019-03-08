@@ -223,11 +223,31 @@ margin-left:300px;
   .sidenav a {font-size: 18px;}
 }
 
-#radiusDiv,#typeDiv{
+#typeDiv{
 top: 3px;
 left: 25px;
 width:160px;
-height:220px;
+height:auto;
+float: left;
+
+}
+
+
+
+#radiusDiv{
+margin-top: 120px;
+left: 25px;
+width:160px;
+height:400px;
+float: left;
+
+}
+
+#transpo{
+margin-top: 120px;
+left: 25px;
+width:160px;
+height:400px;
 float: left;
 
 }
@@ -236,7 +256,7 @@ float: left;
 width:400px;
 
 }
-}
+
 
 #myInput {
   background-image: url('/css/searchicon.png');

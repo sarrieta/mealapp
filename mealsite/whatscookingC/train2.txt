@@ -185,119 +185,119 @@
    {
       "model":"mealapp.menu_items",
       "pk":3813,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"chicken and lamb, sw rice, grilled tomatoes and peppers"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3814,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"sw rice, grilled tomatoes and peppers"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3815,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"sw rice, grilled tomatoes and peppers"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3816,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"sw rice, grilled tomatoes and peppers"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3817,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"sw grilled tomatoes, peppers, yoghurt, tomato sauce and melted butter on slices bread"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3818,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"sw grilled tomatoes, peppers, yoghurt, tomato sauce and melted butter on slices bread"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3819,
-      "cuisine": "vegetarian", "fields":{
+      "cuisine": "indian", "fields":{
          "item_description":"sw mashed potato, salad and lemon dressing"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3820,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"sw salad"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3821,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"wrapped in a flat bread, sw yoghurt, tomato and butter sauce"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3822,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"wrapped in a flat bread, sw yoghurt, tomato and butter sauce"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3823,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"with aubergine, courgette, potato, onion, bechamel sauce*, tomato sauce dressing, sw salad"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3824,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"sw seasonal vegetables and mashed potato"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3825,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"sw tomato, garlic and pesto sauce"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3826,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"with aubergine, courgette, onion, spinach, pepper, potato, chickpeas, garlic, bechamel sauce*, tomato sauce dressing, sw salad"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3827,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"with tomato, garlic, butter and pesto sauce"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3828,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":"with green and red peppers, tomatoes, butter and garlic"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3829,
-      "cuisine": "vegan", "fields":{
+      "cuisine": "spanish", "fields":{
          "item_description":" "
       }
    }]
