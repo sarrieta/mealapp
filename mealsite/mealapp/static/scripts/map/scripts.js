@@ -329,7 +329,7 @@ $(document).ready(function(event){
 
                        var items = data.items;
 
-                       $("#item_list").empty()
+                       $("#innerC").empty()
 
                        for (var i=0;i<items.length;i++) {
                          name = JSON.stringify(items[i].item_name)
@@ -348,8 +348,37 @@ $(document).ready(function(event){
 
                             demo =i;
 
-                            $("#item_list").append("<li id='"+pName+"'style='color:black;text-align:left'><a> <button name='john' type='button' class='btn btn-info' data-toggle='collapse' data-target=#" + demo +">" + pName + '</button>' + '</a>' + "<button id='addSummary' value='"+pName+"' name='"+pPrice+"' type='button' class='btn-xs'> Add </button></li><br>");
-                            $("#item_list").append("<div id='"+ demo+ "' class='collapse' style='color:black;text-align:left'>" + pDesc + ' ' + pPrice+ "</div> </li>");
+                            if ( demo == '1')
+                            {
+                              $("#innerC").append("<div class='carousel-item col-md-4 active '> <div class='panel panel-default'> <div class='panel-thumbnail'>"+
+
+                              '<div class="card text-center" style=""> <div class="card-body">'+
+                                  '<h5 class="card-title">'+  pName+'</h5>'+
+                                  '<p class="card-text">' + pDesc +'</p>' +
+                                  '<a href="#" class="btn btn-primary">'+ pPrice+'</a>  </div> </div>'
+
+
+
+                                + "</div> </div> </div>");
+                            }
+                            else{
+
+
+                            $("#innerC").append("<div class='carousel-item col-md-4'> <div class='panel panel-default'> <div class='panel-thumbnail'>"+
+
+                            '<div class="card text-center" style=""> <div class="card-body">'+
+                                '<h5 class="card-title">'+  pName+'</h5>'+
+                                '<p class="card-text">' + pDesc +'</p>' +
+                                '<a href="#" class="btn btn-primary">'+ pPrice+'</a>  </div> </div>'
+
+
+
+                              + "</div> </div> </div>");
+
+                            }
+
+
+                            //$("#item_list").append("<div id='"+ demo+ "' class='collapse' style='color:black;text-align:left'>" + pDesc + ' ' + pPrice+ "</div> </li>");
                             //$("#item_list").append("<li class='summaryInfo'style='display:none;'><a>" + pName + '</a>' + "</li><br>");
 
 
@@ -439,7 +468,7 @@ $("input").click(function(){
                                "<br>"+
                                "<h6 class='card-subtitle mb-2 text-muted'>"+ data.opening +"</h6>"+
                                "<p class='card-text'> </p>"+
-                               "<button id='menu_button' class='view_menu'>View Menu</button>"+ "</div>"
+                               "<button id='menu_button' class='view_menu btn-xs'>View Menu</button>"+ "</div>"
                                 +" </a></li><br>");
 
 
@@ -452,11 +481,49 @@ $("input").click(function(){
                }
 
 
-
-
-
 /*$(document).ready(function(){
     $('input:radio').click(function() {
         $('input:radio').not(this).prop('checked', false);
     });
 });*/
+
+
+$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $('.carousel-item').length;
+
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+
+
+
+
+  $(document).ready(function() {
+/* show lightbox when clicking a thumbnail */
+    $('a.thumb').click(function(event){
+      event.preventDefault();
+      var content = $('.modal-body');
+      content.empty();
+        var title = $(this).attr("title");
+        $('.modal-title').html(title);
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
+    });
+
+  });

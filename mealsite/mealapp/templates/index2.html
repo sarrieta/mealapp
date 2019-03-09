@@ -8,6 +8,10 @@
 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
+<!--carousel css -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
   <!-- navbar-->
@@ -105,7 +109,7 @@ th, td {
 		  	<span onmouseover="openNav()" class="header-menu-icon"> </span>
 		</a>
 
-    <div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#about">About</a>
   <a href="#services">Services</a>
@@ -115,6 +119,56 @@ th, td {
 </div>
 
 <!-- Use any element to open the sidenav -->
+
+
+<div id="mySidenavF" class="sidenavF">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNavF()">&times;</a>
+  <div id='typeDi' class="" style="width: auto;color:white;">
+    <b style="margin-left:17px" >Type :</b>
+    <div class="card-body">
+      <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
+      <input type="radio" name="food_type" value="vegan" checked > Vegan <br>
+      <input type="radio" name="food_type" value="omnivore" > All <br><br>
+
+      <b style="margin-left:17px" >Cusine :</b><br>
+
+        <input type="radio" name="cuisine" value="brazilian"> brazilian<br>
+        <input type="radio" name="cuisine" value="spanish"  > spanish <br>
+        <input type="radio" name="cuisine" value="mexican"  > mexican <br>
+        <input type="radio" name="cuisine" value="indian" checked > indian <br>
+        <input type="radio" name="cuisine" value="chinese" > chinese <br><br>
+
+
+      <div id="rangedval">
+          <b>Price:</b>
+          <br>
+         <span id="rangevalmin">0 £ -</span><span id="rangevalmax"> 40 £</span>
+
+          <div id="slider-range"></div>
+          <div id="custom-handle" class="ui-slider-handle"></div>
+      </div>
+
+    </div>
+
+    <b style="margin-left:17px" >Radius :</b>
+    <div class="card-body">
+    <input type="radio"  name="limit" value="0.5"> 500 m<br>
+    <input type="radio"  name="limit" value="1" > 1 KM <br>
+    <input type="radio"  name="limit" value="3" > 3 KM <br>
+    <input type="radio"  name="limit" value="5" > 5 KM <br>
+     <input type="radio"  name="limit" value="10" checked> 10 KM <br>
+   </div>
+    <!--<b style="margin-left:17px" > Transport:</b>
+    <div class="card-body">
+    <input type="radio"  name="transport" value="WALKING" checked> Walk<br>
+    <input type="radio"  name="transport" value="BICYCLING" > Cycle <br>
+    <input type="radio"  name="transport" value="DRIVING" > Drive<br>
+    <input type="radio"  name="transport" value="TRANSIT" > Transit <br>
+
+  </div>-->
+  </div>
+</div>
+
 
 
 
@@ -326,8 +380,18 @@ th, td {
    ================================================== -->
    <footer class='mapSection'id="portfolio">
 
-        <h1 style="margin-left:600px;" >Maps</h1>
+     <div class="row narrow section-intro with-bottom-sep animate-this">
+       <div class="col-full">
 
+           <h3 style="color:black;">Menu</h3>
+            <h1 style="color:black;"> Get inspired.</h1>
+
+            <p class="lead" style="color:black;margin-bottom:0px;"> Find food that suits your needs using our tool below.
+            </p>
+
+        </div> <!-- end col-full -->
+     </div> <!-- end row -->
+        <!--
        <div id='radiusDiv'class="card text-white bg-dark mb-" style="width: 12rem;">
        <b style="margin-left:17px" >Radius :</b>
        <div class="card-body">
@@ -345,71 +409,146 @@ th, td {
        <input type="radio"  name="transport" value="TRANSIT" > Transit <br>
 
        </div>
-       </div>
+     </div>-->
 
-       <div style='margin-left:500px'>
 
-         <strong style="color:black">Destination:</strong>
-         <select id="end">
-           {% for add in addresses %}
-           <option value="{{add.address}}">{{add.name}}</option>
-           {% endfor %}
-         </select>
-       </div>
+
+       <br></br>
+       <div style='display:flex'>
+       <button style='margin-left:600px;margin-bottom:0px;' onclick="openNavF()" type='button' class='btn' >
+
+         Show Filters</button><br></br>
+         <button style='margin-bottom:0px;' data-toggle="modal" data-target="#modalCart" type='button' class='btn' >
+
+           Show Directions</button>
+         </div>
+<!--
+       <div id='typeDi' class="collapse card text-white bg-dark mb-" style="width: 18rem">
+         <b style="margin-left:17px" >Type :</b>
+         <div class="card-body">
+           <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
+           <input type="radio" name="food_type" value="vegan" checked > Vegan <br>
+           <input type="radio" name="food_type" value="omnivore" > All <br><br>
+
+           <b style="margin-left:17px" >Cusine :</b><br>
+
+             <input type="radio" name="cuisine" value="brazilian"> brazilian<br>
+             <input type="radio" name="cuisine" value="spanish"  > spanish <br>
+             <input type="radio" name="cuisine" value="mexican"  > mexican <br>
+             <input type="radio" name="cuisine" value="indian" checked > indian <br>
+             <input type="radio" name="cuisine" value="chinese" > chinese <br><br>
+
+
+           <div id="rangedval">
+               <b>Price:</b>
+               <br>
+              <span id="rangevalmin">0 £ -</span><span id="rangevalmax"> 40 £</span>
+
+               <div id="slider-range"></div>
+               <div id="custom-handle" class="ui-slider-handle"></div>
+           </div>
+
+         </div>
+
+         <b style="margin-left:17px" >Radius :</b>
+         <div class="card-body">
+         <input type="radio"  name="limit" value="0.5"> 500 m<br>
+         <input type="radio"  name="limit" value="1" > 1 KM <br>
+         <input type="radio"  name="limit" value="3" > 3 KM <br>
+         <input type="radio"  name="limit" value="5" > 5 KM <br>
+          <input type="radio"  name="limit" value="10" checked> 10 KM <br>
+        </div>
+         <b style="margin-left:17px" > Transport:</b>
+         <div class="card-body">
+         <input type="radio"  name="transport" value="WALKING" checked> Walk<br>
+         <input type="radio"  name="transport" value="BICYCLING" > Cycle <br>
+         <input type="radio"  name="transport" value="DRIVING" > Drive<br>
+         <input type="radio"  name="transport" value="TRANSIT" > Transit <br>
+
+         </div>
+       </div>-->
+
+
+       <!--<div class="panel panel-primary" id="result_panel" >-->
+           <div class="panel-heading"><h3 class="panel-title">Restaurants</h3>
+           </div>
+           <div id='inner' style="display:flex">
+           <div class="panel-body">
+               <ul id='rest_list' class="list-group">
+                 <!--
+                 {% for restaurant in restaurants %}
+                   <li class="list-group-item">
+
+
+                       <div id="{{restaurant.id}}" class='iden'>
+                       <h4 class="card-title">{{restaurant.name}}</h4>
+                       <br>
+                       <h6 class="card-subtitle mb-2 text-muted">{{restaurant.opening}}</h6>
+                       <p class="card-text"> </p>
+                       <button id='menu_button' class='view_menu'>View Menu</button>
+                       </div>
+
+                   </li>
+                 {% endfor %}-->
+
+               </ul>
+           </div>
+
+
+
+
+           <div id='right-item-panel'class="panel-body">
+             <div style='display:flex'>
+            <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+             <button type="button" class="btn btn-primary" style="margin-left:20px;"data-toggle="modal" data-target="#modalCart"><i class="fa fa-pound-sign"> Summary</i></button>-->
+           </div>
+             <div id="map"class="embed-responsive-item" style="border: 1px solid black"></div>
+
+           </div>
+
+
+
+         </div>
+
+
+
+       <!--</div>-->
 
       <!--  <div id="right-panel" class="embed-responsive-item" style="border: 1px solid black"><strong style="color:black" style="margin-left:20px" >Directions:</strong></div>-->
 
-       <div id="map"class="embed-responsive-item" style="border: 1px solid black"></div>
 
+
+
+      <input type="hidden" id="minValue" >
+      <input type="hidden" id="maxValue" >
 
    </footer> <!-- end testimonials -->
 
    <section id="testimonials">
-
-     <div class="overlay"></div>
-
-     <div class="row narrow section-intro with-bottom-sep animate-this">
-       <div class="col-full">
-
-           <h3 style="color:black;">Menu</h3>
-            <h1> Get inspired.</h1>
-
-            <p class="lead"> Find food that suits your needs using our tool below.
-            </p>
-
-        </div> <!-- end col-full -->
-     </div> <!-- end row -->
-
-     <input type="hidden" id="minValue" >
-     <input type="hidden" id="maxValue" >
+     <br></br>
+     <br></br>
 
 
-     <div id='typeDiv' class="card text-white bg-dark mb-" style="width: 18rem;">
-       <b style="margin-left:17px" >Type :</b>
-       <div class="card-body">
-         <input type="radio" name="food_type" value="vegetarian"> Vegetarian<br>
-         <input type="radio" name="food_type" value="vegan" checked > Vegan <br>
-         <input type="radio" name="food_type" value="omnivore" > All <br><br>
+     <div class="container-fluid">
+         <div id="carouselExample" class="carouselPrograms carousel slide" data-ride="carousel" data-interval="false">
+             <div id='innerC' class="carousel-inner row w-100 mx-auto" role="listbox">
 
-         <b style="margin-left:17px" >Cusine :</b><br>
 
-           <input type="radio" name="cuisine" value="brazilian"> brazilian<br>
-           <input type="radio" name="cuisine" value="spanish"  > spanish <br>
-           <input type="radio" name="cuisine" value="mexican"  > mexican <br>
-           <input type="radio" name="cuisine" value="indian" checked > indian <br>
-           <input type="radio" name="cuisine" value="chinese" > chinese <br><br>
 
-         <div id="rangedval">
-             <b>Price:</b>
-             <br>
-            <span id="rangevalmin">0 £ -</span><span id="rangevalmax"> 40 £</span>
 
-             <div id="slider-range"></div>
-             <div id="custom-handle" class="ui-slider-handle"></div>
+             </div>
+             <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+             </a>
+             <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+             </a>
          </div>
+     </div>
 
-       </div>
-   </div>
+
 <!--
    <div class="container text-center my-3">
 
@@ -470,14 +609,14 @@ th, td {
       </div>
   </div>-->
 
-
+<!--
 <div class="panel panel-primary" id="result_panel" >
     <div class="panel-heading"><h3 class="panel-title">Restaurants</h3>
     </div>
     <div id='inner' style="display:flex">
     <div class="panel-body">
         <ul id='rest_list' class="list-group">
-          <!--
+
           {% for restaurant in restaurants %}
             <li class="list-group-item">
 
@@ -491,14 +630,14 @@ th, td {
                 </div>
 
             </li>
-          {% endfor %}-->
+          {% endfor %}
 
         </ul>
-    </div>
+    </div>-->
 
 
 
-
+    <!--
     <div id='right-item-panel'class="panel-body">
       <div style='display:flex'>
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
@@ -508,7 +647,7 @@ th, td {
 
         </ul>
 
-    </div>
+    </div>-->
 
   </div>
 </div>
@@ -524,33 +663,32 @@ th, td {
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Your Summary</h4>
+        <h4 class="modal-title" id="myModalLabel"></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
+
         </button>
+
+        <div style='margin-right:100px'>
+
+           <strong style="color:black">Destination:</strong>
+           <select id="end">
+             {% for add in addresses %}
+             <option value="{{add.address}}">{{add.name}}</option>
+             {% endfor %}
+           </select>
+         </div>
+
       </div>
       <!--Body-->
       <div class="modal-body">
 
 
-        <table style='overflow-y:scroll;height:300px;display:block' id='modal_cart' class="table table-hover">
-          <thead>
-            <tr>
-              <th>Product name</th>
-              <th>Price</th>
-              <th>Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+        <div id="right-panel" class="embed-responsive-item" style="border: 1px solid black"><strong style="color:black" style="margin-left:20px" >Directions:</strong></div>
 
-            </tr>
 
-          </tbody>
-        </table>
 
       </div>
-      <div id ='spanCart'class="modal-title"><span>Total:</span></div><br>
+      <div id ='spanCart'class="modal-title"><span></span></div><br>
       <!--Footer-->
       <div class="modal-footer">
 
@@ -769,6 +907,15 @@ that can be used to contact or identify you.</p>
      document.getElementById("mySidenav").style.width = "0";
    }
    </script>
+   <script>
+function openNavF() {
+  document.getElementById("mySidenavF").style.width = "250px";
+}
+
+function closeNavF() {
+  document.getElementById("mySidenavF").style.width = "0";
+}
+</script>
 
    <script>
 function myFunction() {

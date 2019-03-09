@@ -1,8 +1,8 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
  #map{
-   height: 80%;
-   width: 60%;
+   height: 90%;
+   width: 90%;
    left: 50px;
    float:center;
  }
@@ -57,6 +57,17 @@ margin: 0;
 padding: 0;
 }
 
+.panel-body,.list-group{
+
+width:300px;
+
+}
+#result_panel{
+
+width:900px;
+margin-left:0px;
+
+}
 
 
 #right-panel select, #right-panel input {
@@ -71,9 +82,9 @@ width: 10%;
 font-size: 12px;
 }
 #right-panel {
-height: 80%;
+height: auto;
 float: right;
-width: 20%;
+width: auto;
 overflow: auto;
 }
 
@@ -205,7 +216,7 @@ margin-left:300px;
 .list-group2{
     max-height:400px;
     margin-right:100px;
-    width:90%;
+    width:50%;
     margin-bottom: 10px;
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
@@ -240,6 +251,7 @@ left: 25px;
 width:160px;
 height:400px;
 float: left;
+position: absolute;
 
 }
 
@@ -256,6 +268,11 @@ float: left;
 width:400px;
 
 }
+#rest_list{
+
+margin-left:auto;
+
+}
 
 
 #myInput {
@@ -268,8 +285,115 @@ width:400px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
+#item_list{
 
+  width:50%;
+}
 
 #item_list li a:hover:not(.header) {
   background-color: #eee;
+
+}
+.sidenavF {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenavF a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenavF a:hover {
+  color: #f1f1f1;
+}
+
+.sidenavF .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenavF {padding-top: 15px;}
+  .sidenavF a {font-size: 18px;}
+}
+
+/*css carousel*/
+
+@media (min-width: 768px) {
+
+    /* show 3 items */
+    .carouselPrograms .carousel-inner .active,
+    .carouselPrograms .carousel-inner .active + .carousel-item,
+    .carouselPrograms .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+
+    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+
+    .carouselPrograms .carousel-inner .carousel-item-next,
+    .carouselPrograms .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .carouselPrograms .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    .carouselPrograms .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item,
+    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carouselPrograms .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .carouselPrograms .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
 }
