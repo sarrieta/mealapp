@@ -23,7 +23,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
    window.onload = function () {
 
      getCoordinates()
-     getRestaurants()
+     //getRestaurants()
 
 
    }
@@ -91,6 +91,8 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
              strokeOpacity: 0.8,
            });
 
+          var counter = 0;
+
          for (var i = 0; i < markers.coordinates.length; i++) {
              var data = markers.coordinates[i]
              var myLatlng = new google.maps.LatLng(data.lat, data.long);
@@ -103,7 +105,7 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
 
             if (d<=radius){
-
+              counter++
 
               var marker = new google.maps.Marker({
                   position: myLatlng,
@@ -112,15 +114,14 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
               });
 
-              (function (marker, data) {
-                  google.maps.event.addListener(marker, "click", function (e) {
-                       e.preventDefault();
-                      infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.name + "</div>");
-                      infoWindow.open(map, marker);
+              marker.addListener('click', function() {
+              infowindow.open(map, marker);
+                });
 
-                  });
-              })(marker, data);
-              latlngbounds.extend(marker.position);
+
+
+              //latlngbounds.extend(marker.position);
+
 
             }
 
@@ -128,7 +129,35 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
 
          initMap(map)
 
-       });
+         if(counter<1)
+
+         {
+           setTimeout(function() { alert("There are no restaurants within the current radius"); }, 2000);
+         }
+
+       }, function error(err){
+	//outp("Errored while getting pos: ",err,"-",err.code+".",err.message);
+   $("#portfolio").empty()
+   $("#carouselExample").empty()
+   $("#testimonials").empty()
+
+  alert('Please clear your settings and allow location')
+  $("#portfolio").append(
+    '<div class="row narrow section-intro with-bottom-sep animate-this"> <div class="col-full"> <br></br><h3 style="color:black;">Location</h3>'+
+    ' <h1 style="color:black;"> Please allow us to access your location.</h1>' +
+    '<p class="lead" style="color:black;margin-bottom:0px;"> Use the tutorial below</p> </div> </div>' +
+    '<iframe style="margin-bottom:0px;margin-left:300px;" width="800" height="450" src="https://www.youtube.com/embed/NkRDy2m6vu0?autoplay=1"></iframe>')
+});
+
+var outp = (function(){
+	var elm = document.getElementsByClassName("outp")[0];
+  return function(){
+		var p = document.createElement("p");
+    p.textContent = [].join.call(arguments, " ");
+    elm.appendChild(p);
+    console.log.apply(console, arguments);
+  }
+})();
 
      }
 
@@ -353,9 +382,11 @@ $(document).ready(function(event){
                               $("#innerC").append("<div class='carousel-item col-md-4 active '> <div class='panel panel-default'> <div class='panel-thumbnail'>"+
 
                               '<div class="card text-center" style=""> <div class="card-body">'+
+
+                                  '<h5 class="card-title">' +demo + '</h5>' +
                                   '<h5 class="card-title">'+  pName+'</h5>'+
                                   '<p class="card-text">' + pDesc +'</p>' +
-                                  '<a href="#" class="btn btn-primary">'+ pPrice+'</a>  </div> </div>'
+                                  '<p class="card-text">'+ pPrice + ' ' + '£'+ '</p>  </div> </div>'
 
 
 
@@ -367,9 +398,11 @@ $(document).ready(function(event){
                             $("#innerC").append("<div class='carousel-item col-md-4'> <div class='panel panel-default'> <div class='panel-thumbnail'>"+
 
                             '<div class="card text-center" style=""> <div class="card-body">'+
+
+                            '<h5 class="card-title">' +demo + '</h5>' +
                                 '<h5 class="card-title">'+  pName+'</h5>'+
                                 '<p class="card-text">' + pDesc +'</p>' +
-                                '<a href="#" class="btn btn-primary">'+ pPrice+'</a>  </div> </div>'
+                                '<p class="card-text">'+ pPrice+ ' ' + '£'+ '</p>  </div> </div>'
 
 
 
@@ -443,8 +476,114 @@ $("input").click(function(){
 
 });
 
+$(document).ready(function(){
+  $('input[type=radio][name=limit]').change(function() {
+      if (this.value == '0.5') {
+
+          getRestaurants()
+
+      }
+      else if (this.value == '1') {
+
+          getRestaurants()
+
+      }
+      else if (this.value == '3') {
+          getRestaurants()
+
+      }
+      else if (this.value == '5') {
+          getRestaurants()
+      }
+      else  {
+          getRestaurants()
+      }
+  });
+
+});
 
 
+
+function plotRestaurants(markers){
+
+
+  ////
+  if (navigator.geolocation) {
+
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+
+      val='limit'
+      radius = radioVal(val)
+
+      var radius = parseFloat(radius, 10)*1000;
+
+      $("#rest_list").empty()
+
+      for (var i = 0; i < markers.coordinates.length; i++) {
+
+
+          var data = markers.coordinates[i]
+
+         var d = calcDistance(data.lat,data.long,pos.lat,pos.lng)
+
+          console.log(d)
+          console.log(radius)
+
+         if (d<=radius){
+
+        console.log('yes')
+
+           $("#rest_list").append("<li class='list-group-item'><a>"+
+           "<div id='" + data.id + "' class='iden'>" +
+           "<h4 class='card-title'>"+ data.name +"</h4>"+
+           "<br>"+
+           "<h6 class='card-subtitle mb-2 text-muted'>"+ data.opening +"</h6>"+
+           "<p class='card-text'> </p>"+
+           "<button id='menu_button' class='view_menu btn-xs'>View Menu</button>"+ "</div>"
+            +" </a></li><br>");
+
+
+         }
+         else {console.log('no')}
+
+
+
+      }
+
+
+
+    }, function error(err){
+	outp("Errored while getting pos: ",err,"-",err.code+".",err.message);
+});
+
+  }
+
+  /////
+/*
+                            for (var i = 0; i < markers.coordinates.length; i++) {
+                                   var data = markers.coordinates[i]
+
+
+                                 $("#rest_list").append("<li class='list-group-item'><a>"+
+                                 "<div id='" + data.id + "' class='iden'>" +
+                                 "<h4 class='card-title'>"+ data.name +"</h4>"+
+                                 "<br>"+
+                                 "<h6 class='card-subtitle mb-2 text-muted'>"+ data.opening +"</h6>"+
+                                 "<p class='card-text'> </p>"+
+                                 "<button id='menu_button' class='view_menu btn-xs'>View Menu</button>"+ "</div>"
+                                  +" </a></li><br>");
+
+
+                               }*/
+
+}
 
 
 
@@ -457,22 +596,10 @@ $("input").click(function(){
                              var markers = data
 
 
-
-                          for (var i = 0; i < markers.coordinates.length; i++) {
-                                 var data = markers.coordinates[i]
+                             plotRestaurants(markers);
 
 
-                               $("#rest_list").append("<li class='list-group-item'><a>"+
-                               "<div id='" + data.id + "' class='iden'>" +
-                               "<h4 class='card-title'>"+ data.name +"</h4>"+
-                               "<br>"+
-                               "<h6 class='card-subtitle mb-2 text-muted'>"+ data.opening +"</h6>"+
-                               "<p class='card-text'> </p>"+
-                               "<button id='menu_button' class='view_menu btn-xs'>View Menu</button>"+ "</div>"
-                                +" </a></li><br>");
 
-
-                             }
 
 
       						}
