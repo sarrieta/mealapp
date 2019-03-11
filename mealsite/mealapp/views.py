@@ -206,7 +206,7 @@ def updateItemCuisine():
 
             try:
                 pk = int(pk)
-                print('')
+                print(' ')
                 item= Menu_Items.objects.get(pk=pk)
                 #print(item.item_name)
                 item.update(type=None)
@@ -264,9 +264,9 @@ def map(request):
 
         if type != 'omnivore':
 
-            items= Menu_Items.objects.filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
+            items= Menu_Items.objects.order_by('item_price').filter(restaurant_name_id=name).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
         else:
-            items= Menu_Items.objects.filter(restaurant_name_id=name).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
+            items= Menu_Items.objects.order_by('item_price').filter(restaurant_name_id=name).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
 
         #print(list(items))
         return JsonResponse({'items': list(items)})
@@ -276,18 +276,50 @@ def map(request):
         restaurants= Restaurant.objects.order_by('name')
 
         addresses = Restaurant.objects.order_by('name').values('name','address')
-        print(list(addresses))
-        print('heeey')
+        #print(list(addresses))
+        #print('heeey')
 
 
         return render (request,'index2.html',{ 'restaurants': restaurants, 'addresses': addresses } )
 
 def plotMap(request):
-    if request.method == "GET":
+    if request.method == "POST":
 
+        type = request.POST['food_type']
+        cuisine = request.POST['cuisine']
+        min = request.POST['min']
+        max = request.POST['max']
+
+        #print(type)
+        #print(cuisine)
+        #print(min)
+        #print(max)
+
+        restaurants= Restaurant.objects.all().only('id')
+
+        coordinates = list()
+
+        for r in restaurants:
+            #print(r)
+
+            items= Menu_Items.objects.filter(restaurant_name=r).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
+
+            if (items):
+                print('yes')
+                data = serializers.serialize('json', list(restaurants))
+                coordinates.append(data)
+
+            else:
+                print('no')
+
+
+
+        print(list(coordinates))
         coordinates = Restaurant.objects.filter().values('name','lat','long','opening','id')
         #print(list(coordinates))
     return JsonResponse({'coordinates': list(coordinates)})
+
+
 
 def register(request):
 

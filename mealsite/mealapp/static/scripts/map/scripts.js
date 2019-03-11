@@ -23,16 +23,38 @@ function calcDistance (fromLat, fromLng, toLat, toLng) {
    window.onload = function () {
 
      getCoordinates()
-     //getRestaurants()
+     getRestaurants()
 
 
    }
 
 
    function getCoordinates (event){
+
+     min=$("#minValue").val()
+     max=$("#maxValue").val()
+
+     if(!min)
+     {
+       min = 0
+     }
+
+     if (!max)
+     {
+       max=40
+     }
+     var radios =radioVal('food_type')
+     var cuisine =radioVal('cuisine')
+     var csrftoken=getCookie('csrftoken')
+
+      var csrftoken=getCookie('csrftoken')
                $.ajax({
-                        type:'GET',
+                        type:'POST',
                         url:'/plotMap/',
+                        data:{'food_type':radios,'min':min,'max':max, 'cuisine':cuisine },
+                        headers:{
+                               "X-CSRFToken": csrftoken
+                           },
                         success:function(data){
                           var markers = data
 
@@ -354,6 +376,8 @@ $(document).ready(function(event){
 
                      success:function(data){
 
+
+
                        var list = new Array()
 
                        var items = data.items;
@@ -361,6 +385,7 @@ $(document).ready(function(event){
                        $("#innerC").empty()
 
                        for (var i=0;i<items.length;i++) {
+
                          name = JSON.stringify(items[i].item_name)
                          pName= name.replace(/['"]+/g, '');
 
@@ -478,29 +503,31 @@ $("input").click(function(){
 
 $(document).ready(function(){
   $('input[type=radio][name=limit]').change(function() {
-      if (this.value == '0.5') {
 
           getRestaurants()
 
-      }
-      else if (this.value == '1') {
-
-          getRestaurants()
-
-      }
-      else if (this.value == '3') {
-          getRestaurants()
-
-      }
-      else if (this.value == '5') {
-          getRestaurants()
-      }
-      else  {
-          getRestaurants()
-      }
   });
 
 });
+
+$(document).ready(function(){
+  $('input[type=radio][name=cuisine]').change(function() {
+
+          getRestaurants()
+
+  });
+
+});
+
+$(document).ready(function(){
+  $('input[type=radio][name=food_type]').change(function() {
+
+          getRestaurants()
+
+  });
+
+});
+
 
 
 
@@ -533,12 +560,11 @@ function plotRestaurants(markers){
 
          var d = calcDistance(data.lat,data.long,pos.lat,pos.lng)
 
-          console.log(d)
-          console.log(radius)
+
 
          if (d<=radius){
 
-        console.log('yes')
+
 
            $("#rest_list").append("<li class='list-group-item'><a>"+
            "<div id='" + data.id + "' class='iden'>" +
@@ -551,7 +577,7 @@ function plotRestaurants(markers){
 
 
          }
-         else {console.log('no')}
+         else {}
 
 
 
@@ -565,34 +591,39 @@ function plotRestaurants(markers){
 
   }
 
-  /////
-/*
-                            for (var i = 0; i < markers.coordinates.length; i++) {
-                                   var data = markers.coordinates[i]
-
-
-                                 $("#rest_list").append("<li class='list-group-item'><a>"+
-                                 "<div id='" + data.id + "' class='iden'>" +
-                                 "<h4 class='card-title'>"+ data.name +"</h4>"+
-                                 "<br>"+
-                                 "<h6 class='card-subtitle mb-2 text-muted'>"+ data.opening +"</h6>"+
-                                 "<p class='card-text'> </p>"+
-                                 "<button id='menu_button' class='view_menu btn-xs'>View Menu</button>"+ "</div>"
-                                  +" </a></li><br>");
-
-
-                               }*/
 
 }
 
 
-
-
         function getRestaurants (event){
-                  $.ajax({
-                           type:'GET',
-                           url:'/plotMap/',
-                           success:function(data){
+
+          min=$("#minValue").val()
+          max=$("#maxValue").val()
+
+          if(!min)
+          {
+            min = 0
+          }
+
+          if (!max)
+          {
+            max=40
+          }
+          var radios =radioVal('food_type')
+          var cuisine =radioVal('cuisine')
+          var csrftoken=getCookie('csrftoken')
+
+  
+
+          $.ajax({
+                   type:'POST',
+                   url:'/plotMap/',
+                   data:{'food_type':radios,'min':min,'max':max, 'cuisine':cuisine },
+                   headers:{
+                          "X-CSRFToken": csrftoken
+                      },
+
+                   success:function(data){
                              var markers = data
 
 
