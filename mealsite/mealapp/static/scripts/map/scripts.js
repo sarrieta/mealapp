@@ -228,6 +228,7 @@ var outp = (function(){
      map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
      var onChangeHandler = function() {
+       $("#right-panel").empty()
        calculateAndDisplayRoute(directionsService, directionsDisplay);
      };
      //document.getElementById('start').addEventListener('change', onChangeHandler);
@@ -399,6 +400,13 @@ $(document).ready(function(event){
 
                             /*$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pName + ' '+ pDesc + ' ' + pPrice +'£'
                             + " </a></li>");*/
+
+                            if (pPrice==0)
+                            {
+
+                              pPrice='Not available'
+
+                            }
 
                             demo =i;
 
@@ -613,7 +621,7 @@ function plotRestaurants(markers){
           var cuisine =radioVal('cuisine')
           var csrftoken=getCookie('csrftoken')
 
-  
+
 
           $.ajax({
                    type:'POST',
