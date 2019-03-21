@@ -70,8 +70,6 @@ class Coookings:
 		# note: prediction is a numpy array
 		self.y_pred = self.pipeline.predict(self.X_test)
 
-
-
 		print('creating submission..')
 		yhat = pd.Series(self.pipeline.predict(self.test_data['fields'].str.join('. ')),
 													name='cuisine',
@@ -82,9 +80,9 @@ class Coookings:
 		p = p.replace("'", '')
 		p = p.replace("[", '')
 		p = p.replace("]", '')
-		print (p)
+		#print (p)
 		#print(yhat)
-		print(self.test_data['pk'])
+		#print(self.test_data['pk'])
 
 		if not os.path.exists('submission'):
 			os.mkdir('submission')

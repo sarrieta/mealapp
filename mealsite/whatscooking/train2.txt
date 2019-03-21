@@ -2,302 +2,1506 @@
    {
       "model":"mealapp.menu_items",
       "pk":3787,
-      "cuisine": "southern_us",
+      "cuisine":"vegan",
       "fields":{
-         "item_description":"chickpeas pur\u00e9e, tahini, garlic and lemon juice"
+         "item_description":"served with house-baked gluten-free bread & olive oil"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3788,
-      "cuisine": "southern_us", "fields":{
-         "item_description":"cucumber, yoghurt, olive oil, garlic, fresh mint and dill"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"sautéed artichoke hearts, roasted pepper sauce"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3789,
-      "cuisine": "southern_us", "fields":{
-         "item_description":"chopped onion, tomatoes, cucumber, parsley and chilli paste"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"served with tomato & sour cream"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3790,
-      "cuisine": "southern_us", "fields":{
-         "item_description":"couscous, onion, celery, green and red peppers, parsley, mint, olive oil, lemon juice, tomato juice"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"with a pistachio & olive tapenade"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3791,
-      "cuisine": "southern_us", "fields":{
-         "item_description":"with celery, green and red pepper, red onion, dill, olive oil and lemon juice"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"hummus, roasted pepper dip, guacamole, choice of house-baked gluten-free bread or julienned vegetables"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3792,
-      "cuisine": "southern_us", "fields":{
-         "item_description":"with rice, onion, currants, herbs, tomato paste, olive oil, fresh lemon juice"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"soft nut cheese with herbs, raw crackers, julienned vegetable"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3793,
-      "cuisine": "southern_us", "fields":{
-         "item_description":"aubergine, yoghurt, red pepper, tahini, garlic and herbs"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"raw, chilled soup with avocado and watercress"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3794,
-      "cuisine": "brazilian", "fields":{
-         "item_description":"aubergine, courgette, potato, red & green peppers, onion, garlic and tomato sauce"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"tossed in an olive oil & lemon dressing"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3795,
-      "cuisine": "brazilian", "fields":{
-         "item_description":"hummus, cacik, kisir, stuffed vine leaves, saksuka"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"cashew cream, mushrooms, seitan strips, caramalised onions, brown rice"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3796,
-      "cuisine": "brazilian", "fields":{
-         "item_description":"please ask"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"vegetable stir-fry, choice of seitan (G) or marinated tofu, choice of brown rice or gluten-free"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3797,
-      "cuisine": "brazilian", "fields":{
-         "item_description":"stuffed with feta cheese, spinach, dill"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"spinach & tofu cottage cheese on roasted potato, sautéed oyster mushrooms"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3798,
-      "cuisine": "brazilian", "fields":{
-         "item_description":" "
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"asparagus & petit pois burger, avocado & truffle mayo on house baked gluten-free bread, oven-baked"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3799,
-      "cuisine": "pakistani", "fields":{
-         "item_description":"fritters of; grated courgette with feta cheese, dill, eggs and wheat"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"baked pumpkin & butternut squash, brown rice"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3800,
-      "cuisine": "pakistani", "fields":{
-         "item_description":"grilled spicy beef sausages"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"seasonal vegetables, avocado, asparagus, marinated artichoke"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3801,
-      "cuisine": "pakistani", "fields":{
-         "item_description":"sw tartar sauce"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"seasoned seitan medallions, potato & parsnip mash, steamed vegetables, onion gravy"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3802,
-      "cuisine": "pakistani", "fields":{
-         "item_description":"sw hummus"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"traditional African dish made from ground melon seed, served with a choice of baked yam"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3803,
-      "cuisine": "pakistani", "fields":{
-         "item_description":" "
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"gluten-free pasta with quinoa & spinach ‘meatballs’, roasted tomato sauce"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3804,
-      "cuisine": "pakistani", "fields":{
-         "item_description":"pastry roll, halloumi, mucver, garlic sausage, falafel"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"pumpkin & courgette noodles, fresh coconut, vegetables, brazil nuts, lime & ginger dressing"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3805,
-      "cuisine": "pakistani", "fields":{
-         "item_description":"tomato, cucumber, onion, green peppers, olive oil dressing and parsley"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Rosemary focaccia, olive oil"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3806,
-      "cuisine": "algerian", "fields":{
-         "item_description":"with mixed leaves, cherry tomatoes, parmesan and olive oil dressing"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Cornbread, chilli lime butter"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3807,
-      "cuisine": "algerian", "fields":{
-         "item_description":"with mixed leaves, tomato, olive oil dressing"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Pumpkin and sage tortellini, garlic herb butter, redcurrants, fried sage"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3808,
-      "cuisine": "algerian", "fields":{
-         "item_description":"with mixed leaves, lemon vinaigrette and walnuts"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Sweet potato, black bean, coconut soup, cornbread"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3809,
-      "cuisine": "algerian", "fields":{
-         "item_description":"chicken shish, lamb shish, Adana kebab, lamb chops sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Gyoza dumplings, sweet chilli and soya dip"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3810,
-      "cuisine": "algerian", "fields":{
-         "item_description":"sw rice and salad"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Hoummus, rose petal harissa, flatbread"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3811,
-      "cuisine": "algerian", "fields":{
-         "item_description":"sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Roman style artichokes, chargrilled on crostini, smoked garlic aioli"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3812,
-      "cuisine": "algerian", "fields":{
-         "item_description":"sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Broccoli, garlic, chilli, lemon, olive oil"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3813,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"chicken and lamb, sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Grilled aubergine, saffron tahini, pomegranate, pomegranate molasses"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3814,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Smashed avocado, lime, chilli, organic corn chips"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3815,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Side of green falafel, tahini, lemon"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3816,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"sw rice, grilled tomatoes and peppers"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Girolle mushrooms cooked in papillote of banana leaves"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3817,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"sw grilled tomatoes, peppers, yoghurt, tomato sauce and melted butter on slices bread"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Tomato served with jasmine rice, dill, mint, roasted red peppers tears"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3818,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"sw grilled tomatoes, peppers, yoghurt, tomato sauce and melted butter on slices bread"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Carrot with mandarin, liquorice, coconut and malibu with lemon thyme"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3819,
-      "cuisine": "vegetarian", "fields":{
-         "item_description":"sw mashed potato, salad and lemon dressing"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Forced Yorkshire rhubarb complete with basil and lemongrass"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3820,
-      "cuisine": "vegan", "fields":{
-         "item_description":"sw salad"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Chickpea crepes stuffed with chestnut and shiitake mushroom served with truffle besciamella"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3821,
-      "cuisine": "vegan", "fields":{
-         "item_description":"wrapped in a flat bread, sw yoghurt, tomato and butter sauce"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Baked potatoes with rosemary served with raw tomato ketchup"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3822,
-      "cuisine": "vegan", "fields":{
-         "item_description":"wrapped in a flat bread, sw yoghurt, tomato and butter sauce"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Black kale served raw with seasoning and lemon"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3823,
-      "cuisine": "vegan", "fields":{
-         "item_description":"with aubergine, courgette, potato, onion, bechamel sauce*, tomato sauce dressing, sw salad"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Lightly fried broccoli with garlic, extra virgin olive oil and chilli"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3824,
-      "cuisine": "vegan", "fields":{
-         "item_description":"sw seasonal vegetables and mashed potato"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Seasonal salad with fruit and vegetables, legumes and a selected ricottina"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3825,
-      "cuisine": "vegan", "fields":{
-         "item_description":"sw tomato, garlic and pesto sauce"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Radicchio, mushroom and walnut risotto"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3826,
-      "cuisine": "vegan", "fields":{
-         "item_description":"with aubergine, courgette, onion, spinach, pepper, potato, chickpeas, garlic, bechamel sauce*, tomato sauce dressing, sw salad"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Lentil and nut roast with balsamic gravy served with roasted brussels and carrots."
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3827,
-      "cuisine": "vegan", "fields":{
-         "item_description":"with tomato, garlic, butter and pesto sauce"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"pulled jackfruit and lentil stew with mashed-potato and baby carrots"
       }
    },
    {
       "model":"mealapp.menu_items",
-      "pk":3828,
-      "cuisine": "vegan", "fields":{
-         "item_description":"with green and red peppers, tomatoes, butter and garlic"
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"smoky chilli of spiced mushrooms, lentils and kidney beans on basmati herb rice with cashew sour cream, lime and coriander cress"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"sweet potato mash and seasonal vegetables, aromatic thai roots, spices and coconut cream with jasmine ric"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"soft wheat tortilla with sautéed ackee, black beans, red rice, cherry tomatoes and peppers with chilli, coriander, lime and cashew sour cream."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"black beans, avocado, sweet corn, baby gem, datterini tomatoes and salsa with savoury pecan crunch and a coriander cashew cream dressing."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"raw pumpkin with pears, spinach, radish and toasted hazelnuts, walnuts & pumpkin seeds in a balsamic dressing."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Roasted Wedges with Rosemary & Thyme"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Mixed Olives, Capers & Peppers"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Smashed avocado with oven baked tomatoes, homemade basil and rocket pesto and a sprinkle of roasted sunflower and pumpkin seeds"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"A classic breakfast comprising pan-fried mushrooms, herb-roasted tomatoes, sausages, scrambled tofu, fried potatoes, wilted spinach and homemade baked beans in a rich and flavourful tomato sauce and sourdough toast"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Smashed avocado with oven baked tomatoes, homemade basil and rocket pesto and a sprinkle of roasted sunflower and pumpkin seeds"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Nacho crisps topped with our tasty kidney bean chilli, creamy sour cream made with silken tofu, traditional guacamole, pickled onions, fresh coriander, jalapeños and a lime wedge"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Side of vegan macaroni, crispy onions, jalapenos"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Roast cauliflower and chickpea curry, homemade garlic naan bread, mango chutney, rice"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Vegan macaroni, crispy onions, jalapenos with salad"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Roasted cauliflower hummus, coriander oil, toasted almonds, toast"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Tofu Po Grecku (crispy tofu, with herby winter vegetables)"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Portobello mushroom guinness and beetroot pie, colcannon mash topping served with creamed kale leek and tarragon sauce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Greek chickpeas in and kalamata olives on sourdough toast"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Shakshuka. Roasted tofu seasoned with maghrebi spices in aromatic tomato and red pepper stew, sourdough toast"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Avocado on sourdough toast"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"The Roast. nut and butternut squash wellington with pesto, served with seasonal veggies, roasted potatoes, gravy"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"VEGAN CHICKN & MUSHROOM FILLING WITH POTATO, CHICKPEAS, MIXED VEGGIES AND CREAM OF TRUFFLE TOPPED WITH PUFF PASTRY"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"SAUTÉED VEGGIES & GREENS WITH MINCED GARLIC & HERBS DE PROVENCE WITH VEGAN BUTTER AND WHITE TRUFFLE OIL.SERVED OVER BROWN RICE."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"SPICED CHICKPEAS, SWEET POTATO VEGGIE CURRY WITH TURMERIC & DHAL SIMMERED"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"STIR-FRY VEGGIES W/ HEMP OIL IN A SMOKEY SWEET N SOUR BBQ SAUCE. TOPPED WITH GREEN HERBS & HEMP SEED CRUMBLES. SERVED OVER BROWN RICE"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"VEGGIES WITH YAM, BOILED WHOLEMEAL DUMPLINGS, STEAMED PLANTAIN & ACKEE IN A THYME AND SCOTCH BONNET SAUCE."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"MILD COCONUT BROTH INFUSED W/ KAFFIR LIME LEAVES, LEMONGRASS & GALANGAL WITH A HINT OF FRESH LIME. SERVED OVER BROWN RICE OR RICE NOODLES"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"VEGAN UDON NOODLE STIR-FRY WITH MIXED VEGGIES, BEANSPROUTS AND ROASTED CHILLI OIL, TOPPED WITH “CHAR SIU” CRUMBLES & LIME"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"WITH A CHOICE OF: JUST VEGGIES, PUFF TOFU & VEG, CHICKN & VEG, PRAUN & VEG OR MINI SPRING ROLLS & VEG."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Roasted mushroom, borlotti bean and parsley patty with tomato, rocket, ketchup and house made sundried tomato and walnut pesto"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Spicy corn fritter, with house slaw, tortilla chips, spiced almonds, salsa and house chilli mayo."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Spicy, sweet & creamy beetroot and coconut soup (cold) with peanut and parsley"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Massaged Kale, creamy orange dressing, dried apricots, dates and sunflower seeds"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"chickpea, lentil and coconut curry, brown rice, sesame-slaw, crispy pakoras, satay and sweet chiili dips"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"thai green curry, fluffy white rice, asian salad, crispy pakoras & dips"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"fresh noodles, roast mushrooms, broccoli, spinach, chili, coriander and crunchy peanut sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"massaged kale, carrot, cabbage, avocado, roast mushrooms, cherry tomatoes and sautéed mung bean sprouts"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Broccoli, Mushroom and Aubergine in a crispy onion seed batter, served with our own peanut satay sauce and sweet chilli"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Highly spiced with fresh garlic, spring onions, funugreek, tomatoes, green pepper and herbs. "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Richly spiced with garam masala, fresh coriander, fenugreek and whole cumin, fresh lime juice and herbs"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Prepared with special spice, green pepper, onion, carrot, green chilli, ginger, garlic, tomatoes and fresh herbs. "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Mashed chickpeas, tahini, lemon juice, garlic and olive oil"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Marinated olive oil in thyme, lemon & olive oil"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Charcoal grilled red peppers, walnut dip"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Oven baked halloumi, grilled red peppers, Crete extra virgin olive oil "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Filo triangles with feta cheese and spinach "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Fine bulgur, tomatoes, fne chopped parsley, onion "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Herby fava beans and chickpea paty with sesame seeds"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"tomatoes, onions, parsley, fnished of with herbs, spices,pomegranate sauce, lemon juice and olive oil "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":" tomatoes, red onions, cucumber,parsley, croutons, black olive with olive oil, pomegranate sauce almond and lemon juice "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":" Hearty, super healthy quinoa with mix leaf salad, avocado, red peppers,pomegranate sauce, lemon and olive oil dressing "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Spinach cooked with onion, garlic, sundried tomatoes, chickpeas, served with rice "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":" mushrooms, garlic and red pepper piece"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Spiced Fresh Tomato Soup With Sweet and Herby Pitas"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Tahini-Lemon Quinoa With Asparagus Ribbons"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3787,
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Grilled Asparagus and Shitake Tacos"
       }
    },
    {
       "model":"mealapp.menu_items",
       "pk":3829,
-      "cuisine": "vegan", "fields":{
-         "item_description":" "
+      "cuisine":"vegan",
+      "fields":{
+         "item_description":"Cauliflower Steaks With Chimichurri Sauce"
       }
-   }]
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Arlo's beef patty, streaky bacon, cheese, fried egg, batavia lettuce, our Burning Bear sauce & green chilli."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Our house bavette, chuck & aged ribcap patty, simply served straight up with streaky bacon & American cheese"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Bavette steak, Brindisa chorizo, roast mushrooms, vine tomatoes & fried eggs on sourdough."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken Free-range, herb-fed, lemon ad herbs"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Rare steak salad, walnuts, pickled & charred carrots"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Potted beef & bacon with Yorkshires"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Old Spot belly ribs"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"beef dripping roast potatoes, Yorkshire puddings, carrots, greens, roasted shallots & garlic and lashings of bone marrow & onion gravy"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Potted beef & bacon with Yorkshires - Celery heart salad, mushroom & Spenwood"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"chicken thighs, melting cheddar cheese, smoky red pepper chutney and baby spinach"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"chicken breasts joined by crispy skin, packed in a Portuguese roll and topped with tomato and lettuce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"chicken thighs, grilled halloumi cheese, caramelised red onion relish and wild garlic aioli mayonnaise, topped with lettuce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"beef steak marinated in PERi-PERi with chargrilled veg and wild garlic aioli mayonnaise, served in a pitta."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"beef steak marinated in PERi-PERi with chargrilled veg and wild garlic aioli mayonnaise, served in a wrap."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"beef steak marinated in PERi-PERi with baby spinach, wild garlic aioli mayonnaise and tomato, on a Portuguese roll."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Crispy Fried Chicken served with Hashbrown, Cheese, Lettuce and Mayonnaise"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Beef served with Gherkins and Mustard"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Crispy Fried Chicken served with Hashbrown, Cheese, Lettuce and Mayonnaise"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Teriyaki Chicken served with Tahini Sauce, Roasted sesame seeds and salads"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Roast Chicken served with Avocado, Salad and Honey Mustard Sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken served with Tikka Sauce and Mango Chutney"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"BBQ Chicken Strips served with Cheese and BBQ Sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Portion of wings, garlic bread, spicy curly fries, and potato skins with cheese."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Beef pattie, cheese, messy cheesy, mash paste, beef, bacon, red onions, and mustard onion sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken fillet burger with chilli mince. Served with iceberg, lettuce, tomato, and gherkin"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Succulent grilled chicken served with steak, chips, vegetables, and gravy."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Steak served with medley of vegetables, chips and gravy."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"marinated chicken skewers served with rice "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Grilled lamb kofta, wrapped in bread with salad"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Grilled fresh spicy sausages wrapped in bread with chips and salad."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Minced lamb with herbs. Served with salad and bread with rice."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Boneless chicken, marinated, and charcoal grilled. Served with salad and bread with rice."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Lamb doner and chicken shawarma meat."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken wings marinated and cooked in a choice of BBQ or peri peri sauce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"BBQ wings deep fried, coated with our sweet, and sticky chilli sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Marinated chicken fillet deep fried with seasoned flour until tender and crisp."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Tender chops marinated overnight to infuse with a special blend of herbs, spices, grilled, and sizzled "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Grilled chicken fillets sizzled with cajun spices, peppers, onions, and topped with melted cheddar and mozzarella."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Tender chops marinated overnight to infuse with a special blend of herbs, spices, grilled, and sizzled "
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"T-bone steak marinated in our spicy marinade and flame grilled."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"beef patties, two sauteed onions, cheese, spicy BBQ sauce, tomato, and lettuce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"BBQ pulled chicken, crispy chicken strips, cheese, coleslaw, pickles, and lettuce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"BBQ pulled chicken, crispy chicken strips, cheese, coleslaw, pickles, and lettuce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Flame grilled chicken fillet, cheese, tomato, lettuce, and BBQ sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Spiced chicken wings with spicy buffalo & maple sauce."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Brioche bun, Grandma t's fried chicken, bacon, buffalo mayo, tomato, baby gem lettuce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Brioche bun, mixed pepper salsa, rocket, charred pineapple & buffalo mayo"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Roasted in smoked beef drippings, spicy H sauce, and sesame."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Iberico acorn pork patty, Fried Egg and Spiced Hollandise."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken on top of a Belgium style waffle with truffle salt and maple syrup."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"A whole piece of chicken breast grilled and garnished with a choice of side and with sauces."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Five pieces of wings with chips, salads, and sauces."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"ix pieces of grilled sweet and spicy wings with salads and sauces."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Half peri peri chicken with choice of side and salad."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Four peri peri chicken pieces, two spicy jerk chops, six chargrill wings, four sauce tubes, and salad"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Two spicy jerk chops, four chargrill wings, two shish"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"A whole piece of chicken breast grilled and garnished with a choice of side and with sauces."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Triple layer of 100% beef grilled and garnished with a choice of side."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Long grained basmati rice flavored with aromatic spices with choice of slow cooked chicken"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Tandoori cooked sheek kebab, chicken, and lamb tikka with crispy somosa"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"tandoori chicken wings cooked with the chosen sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Long grained basmati rice flavored with aromatic spices with choice of slow cooked lamb"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Flame grilled 4 ounces of beef patty, topped with a slice of cheese, red onion, crispy lettuce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Roasted thin slices of marinated chicken thighs, topped with fresh lettuce, red onion, white"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Marinated succulent chicken breast lightly spiced then flame grilled topped with fresh lettuce,"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Succulent pieces of chicken breast, coated with rich in herbs fragrant sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Lean and tender pieces of lamb, coated with rich in herbs fragrant sauc"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Lean and tender pieces of our special lamb chops, coated with rich in herbs"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Roasted thin slices of marinated chicken thighs, served with toasted pitta bread, mixed salad"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Marinated chicken breast fillet cooked on charcoal grill with piri mayo. Served with a brioche bun with lettuce, beef, tomatoes, red onions, and a slice of gherkin"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Charcoal grilled quarter tandoori chicken, lamb tikka, chicken tikka, seekh kebab, lamb chop, and naan"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Two lamb chops, two lamb ribs, half tandoori, rice, and salad."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Battered chicken cooked with garlic cube onion capsicum green chilli with chefs own herbs and spice."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Quarter pound of lamb patty. Served in seeded bun with mayonnaise, lettuce, cheese, onion, and tomato."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken pieces cooked in a curry and coconut sauce with noodles."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken breast with jelepenos and BBQ sauce in a panini."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Flame grilled chicken pieces with melted cheese and tomato salsa cooked in a tortilla"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Toasted bagel with spicy beef sausage slices, sweet chilli sauce and cheese slices"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chunky beef, jalapenos, chilli sauce, and topped with special homemade hot pepper salsa."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken steak, chicken strips, and hash brown with slices of cheese"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Shredded chicken fried with mixed pepper, onion, rice, and special Mexican spice"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"chicken marinated in yogurt, mild spices, and grilled in the tandoori clay oven"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Spicy Chicken Wings with Smokey Mayonnaise"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Grilled Chicken Skewers with Piri Piri Sauce"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Lamb Kofte Skewers with Lebaneh Sauce and Mediterranean Salad"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Diced chicken, mushroom cooked in white sauce, and then covered in puffed pastries"
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Lamb mince, carrots, peas cooked in stock, and topped with mash potato."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Beef mince meat cooked to perfection with tomato sauce and parmesan cheese."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Marinated chicken breast slow cooked with flavored saffron rice and mix salad."
+      }
+   },
+   {
+      "model":"mealapp.menu_items",
+      "pk":3829,
+      "cuisine":"meat",
+      "fields":{
+         "item_description":"Chicken breast grilled to your favourite spice. With lettuce, tomato, and mild peri-peri mayonnaise"
+      }
+   }
+
+]

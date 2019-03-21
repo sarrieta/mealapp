@@ -130,7 +130,7 @@ def scrape ():
                 price=price.translate({ord('£'): None})
                 price=float(price)
             except:
-                price=0.00
+                price=""
 
             try:
                 name = menu_items.findChildren()[1].text
@@ -140,9 +140,9 @@ def scrape ():
             try:
                 desc = menu_items.findChildren()[2].text
             except:
-                desc =" "
+                desc =""
 
-            if  not name or name.startswith("£"):
+            if  not name or name.startswith("£") or not desc or not price:
                 continue
             else:
                 menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant)
@@ -167,7 +167,7 @@ def itemsToJSON():
 def runML():
 
     type = Coookings().split().train_model().predict().get_metrics()
-    cusine = CoookingsC().split().train_model().predict().get_metrics()
+    #cusine = CoookingsC().split().train_model().predict().get_metrics()
 
     return HttpResponse('')
 
@@ -182,14 +182,12 @@ def updateItemsModel():
 
             try:
                 pk = int(pk)
-                item= Menu_Items.objects.get(pk=pk)
-                item.update(type=None)
-                #print(item.item_name)
-                item.type= str(t)
-                item.save()
+
+                item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
 
             except:
-                print('2except')
+                print('Type cannot be updated')
+                print(' ')
                 continue
 
     return HttpResponse('')
@@ -206,13 +204,12 @@ def updateItemCuisine():
 
             try:
                 pk = int(pk)
-                print(' ')
+                print(pk)
                 item= Menu_Items.objects.get(pk=pk)
-                #print(item.item_name)
+                print('PK and item matched')
                 item.update(type=None)
+                print('item updated')
                 print(item.cuisine)
-                print('amair')
-                #item.cuisine= str(t)
                 item.save()
 
             except:
@@ -223,14 +220,12 @@ def updateItemCuisine():
 
 def index(request):
     #scrape()
-    #itemsToJSON()
-    #runML()
+    itemsToJSON()
+    runML()
     updateItemsModel()
-    updateItemCuisine()
-    print('dog12')
+    #updateItemCuisine()
 
-
-    return render (request,'index.html')
+    return HttpResponse('Index executed')
 
 def index2(request):
 
@@ -290,14 +285,10 @@ def plotMap(request):
         min = request.POST['min']
         max = request.POST['max']
 
-        #print(type)
-        #print(cuisine)
-        #print(min)
-        #print(max)
 
         restaurants= Restaurant.objects.all().only('id')
 
-        coordinates = list()
+        #coordinates = list()
 
         for r in restaurants:
             #print(r)
@@ -305,16 +296,19 @@ def plotMap(request):
             items= Menu_Items.objects.filter(restaurant_name=r).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
 
             if (items):
-                print('yes')
-                data = serializers.serialize('json', list(restaurants))
+                #print('yes')
+                rest = Restaurant.objects.filter(name=r)
+                #print(rest)
+                data = serializers.serialize('json', list(rest))
+                #print(data)
                 coordinates.append(data)
 
             else:
-                print('no')
+                #print('no')
+                d=''
 
 
-
-        print(list(coordinates))
+        #print(list(coordinates))
         coordinates = Restaurant.objects.filter().values('name','lat','long','opening','id')
         #print(list(coordinates))
     return JsonResponse({'coordinates': list(coordinates)})
