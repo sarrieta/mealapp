@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
-
+from django.contrib.postgres.fields import ArrayField
 
 class Restaurant(models.Model):
     name= models.CharField(blank=False, default=None,max_length=100)
@@ -10,7 +10,7 @@ class Restaurant(models.Model):
     lat = models.DecimalField(null=True,max_digits=15, decimal_places=9)
     description= models.TextField(null=True, default=None)
     address= models.CharField(null=True,blank=True, default=None,max_length=100)
-
+    ingredients = ArrayField(models.CharField(max_length = 1000), default = list)
 
     class Meta:
         verbose_name = "Restaurant"
