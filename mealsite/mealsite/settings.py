@@ -38,13 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
-    'rest_framework',
-    'mealapp',
-    'mapwidgets',
-    'widget_tweaks',
-    'django_google_maps',
-    
+    'mealapp'
+
 ]
 
 
