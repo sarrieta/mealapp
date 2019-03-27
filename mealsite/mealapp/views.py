@@ -5,7 +5,9 @@ from django.contrib.auth import authenticate
 from django.http import JsonResponse
 import json
 from django.core import serializers
-
+#array imports
+from django.contrib.postgres.fields import ArrayField
+from django_postgres_extensions.models.functions import *
 #geocoding imports
 import googlemaps
 from datetime import datetime
@@ -132,7 +134,25 @@ def scrape ():
             if  not name or name.startswith("£") or not desc or not price:
                 continue
             else:
+                x = desc.split()
+                # print(x)
+                # print('next item')
+                # print(' ')
+
+
                 menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant)
+
+                for i in x:
+                    e = menu.ingredients.append(i)
+                    i = i.replace(',', '')
+                    print(i)
+                    Menu_Items.objects.update(ingredients = ArrayAppend('ingredients', i))
+                print('next item')
+                print(' ')
+
+
+
+
                 menu.save()
 
 
@@ -142,12 +162,25 @@ def scrape ():
 
 def itemsToJSON():
 
-    #data = serializers.serialize('json', Menu_Items.objects.filter(restaurant_name=101), fields=('item_description'))
-    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('item_description'))
+    #data = Menu_Items.objects.all().only fields=('ingre'))
+    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('item_description','ingredients'))
+    #r   = Restaurant.objects.all().values('id')
+    #print (list (r))
 
-    file = open('whatscooking/test2.txt','w')
+    file = open('whatscooking/testNotescaped.txt','w')
     file.write(data)
     file.close()
+
+        # Read in the file
+    with open('whatscooking/testNotescaped.txt', 'r') as file :
+      filedata = file.read()
+
+    # Replace the target string
+    filedata = filedata.replace('\\', '')
+
+    # Write the file out again
+    with open('whatscooking/test2.txt', 'w') as file:
+      file.write(filedata)
 
     return HttpResponse('')
 
@@ -204,11 +237,11 @@ def updateItemCuisine():
     return HttpResponse('')
 
 def index(request):
-    scrape()
+    #scrape()
     itemsToJSON()
     runML()
-    updateItemsModel()
-    #updateItemCuisine()
+    # updateItemsModel()
+    # #updateItemCuisine()
 
     return HttpResponse('Index executed')
 

@@ -10,7 +10,7 @@ class Restaurant(models.Model):
     lat = models.DecimalField(null=True,max_digits=15, decimal_places=9)
     description= models.TextField(null=True, default=None)
     address= models.CharField(null=True,blank=True, default=None,max_length=100)
-    ingredients = ArrayField(models.CharField(max_length = 1000), default = list)
+
 
     class Meta:
         verbose_name = "Restaurant"
@@ -24,6 +24,7 @@ class Menu_Items(models.Model):
     item_name = models.CharField(blank=False, default=None,max_length=100)
     item_description = models.TextField(null=True, default=None)
     item_price = models.FloatField(max_length=2,blank=False, default=None)
+    ingredients = ArrayField(models.CharField(max_length = 1000), default = list)
     restaurant_name= models.ForeignKey(
     Restaurant,
         on_delete=models.CASCADE,
