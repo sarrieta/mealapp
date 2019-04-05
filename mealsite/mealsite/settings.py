@@ -32,14 +32,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'object_tools',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'export',
     'mealapp'
 
 ]
@@ -90,7 +88,7 @@ DATABASES = {
         'USER': 'mealsite',
         'PASSWORD': 't6s8toP',
         'HOST': '',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
