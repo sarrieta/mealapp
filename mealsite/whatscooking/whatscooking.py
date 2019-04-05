@@ -42,8 +42,11 @@ class Coookings:
 
 	def split(self):
 
+		print('before2 frame')
 		self.train_data = pd.read_json('whatscooking/train2.txt', orient='records')
-		self.test_data = pd.read_json('whatscooking/test2.txt', orient='records')
+		print('train2 to frame')
+		self.test_data = pd.read_json('whatscooking/testNotescaped.txt', orient='records')
+		print('test to frame')
 
 		X = self.train_data['fields'].str.join('. ')
 		y = self.train_data['cuisine']

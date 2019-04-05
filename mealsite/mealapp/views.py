@@ -46,7 +46,9 @@ import geopy.distance
 from whatscooking.whatscooking import*
 from whatscookingC.whatscookingC import*
 import csv
-
+#stop_words
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
 
 
 def scrape ():
@@ -57,14 +59,14 @@ def scrape ():
     'https://www.opentable.com/r/kilikya-mile-end-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=5f970422-07b4-47e0-823b-bcd5829a7555&p=2&sd=2019-01-20%2019%3A00',
     'https://www.opentable.com/palmers-restaurant?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
     'https://www.opentable.com/r/sultan-sofrasi-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00'
-    # 'https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.com/r/90-degree-melt-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.com/verdis-restaurant-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.com/r/bacaro-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.co.uk/r/rowleys-restaurant-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/inamo-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/blacklock-london-2?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/foxlow-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+    'https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    'https://www.opentable.com/r/90-degree-melt-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    'https://www.opentable.com/verdis-restaurant-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    'https://www.opentable.com/r/bacaro-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    'https://www.opentable.co.uk/r/rowleys-restaurant-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+    'https://www.opentable.co.uk/r/inamo-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+    'https://www.opentable.co.uk/r/blacklock-london-2?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+    'https://www.opentable.co.uk/r/foxlow-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
     # 'https://www.opentable.co.uk/r/maison-du-mezze-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08%2019%3A00',
     # 'https://www.opentable.co.uk/r/baluchi-london-2?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
     # 'https://www.opentable.co.uk/r/roast-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
@@ -89,16 +91,22 @@ def scrape ():
         source = requests.get(url)
         soup = BeautifulSoup(source.text, 'lxml')
 
+        try:
+            restaurant_name=soup.find('div', class_="_85098b38").text
+            opening=soup.find(itemprop="openingHours").get_text(separator="\n")
+        except:
+            continue
 
-        restaurant_name=soup.find('div', class_="_85098b38").text
-        opening=soup.find(itemprop="openingHours").get_text(separator="\n")
-
-        restaurant_desc=soup.find('div', class_="_894dc9d0").text
-        description=soup.find(itemprop="description").get_text(separator="\n")
-
-        neighbourhood= soup.find_all("div", class_="_16c8fd5e _1f1541e1")
-        d = neighbourhood = soup.find_all("a", class_="f3bf9165")
-
+        try:
+            restaurant_desc=soup.find('div', class_="_894dc9d0").text
+            description=soup.find(itemprop="description").get_text(separator="\n")
+        except:
+            continue
+        try:
+            neighbourhood= soup.find_all("div", class_="_16c8fd5e _1f1541e1")
+            d = neighbourhood = soup.find_all("a", class_="f3bf9165")
+        except:
+            continue
 
 
         address=soup.find(itemprop="streetAddress").get_text()
@@ -134,20 +142,28 @@ def scrape ():
             if  not name or name.startswith("£") or not desc or not price:
                 continue
             else:
+                # print('yiuj')
+                # data = "All work and no play makes jack dull boy. All work and no play makes jack a dull boy."
+                # stopWords = set(stopwords.words('english'))
+                # words = word_tokenize(data)
+                # wordsFiltered = []
+                #
+                # for w in words:
+                #     if w not in stopWords:
+                #         wordsFiltered.append(w)
+                #
+                # print(wordsFiltered)
                 x = desc.split()
-                # print(x)
-                # print('next item')
-                # print(' ')
 
 
                 menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant)
 
                 for i in x:
-                    e = menu.ingredients.append(i)
+                    #e = menu.ingredients.append(i)
                     i = i.replace(',', '')
                     print(i)
                     Menu_Items.objects.update(ingredients = ArrayAppend('ingredients', i))
-                print('next item')
+                print('next menu item')
                 print(' ')
 
 
@@ -163,7 +179,7 @@ def scrape ():
 def itemsToJSON():
 
     #data = Menu_Items.objects.all().only fields=('ingre'))
-    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('item_description','ingredients'))
+    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('ingredients'))
     #r   = Restaurant.objects.all().values('id')
     #print (list (r))
 
@@ -201,8 +217,9 @@ def updateItemsModel():
             t = column[1]
             try:
                 pk = int(pk)
+                print('pk found')
                 item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
-
+                print('item updated')
             except:
                 print('Type cannot be updated')
                 print(' ')
@@ -237,10 +254,10 @@ def updateItemCuisine():
     return HttpResponse('')
 
 def index(request):
-    #scrape()
+    scrape()
     itemsToJSON()
     runML()
-    # updateItemsModel()
+    updateItemsModel()
     # #updateItemCuisine()
 
     return HttpResponse('Index executed')
