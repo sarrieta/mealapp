@@ -42,8 +42,8 @@ class CoookingsC:
 
 	def split(self):
 
-		self.train_data = pd.read_json('whatscooking/train2.txt', orient='records')
-		self.test_data = pd.read_json('whatscooking/test2.txt', orient='records')
+		self.train_data = pd.read_json('whatscookingC/trainType.txt', orient='records')
+		self.test_data = pd.read_json('whatscookingC/menuItem.txt', orient='records')
 
 		X = self.train_data['fields'].str.join('. ')
 		y = self.train_data['cuisine']
@@ -74,8 +74,8 @@ class CoookingsC:
 
 		print('creating submission..')
 		yhat = pd.Series(self.pipeline.predict(self.test_data['fields'].str.join('. ')),
-													name='cuisine',
-														index=self.test_data['pk'])
+													name='cuisine')
+														#index=self.test_data['pk'])
 
 		p= (self.pipeline.predict(self.test_data['fields'].str.join('. ')))
 		p = str(p)
@@ -84,7 +84,7 @@ class CoookingsC:
 		p = p.replace("]", '')
 		print (p)
 		#print(yhat)
-		print(self.test_data['pk'])
+		#print(self.test_data['pk'])
 
 		if not os.path.exists('submission'):
 			os.mkdir('submission')

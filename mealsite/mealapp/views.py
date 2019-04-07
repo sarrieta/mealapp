@@ -57,7 +57,7 @@ def scrape ():
     delete = Restaurant.objects.all().delete()
 
     url_list = [
-    #'https://www.opentable.com/r/kilikya-mile-end-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=5f970422-07b4-47e0-823b-bcd5829a7555&p=2&sd=2019-01-20%2019%3A00',
+    'https://www.opentable.com/r/kilikya-mile-end-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=5f970422-07b4-47e0-823b-bcd5829a7555&p=2&sd=2019-01-20%2019%3A00',
     # 'https://www.opentable.com/palmers-restaurant?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
     # # 'https://www.opentable.com/r/sultan-sofrasi-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00'
     # # 'https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
@@ -75,7 +75,7 @@ def scrape ():
     # # 'https://www.opentable.co.uk/gaucho-tower-bridge?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
     # # 'https://www.opentable.co.uk/r/duddells-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
     # # 'https://www.opentable.co.uk/ting-restaurant-shangri-la-at-the-shard?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # # 'https://www.opentable.co.uk/r/suvlaki-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
+     'https://www.opentable.co.uk/r/suvlaki-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00'
     # # 'https://www.opentable.co.uk/r/nobu-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
     # # 'https://www.opentable.co.uk/r/morito-hackney-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
     # # 'https://www.opentable.co.uk/hoi-polloi?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
@@ -136,6 +136,7 @@ def scrape ():
             if  not name or name.startswith("£") or not desc or not price:
                 continue
             else:
+
                 x = desc.split()
                 descL=[]
                 list_n = []
@@ -156,7 +157,7 @@ def scrape ():
                 'corn-battered','battered','bun','extra','toppings','Veggies','(Burger,Lettuce,Tomato)','fun-fair','staple',
                 'Flavors','North','corndog','cornbattered','on','vegan','africa','flavorful','wine','Riesling',
                 'Brooklyn','pairing','house','roasted','FOTD','Blanc','Sauvignon','Sunblush','rocketwine','blanc','desperados',
-                'shredded','fun','take','cook','oreo','8','4','to','to,','steamed','excellent','simply','many','our','dishes',
+                'shredded','fun','take','cook','oreo','8','4','to','to,','steamed','excellent','simply','many','our','dishes','three','encased',
                 'pop','out','whet','appetite','version','bowl','sip','though','presented,','phones','Camera','pool','tranquil','our','dishes']
 
                 for l in x:
@@ -183,8 +184,12 @@ def scrape ():
                 with open('whatscooking/menuItem.txt', 'w') as outfile:
                     json.dump(out, outfile)
 
+                with open('whatscookingC/menuItem.txt', 'w') as outfile:
+                    json.dump(out, outfile)
+
                 ####
-                type = Coookings().split().train_model().predict().get_metrics()
+                cuisine = Coookings().split().train_model().predict().get_metrics()
+                type = CoookingsC().split().train_model().predict().get_metrics()
 
                 #####
                 f = open('submission.csv')
@@ -192,14 +197,32 @@ def scrape ():
 
                 for column in csv_f:
                         pk= column[0]
-                        t = column[1]
+                        c = column[1]
                         try:
-                            if (t!='cuisine'):
+                            if (c!='cuisine'):
                                 print('cuisine is:')
-                                print(t)
+                                print(c)
 
                             # pk = int(pk)
                             # item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
+                            else:
+                                continue
+                        except:
+                            print('Cuisine cannot be updated')
+                            print(' ')
+                            continue
+
+                #####
+                f = open('submissionC.csv')
+                csv_f = csv.reader(f)
+
+                for column in csv_f:
+                        pk= column[0]
+                        t = column[1]
+                        try:
+                            if (t!='cuisine'):
+                                print('type is:')
+                                print(t)
                             else:
                                 continue
                         except:
@@ -207,9 +230,10 @@ def scrape ():
                             print(' ')
                             continue
 
-                #####
 
-                menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant,cuisine=t)
+                ####
+
+                menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant,cuisine=c,type=t)
 
                 for i in str1:
                     e = menu.ingredients.append(i)
@@ -225,114 +249,20 @@ def scrape ():
 
     return data
 
-def itemsToJSON():
-
-    #data = Menu_Items.objects.all().only fields=('ingre'))
-    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('ingredients'))
-    #r   = Restaurant.objects.all().values('id')
-    #print (list (r))
-
-    file = open('whatscooking/testNotescaped.txt','w')
-    file.write(data)
-    file.close()
-
-        # Read in the file
-    with open('whatscooking/testNotescaped.txt', 'r') as file :
-      filedata = file.read()
-
-    # Replace the target string
-    filedata = filedata.replace('\\', '')
-
-    # Write the file out again
-    with open('whatscooking/test2.txt', 'w') as file:
-      file.write(filedata)
-
-    return HttpResponse('')
-
-def runML():
-
-    type = Coookings().split().train_model().predict().get_metrics()
-    #cusine = CoookingsC().split().train_model().predict().get_metrics()
-
-    return HttpResponse('')
-
-
-def updateItemsModel():
-    f = open('submission.csv')
-    csv_f = csv.reader(f)
-
-    for column in csv_f:
-            pk= column[0]
-            t = column[1]
-            try:
-                if (t!='cuisine'):
-                    print('cuisine is:')
-                    print(t)
-
-                # pk = int(pk)
-                # item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
-                else:
-                    continue
-            except:
-                print('Type cannot be updated')
-                print(' ')
-                continue
-
-    return HttpResponse('')
-
-
-def updateItemCuisine():
-
-    f = open('submissionC.csv')
-    csv_f = csv.reader(f)
-
-    for column in csv_f:
-            pk= column[0]
-            t = column[1]
-
-            try:
-                pk = int(pk)
-                print(pk)
-                item= Menu_Items.objects.get(pk=pk)
-                print('PK and item matched')
-                item.update(type=None)
-                print('item updated')
-                print(item.cuisine)
-                item.save()
-
-            except:
-                continue
-
-
-    return HttpResponse('')
 
 def index(request):
     scrape()
-    # itemsToJSON()
-    #runML()
-    #updateItemsModel()
-    # #updateItemCuisine()
 
     return HttpResponse('Index executed')
 
 def index2(request):
 
-
-
     return render (request,'index2.html')
 
-def profile(request):
-
-
-    coords_1 = (51.531441500, -0.037871500)
-    coords_2 = (51.4553169, -0.0130913)
-    d = geopy.distance.distance(coords_1, coords_2).km
-
-    return render (request,'profile.html')
 
 def addresses (request):
     addresses = Restaurant.objects.order_by('name').values('name','address')
-    ##print(list(addresses))
+
     return JsonResponse({'addresses': list(addresses)})
 
 
@@ -359,8 +289,6 @@ def map(request):
         restaurants= Restaurant.objects.order_by('name')
 
         addresses = Restaurant.objects.order_by('name').values('name','address')
-        #print(list(addresses))
-        #print('heeey')
 
 
         return render (request,'index2.html',{ 'restaurants': restaurants, 'addresses': addresses } )
@@ -376,7 +304,6 @@ def plotMap(request):
 
         restaurants= Restaurant.objects.all().only('id')
 
-        #coordinates = list()
 
         for r in restaurants:
             #print(r)
@@ -384,19 +311,15 @@ def plotMap(request):
             items= Menu_Items.objects.filter(restaurant_name=r).filter(type=type).filter(item_price__range=(min, max)).values('item_name','item_description','item_price')
 
             if (items):
-                #print('yes')
                 rest = Restaurant.objects.filter(name=r)
-                #print(rest)
                 data = serializers.serialize('json', list(rest))
                 print()
-                #coordinates.append(data)
 
             else:
-                #print('no')
+
                 d=''
 
 
-        #print(list(coordinates))
         coordinates = Restaurant.objects.filter().values('name','lat','long','opening','id')
         #print(list(coordinates))
     return JsonResponse({'coordinates': list(coordinates)})

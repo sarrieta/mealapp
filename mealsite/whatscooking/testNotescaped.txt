@@ -1,1 +1,0 @@
-[{"fields": ["chickpeas", "pure", "tahini", "garlic", "lemon"]}]
