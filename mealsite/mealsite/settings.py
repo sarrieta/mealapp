@@ -88,7 +88,7 @@ DATABASES = {
         'USER': 'mealsite',
         'PASSWORD': 't6s8toP',
         'HOST': '',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 

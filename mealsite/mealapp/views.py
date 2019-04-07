@@ -47,6 +47,9 @@ from whatscooking.whatscooking import*
 from whatscookingC.whatscookingC import*
 import csv
 
+#regex
+import re
+
 
 
 def scrape ():
@@ -54,32 +57,31 @@ def scrape ():
     delete = Restaurant.objects.all().delete()
 
     url_list = [
-    'https://www.opentable.com/r/kilikya-mile-end-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=5f970422-07b4-47e0-823b-bcd5829a7555&p=2&sd=2019-01-20%2019%3A00',
-    'https://www.opentable.com/palmers-restaurant?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    'https://www.opentable.com/r/sultan-sofrasi-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00'
-    # 'https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.com/r/90-degree-melt-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.com/verdis-restaurant-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.com/r/bacaro-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
-    # 'https://www.opentable.co.uk/r/rowleys-restaurant-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/inamo-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/blacklock-london-2?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/foxlow-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/maison-du-mezze-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08%2019%3A00',
-    # 'https://www.opentable.co.uk/r/baluchi-london-2?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/roast-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/the-ivy-tower-bridge-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/kudu-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/gaucho-tower-bridge?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/duddells-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/ting-restaurant-shangri-la-at-the-shard?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/suvlaki-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/nobu-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/morito-hackney-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/hoi-polloi?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/tapas-brindisa-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/plum-and-spilt-milk?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00',
-    # 'https://www.opentable.co.uk/r/st-pancras-brasserie-by-searcys-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00',
+    #'https://www.opentable.com/r/kilikya-mile-end-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=5f970422-07b4-47e0-823b-bcd5829a7555&p=2&sd=2019-01-20%2019%3A00',
+    # 'https://www.opentable.com/palmers-restaurant?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    # # 'https://www.opentable.com/r/sultan-sofrasi-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00'
+    # # 'https://www.opentable.com/r/the-widows-son-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    #  # 'https://www.opentable.com/r/90-degree-melt-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    # # 'https://www.opentable.com/verdis-restaurant-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    # # 'https://www.opentable.com/r/bacaro-london?avt=eyJ2IjoxLCJtIjowLCJwIjowfQ&corrId=ea5e8fc7-ed70-4763-88b7-febc3ad1daf5&p=2&sd=2019-01-29+19%3A00',
+    # # 'https://www.opentable.co.uk/r/rowleys-restaurant-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+        'https://www.opentable.co.uk/r/inamo-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+    #  'https://www.opentable.co.uk/r/foxlow-soho-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/maison-du-mezze-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=4314a95c-763a-43f0-be0c-03931a9b775d&p=2&sd=2019-03-08%2019%3A00',
+    # # 'https://www.opentable.co.uk/r/baluchi-london-2?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/roast-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/the-ivy-tower-bridge-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/kudu-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/gaucho-tower-bridge?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/duddells-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/ting-restaurant-shangri-la-at-the-shard?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=6c5d52dc-f3d0-4b57-9575-091f6b1f077e&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/suvlaki-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/nobu-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/morito-hackney-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/hoi-polloi?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/r/tapas-brindisa-shoreditch-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=8dcbb840-7c90-4fd4-8e52-dbb3f1d118f0&p=2&sd=2019-03-08+19%3A00',
+    # # 'https://www.opentable.co.uk/plum-and-spilt-milk?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00',
+    #  'https://www.opentable.co.uk/r/st-pancras-brasserie-by-searcys-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00',
     # 'https://www.opentable.co.uk/r/shaka-zulu-london?avt=eyJ2IjoxLCJtIjoxLCJwIjoxfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00',
     # 'https://www.opentable.co.uk/r/rossella-london?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00',
     # 'https://www.opentable.co.uk/german-gymnasium-restaurant?avt=eyJ2IjoxLCJtIjoxLCJwIjowfQ&corrId=ca2799b1-5e46-4517-9fc4-b6a3658b3767&p=2&sd=2019-03-08+19%3A00'
@@ -135,22 +137,85 @@ def scrape ():
                 continue
             else:
                 x = desc.split()
-                # print(x)
-                # print('next item')
-                # print(' ')
+                descL=[]
+                list_n = []
 
+                filterlist = ['and','the','with','the','and','fried','or','&','sw','grilled','adana','shish','dressing','mixed','leaves',
+                'roll','pastry','spicy','hot','of','grated','dill','stuffed','please','ask','vine','green','red','sauce','paste','chopped',
+                'baked','a','diced','topped','stuffed','specially','prepared','bed','Sautéed','Sautée','Bottomless','sunday','lunch',
+                'baked','a',')','(','roast','F.O.T.D ','cut','de','of','Selection','Selection','ragu','lunch',
+                'Superb','elegant','superb','redefined','sparkling','fruity','flowers','touch','yellow','served','ring','cooked','white',
+                'char','spit','mixture','Marinated','chops','chargrilled','Knuckle','slow','yellow','served','pieces','Oven','mediterranean',
+                'herbs','minced','thin','very','juice','flavoured','thinly','award','winning','country','artisanal','Oven','Seasonal',
+                'balsamic','Buckhurst','style','traditional','Roast','sweet','light','Spanish','omelette','deep','delicious','each','classic',
+                'tights','sprinkled','seeds','dip','two','soft','both','buns','8oz','4oz','toasted','favourite','crushed',
+                'smoked','Shredded','Nourishing','brown','breast','baby','cubed','layer','layered','tangy','ripe','salad','Stone-baked',
+                'always','smashed','black','ree-range','pasta','stew','compote','semifreddo','pipping',
+                'american','wedges','Chipotle','but','without','Smothered','in','cooling','All-American',
+                '-','wedges','no-ham','blt','without','Smothered','in','cooling','AllAmerican',
+                'corn-battered','battered','bun','extra','toppings','Veggies','(Burger,Lettuce,Tomato)','fun-fair','staple',
+                'Flavors','North','corndog','cornbattered','on','vegan','africa','flavorful','wine','Riesling',
+                'Brooklyn','pairing','house','roasted','FOTD','Blanc','Sauvignon','Sunblush','rocketwine','blanc','desperados',
+                'shredded','fun','take','cook','oreo','8','4','to','to,','steamed','excellent','simply','many','our','dishes',
+                'pop','out','whet','appetite','version','bowl','sip','though','presented,','phones','Camera','pool','tranquil','our','dishes']
 
-                menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant)
+                for l in x:
+                        l = re.sub('[^A-Za-z0-9]+', '', l)
+                        l = l.replace(',', '')
+                        list_n.append(l)
 
-                for i in x:
+                for word in list_n:
+                   if word.lower() not in filterlist:
+                        descL.append(word)
+
+                str1 = list(descL)
+                ###
+                out=[]
+                data = {}
+
+                data['fields'] = []
+                for w in descL:
+
+                    data['fields'].append(w)
+
+                out.append(data)
+
+                with open('whatscooking/menuItem.txt', 'w') as outfile:
+                    json.dump(out, outfile)
+
+                ####
+                type = Coookings().split().train_model().predict().get_metrics()
+
+                #####
+                f = open('submission.csv')
+                csv_f = csv.reader(f)
+
+                for column in csv_f:
+                        pk= column[0]
+                        t = column[1]
+                        try:
+                            if (t!='cuisine'):
+                                print('cuisine is:')
+                                print(t)
+
+                            # pk = int(pk)
+                            # item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
+                            else:
+                                continue
+                        except:
+                            print('Type cannot be updated')
+                            print(' ')
+                            continue
+
+                #####
+
+                menu = Menu_Items.objects.create(item_name=name,item_price=price,item_description=desc,restaurant_name=restaurant,cuisine=t)
+
+                for i in str1:
                     e = menu.ingredients.append(i)
                     i = i.replace(',', '')
-                    print(i)
-                    Menu_Items.objects.update(ingredients = ArrayAppend('ingredients', i))
-                print('next item')
-                print(' ')
-
-
+                    #print(i)
+                    Menu_Items.objects.update(ingredients = ArrayReplace('ingredients', i, i))
 
 
                 menu.save()
@@ -163,7 +228,7 @@ def scrape ():
 def itemsToJSON():
 
     #data = Menu_Items.objects.all().only fields=('ingre'))
-    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('item_description','ingredients'))
+    data = serializers.serialize('json', Menu_Items.objects.all(), fields=('ingredients'))
     #r   = Restaurant.objects.all().values('id')
     #print (list (r))
 
@@ -200,9 +265,14 @@ def updateItemsModel():
             pk= column[0]
             t = column[1]
             try:
-                pk = int(pk)
-                item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
+                if (t!='cuisine'):
+                    print('cuisine is:')
+                    print(t)
 
+                # pk = int(pk)
+                # item= Menu_Items.objects.filter(pk=pk).update(type=str(t))
+                else:
+                    continue
             except:
                 print('Type cannot be updated')
                 print(' ')
@@ -237,10 +307,10 @@ def updateItemCuisine():
     return HttpResponse('')
 
 def index(request):
-    #scrape()
-    itemsToJSON()
-    runML()
-    # updateItemsModel()
+    scrape()
+    # itemsToJSON()
+    #runML()
+    #updateItemsModel()
     # #updateItemCuisine()
 
     return HttpResponse('Index executed')

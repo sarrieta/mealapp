@@ -213,7 +213,7 @@
     "pk": 2698,
     "cuisine": "italian",
     "fields": [
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "walnuts",
       "hot red pepper flakes",
       "extra-virgin olive oil",
@@ -1180,7 +1180,7 @@
       "tomatoes",
       "red pepper",
       "olive oil",
-      "Italian bread",
+      "italian bread",
       "balsamic vinegar",
       "onions",
       "fresh basil",
@@ -4848,7 +4848,7 @@
     "cuisine": "indian",
     "fields": [
       "tumeric",
-      "vegan margarine",
+      "italian margarine",
       "cardamom pods",
       "onions",
       "coriander seeds",
@@ -6242,7 +6242,7 @@
     "fields": [
       "cheese ravioli",
       "evaporated milk",
-      "Italian seasoned breadcrumbs",
+      "italian seasoned breadcrumbs",
       "eggs",
       "cheese",
       "parsley",
@@ -6473,7 +6473,7 @@
       "garlic cloves",
       "fresh basil leaves",
       "olive oil",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "green beans"
     ]
   },
@@ -7308,7 +7308,7 @@
       "extra-virgin olive oil",
       "fat free less sodium chicken broth",
       "diced tomatoes",
-      "Italian bread",
+      "italian bread",
       "sundried tomato paste",
       "dried thyme",
       "salt"
@@ -8928,7 +8928,7 @@
       "olive oil",
       "mint sprigs",
       "peasant bread",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "boneless skinless chicken breast halves",
       "water",
       "red wine vinegar",
@@ -9810,7 +9810,7 @@
       "castellane",
       "red bell pepper",
       "cherry tomatoes",
-      "hot Italian sausages",
+      "hot italian sausages",
       "extra-virgin olive oil",
       "onions"
     ]
@@ -10009,7 +10009,7 @@
       "ham",
       "fresh basil",
       "salt",
-      "Italian bread",
+      "italian bread",
       "butter",
       "balsamic vinaigrette"
     ]
@@ -14675,7 +14675,7 @@
     "fields": [
       "olive oil",
       "red potato",
-      "vegan parmesan cheese",
+      "italian parmesan cheese",
       "garlic",
       "fresh chives",
       "dried oregano"
@@ -16248,7 +16248,7 @@
       "celery ribs",
       "low sodium chicken broth",
       "vegetable oil",
-      "Italian seasoned breadcrumbs",
+      "italian seasoned breadcrumbs",
       "onions",
       "pepper",
       "green onions",
@@ -20087,7 +20087,7 @@
       "apple cpker vinegar",
       "onions",
       "kosher salt",
-      "hot Italian sausages"
+      "hot italian sausages"
     ]
   },
   {
@@ -23429,7 +23429,7 @@
       "fat free less sodium chicken broth",
       "cooking spray",
       "yellow onion",
-      "Italian bread",
+      "italian bread",
       "baby lima beans",
       "hot pepper sauce",
       "all-purpose flour",
@@ -24185,7 +24185,7 @@
       "tamari soy sauce",
       "Sriracha",
       "napa cabbage",
-      "vegan mayonnaise"
+      "italian mayonnaise"
     ]
   },
   {
@@ -24605,7 +24605,7 @@
     "fields": [
       "grape tomatoes",
       "broccoli florets",
-      "Wish-Bone Italian Dressing",
+      "Wish-Bone italian Dressing",
       "purple onion",
       "baby spinach leaves",
       "kalamata",
@@ -25300,7 +25300,7 @@
     "pk": 39981,
     "cuisine": "italian",
     "fields": [
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "garlic cloves",
       "yukon gold potatoes",
       "extra-virgin olive oil",
@@ -25508,7 +25508,7 @@
     "cuisine": "italian",
     "fields": [
       "fresh rosemary",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "grated parmesan cheese",
       "toasted pine nuts",
       "olive oil",
@@ -25758,7 +25758,7 @@
       "extra-virgin olive oil",
       "seasoning salt",
       "ground black pepper",
-      "Italian bread",
+      "italian bread",
       "pinenuts",
       "garlic powder",
       "mixed greens",
@@ -26479,7 +26479,7 @@
       "fresh chervil",
       "chicken broth",
       "salt",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "canola oil"
     ]
   },
@@ -26737,7 +26737,7 @@
     "fields": [
       "tomatoes",
       "cpker vinegar",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "garlic",
       "green beans",
       "eggs",
@@ -28432,7 +28432,7 @@
     "cuisine": "italian",
     "fields": [
       "prosciutto",
-      "Italian bread",
+      "italian bread",
       "cooking spray",
       "smoked gouda"
     ]
@@ -30694,7 +30694,7 @@
       "mussels",
       "dried basil",
       "bay leaves",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "country bread",
       "large shrimp",
       "rub",
@@ -34321,7 +34321,7 @@
       "salt",
       "pasta",
       "pepper",
-      "mild Italian sausage",
+      "mild italian sausage",
       "extra-virgin olive oil",
       "carrots",
       "fresh basil",
@@ -35041,7 +35041,7 @@
     "fields": [
       "large eggs",
       "extra-virgin olive oil",
-      "Italian bread",
+      "italian bread",
       "spaghetti",
       "olive oil",
       "ground veal",
@@ -35146,7 +35146,7 @@
       "orzo",
       "fresh lemon juice",
       "pinenuts",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "salt",
       "cooked chicken breasts",
       "broccoli florets",
@@ -39046,7 +39046,7 @@
       "extra-virgin olive oil",
       "garlic powder",
       "onion salt",
-      "hot Italian sausages",
+      "hot italian sausages",
       "pasta",
       "sliced black olives",
       "salt"
@@ -43019,7 +43019,7 @@
       "plain dry bread crumb",
       "spanish onion",
       "large eggs",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "flat leaf parsley",
       "cuban peppers",
       "ground black pepper",
@@ -43467,7 +43467,7 @@
       "long grain white rice",
       "andouille sausage",
       "ground black pepper",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "medium shrimp"
     ]
   },
@@ -46020,7 +46020,7 @@
     "cuisine": "thai",
     "fields": [
       "Skippy Creamy Peanut Butter",
-      "Wish-Bone Italian Dressing",
+      "Wish-Bone italian Dressing",
       "red bell pepper, sliced",
       "boneless skinless chicken breast halves",
       "firmly packed brown sugar",
@@ -46126,7 +46126,7 @@
       "fresh rosemary",
       "salt and ground black pepper",
       "fusilli",
-      "Italian herbs",
+      "italian herbs",
       "grated parmesan cheese",
       "crushed red pepper flakes",
       "olive oil",
@@ -49934,7 +49934,7 @@
     "pk": 20516,
     "cuisine": "mexican",
     "fields": [
-      "KRAFT Zesty Italian Dressing",
+      "KRAFT Zesty italian Dressing",
       "lean ground beef",
       "chunky salsa",
       "flour tortillas",
@@ -53032,7 +53032,7 @@
     "cuisine": "italian",
     "fields": [
       "plum tomatoes",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "gorgonzola",
       "almonds"
     ]
@@ -54230,7 +54230,7 @@
       "celery ribs",
       "salt and ground black pepper",
       "fish stock",
-      "Italian bread",
+      "italian bread",
       "white vinegar",
       "olive oil",
       "red pepper flakes",
@@ -54454,7 +54454,7 @@
     "cuisine": "cajun_creole",
     "fields": [
       "ground black pepper",
-      "Italian bread",
+      "italian bread",
       "fresh parsley leaves",
       "unsalted butter",
       "chopped garlic",
@@ -55548,7 +55548,7 @@
       "garlic cloves",
       "water",
       "cooking spray",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "grape tomatoes",
       "broccoli rabe",
       "salt",
@@ -58084,7 +58084,7 @@
       "frozen peas",
       "chili",
       "sweet potatoes",
-      "vegan butter",
+      "italian butter",
       "cumin seed",
       "onions",
       "spring roll wrappers",
@@ -61019,7 +61019,7 @@
     "fields": [
       "ground black pepper",
       "tomatoes with juice",
-      "Italian bread",
+      "italian bread",
       "active dry yeast",
       "pecorino romano cheese",
       "caciocavallo",
@@ -61578,7 +61578,7 @@
       "freshly ground pepper",
       "ground turmeric",
       "preserved lemon",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "yellow onion",
       "fresh lemon juice"
     ]
@@ -61624,7 +61624,7 @@
       "cheese tortellini",
       "part-skim mozzarella cheese",
       "diced tomatoes",
-      "ground Italian sausage",
+      "ground italian sausage",
       "fresh mushrooms"
     ]
   },
@@ -62037,7 +62037,7 @@
       "asiago",
       "garlic cloves",
       "olive oil",
-      "Italian turkey sausage"
+      "italian turkey sausage"
     ]
   },
   {
@@ -63239,7 +63239,7 @@
       "large eggs",
       "anchovy fillets",
       "water",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "fresh lemon juice"
     ]
   },
@@ -63842,7 +63842,7 @@
       "sage",
       "minced garlic",
       "zucchini",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "pasta",
       "olive oil",
       "grated parmesan cheese"
@@ -66157,7 +66157,7 @@
       "extra-virgin olive oil",
       "onions",
       "ground nutmeg",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "baby spinach leaves",
       "whipping cream",
       "asiago",
@@ -66824,7 +66824,7 @@
     "cuisine": "mexican",
     "fields": [
       "silken tofu",
-      "vegan cheese",
+      "italian cheese",
       "salt",
       "corn tortillas",
       "olive oil",
@@ -67804,7 +67804,7 @@
       "onions",
       "olive oil",
       "large garlic cloves",
-      "hot Italian sausages",
+      "hot italian sausages",
       "dried oregano"
     ]
   },
@@ -69145,7 +69145,7 @@
       "extra-virgin olive oil",
       "fresh lemon juice",
       "black pepper",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "squpk",
       "celery ribs",
       "red wine vinegar",
@@ -71066,7 +71066,7 @@
       "vegetable oil",
       "pepper",
       "marinara sauce",
-      "Italian seasoned breadcrumbs",
+      "italian seasoned breadcrumbs",
       "mozzarella cheese",
       "grated parmesan cheese",
       "salt",
@@ -74565,7 +74565,7 @@
     "fields": [
       "dried thyme",
       "potatoes",
-      "Italian cheese blend",
+      "italian cheese blend",
       "olive oil",
       "leeks",
       "large egg whites",
@@ -74902,7 +74902,7 @@
       "low sodium chicken broth",
       "red bell pepper",
       "olive oil",
-      "mild Italian sausage"
+      "mild italian sausage"
     ]
   },
   {
@@ -76424,7 +76424,7 @@
       "shredded mozzarella cheese",
       "ragu cheesi classic alfredo sauc",
       "milk",
-      "Italian bread",
+      "italian bread",
       "broccoli"
     ]
   },
@@ -78848,7 +78848,7 @@
       "butter",
       "grated orange peel",
       "french toast",
-      "Italian bread"
+      "italian bread"
     ]
   },
   {
@@ -79970,7 +79970,7 @@
     "cuisine": "italian",
     "fields": [
       "dough",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "ground black pepper",
       "fine sea salt",
       "pinenuts",
@@ -82253,7 +82253,7 @@
       "thyme sprigs",
       "black peppercorns",
       "minced garlic",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "hot water",
       "dough",
       "parsley sprigs",
@@ -85950,7 +85950,7 @@
       "onions",
       "tomato paste",
       "canned tomatoes",
-      "mild Italian sausage",
+      "mild italian sausage",
       "lean ground beef"
     ]
   },
@@ -85958,7 +85958,7 @@
     "pk": 22837,
     "cuisine": "italian",
     "fields": [
-      "Wish-Bone Italian Dressing",
+      "Wish-Bone italian Dressing",
       "hellmann' or best food real mayonnais",
       "potatoes",
       "finely chopped fresh parsley",
@@ -90240,7 +90240,7 @@
       "dry white wine",
       "flat leaf parsley",
       "crushed tomatoes",
-      "mild Italian sausage",
+      "mild italian sausage",
       "garlic cloves",
       "chicken stock",
       "olive oil",
@@ -91565,7 +91565,7 @@
       "yukon gold potatoes",
       "extra-virgin olive oil",
       "oregano",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "garlic cloves",
       "lemon",
       "fine sea salt",
@@ -91678,7 +91678,7 @@
     "cuisine": "mexican",
     "fields": [
       "black pepper",
-      "vegan cheese",
+      "italian cheese",
       "sea salt",
       "chopped cilantro fresh",
       "mild olive oil",
@@ -91934,9 +91934,9 @@
     "fields": [
       "tomatoes",
       "garlic salt",
-      "shredded Italian cheese",
+      "shredded italian cheese",
       "olive oil",
-      "Italian bread"
+      "italian bread"
     ]
   },
   {
@@ -92591,7 +92591,7 @@
       "pizza sauce",
       "shredded mozzarella cheese",
       "green pepper",
-      "Johnsonville Mild Italian Sausage Links",
+      "Johnsonville Mild italian Sausage Links",
       "thin pizza crust"
     ]
   },
@@ -92936,7 +92936,7 @@
       "fresh parsley",
       "white pepper",
       "olive oil",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "tomato sauce",
       "minced garlic",
       "crushed red pepper",
@@ -95035,7 +95035,7 @@
       "tarragon leaves",
       "white vinegar",
       "white wine vinegar",
-      "Italian bread",
+      "italian bread",
       "olive oil",
       "salt pork",
       "frisee"
@@ -103604,7 +103604,7 @@
       "littleneck clams",
       "kosher salt",
       "fennel bulb",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "olive oil",
       "dry white wine",
       "razor clams",
@@ -103641,7 +103641,7 @@
     "cuisine": "italian",
     "fields": [
       "salt",
-      "Italian bread",
+      "italian bread",
       "extra-virgin olive oil",
       "dried oregano",
       "garlic cloves"
@@ -103807,7 +103807,7 @@
     "fields": [
       "ground chipotle chile pepper",
       "corn tortillas",
-      "Wish-Bone Italian Dressing",
+      "Wish-Bone italian Dressing",
       "cabbage",
       "lime juice",
       "chopped cilantro fresh",
@@ -104127,7 +104127,7 @@
       "ricotta",
       "plain flour",
       "parsley leaves",
-      "vegan parmesan cheese",
+      "italian parmesan cheese",
       "olive oil",
       "garlic cloves",
       "eggs",
@@ -104569,7 +104569,7 @@
       "spinach",
       "shallots",
       "garlic cloves",
-      "Italian cheese",
+      "italian cheese",
       "balsamic vinegar",
       "fresh lemon juice",
       "fresh basil",
@@ -105248,7 +105248,7 @@
       "yellow onion",
       "parsnips",
       "ground nutmeg",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "brussels sprouts",
       "kosher salt",
       "sweet potatoes",
@@ -105268,7 +105268,7 @@
       "bread crumbs",
       "salt",
       "frozen chopped spinach",
-      "Italian cheese",
+      "italian cheese",
       "ground turkey",
       "ketchup",
       "ground black pepper"
@@ -105882,7 +105882,7 @@
     "fields": [
       "dinner rolls",
       "basil leaves",
-      "hot Italian sausages",
+      "hot italian sausages",
       "roma tomatoes",
       "fresh mozzarella",
       "onions",
@@ -108503,7 +108503,7 @@
       "apples",
       "chicken broth",
       "butternut squash",
-      "Italian cheese blend",
+      "italian cheese blend",
       "salt and ground black pepper",
       "garlic",
       "milk",
@@ -109838,7 +109838,7 @@
       "ripe olives",
       "pepperoni slices",
       "olive oil",
-      "Italian bread",
+      "italian bread",
       "pepper",
       "pimento stuffed olives",
       "fresh parsley"
@@ -110310,7 +110310,7 @@
       "fennel",
       "celery",
       "water",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "sage leaves",
       "garlic"
     ]
@@ -110366,7 +110366,7 @@
     "fields": [
       "grated parmesan cheese",
       "mozzarella cheese",
-      "Italian seasoned breadcrumbs",
+      "italian seasoned breadcrumbs",
       "risotto",
       "vegetable oil",
       "large eggs"
@@ -111172,7 +111172,7 @@
       "grated parmesan cheese",
       "spaghetti",
       "roasted almonds",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "ground black pepper",
       "extra-virgin olive oil",
       "kosher salt",
@@ -112325,7 +112325,7 @@
       "garlic cloves",
       "olive oil",
       "fresh spinach",
-      "vegan parmesan cheese",
+      "italian parmesan cheese",
       "chestnut mushrooms"
     ]
   },
@@ -112825,7 +112825,7 @@
       "large shrimp",
       "hungarian sweet paprika",
       "vegetable oil",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "plum tomatoes",
       "saffron threads",
       "ground black pepper",
@@ -113592,7 +113592,7 @@
       "eggs",
       "ground sage",
       "vegetable oil",
-      "Italian bread",
+      "italian bread",
       "yellow corn meal",
       "milk",
       "hard-boiled egg",
@@ -114079,7 +114079,7 @@
     "cuisine": "italian",
     "fields": [
       "capers",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "olive oil",
       "orange rind",
       "baguette",
@@ -115728,7 +115728,7 @@
       "garlic",
       "greek yogurt",
       "ground cinnamon",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "cayenne pepper",
       "ground black pepper",
       "salt",
@@ -115907,7 +115907,7 @@
     "fields": [
       "light mayonnaise",
       "yellow bell pepper",
-      "Italian bread",
+      "italian bread",
       "lettuce leaves",
       "cajun seasoning",
       "garlic cloves",
@@ -117072,7 +117072,7 @@
     "fields": [
       "olive oil",
       "flat anchovy",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "pimento stuffed olives",
       "large garlic cloves",
       "spaghetti"
@@ -117250,7 +117250,7 @@
     "fields": [
       "dried porcini mushrooms",
       "bay leaves",
-      "hot Italian sausages",
+      "hot italian sausages",
       "fresh rosemary",
       "grated parmesan cheese",
       "button mushrooms",
@@ -117918,7 +117918,7 @@
     "fields": [
       "pepper",
       "fresh mozzarella",
-      "Italian bread",
+      "italian bread",
       "tomatoes",
       "basil leaves",
       "purple onion",
@@ -118521,7 +118521,7 @@
     "fields": [
       "mini pepperoni slices",
       "Pillsbury™ Refrigerated Crescent Dinner Rolls",
-      "mild Italian sausage",
+      "mild italian sausage",
       "shredded mozzarella cheese",
       "pizza sauce"
     ]
@@ -118618,7 +118618,7 @@
       "soy milk",
       "baking powder",
       "baking soda",
-      "vegan butter",
+      "italian butter",
       "vinegar",
       "salt"
     ]
@@ -119204,7 +119204,7 @@
       "kosher salt",
       "jalapeno chilies",
       "konbu",
-      "vegan mayonnaise",
+      "italian mayonnaise",
       "sake",
       "water",
       "cilantro leaves",
@@ -121123,7 +121123,7 @@
       "ground beef",
       "eggs",
       "grated parmesan cheese",
-      "Italian seasoned breadcrumbs",
+      "italian seasoned breadcrumbs",
       "long grain white rice"
     ]
   },
@@ -122632,7 +122632,7 @@
       "purple onion",
       "chopped garlic",
       "olive oil",
-      "Italian bread",
+      "italian bread",
       "pitted kalamata olives",
       "provolone cheese",
       "genoa salami",
@@ -123651,7 +123651,7 @@
       "extra-virgin olive oil",
       "shallots",
       "oregano",
-      "hot Italian sausages"
+      "hot italian sausages"
     ]
   },
   {
@@ -123799,7 +123799,7 @@
       "onions",
       "saffron threads",
       "zucchini",
-      "hot Italian sausages",
+      "hot italian sausages",
       "fresh parsley",
       "tomatoes",
       "paprika",
@@ -128767,7 +128767,7 @@
       "olive oil",
       "cracked black pepper",
       "red bell pepper",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "garlic cloves",
       "champagne vinegar"
     ]
@@ -131835,7 +131835,7 @@
       "garlic cloves",
       "drippings",
       "grated parmesan cheese",
-      "hot Italian sausages",
+      "hot italian sausages",
       "salt and ground black pepper",
       "diced tomatoes"
     ]
@@ -132994,7 +132994,7 @@
       "ground black pepper",
       "salt",
       "olive oil",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "eggs",
       "dry white wine",
       "spaghetti",
@@ -133981,7 +133981,7 @@
       "garlic cloves",
       "orecchiette",
       "pitted kalamata olives",
-      "Italian turkey sausage",
+      "italian turkey sausage",
       "dried oregano",
       "ground black pepper",
       "feta cheese crumbles"
@@ -134156,7 +134156,7 @@
       "yellow rock sugar",
       "oxtails",
       "star anise",
-      "Italian basil",
+      "italian basil",
       "fennel seeds",
       "kosher salt",
       "coriander seeds",
@@ -134182,7 +134182,7 @@
       "penne pasta",
       "minced garlic",
       "red pepper flakes",
-      "Italian turkey sausage"
+      "italian turkey sausage"
     ]
   },
   {
@@ -134713,7 +134713,7 @@
       "tomato paste",
       "black beans",
       "diced tomatoes",
-      "hot Italian sausages",
+      "hot italian sausages",
       "onions"
     ]
   },
@@ -136548,7 +136548,7 @@
       "red wine vinegar",
       "fresh lemon juice",
       "water",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "pimento stuffed green olives",
       "sugar",
       "roasted red peppers",
@@ -137212,7 +137212,7 @@
       "chicken thighs",
       "chicken legs",
       "ground black pepper",
-      "Italian parsley leaves",
+      "italian parsley leaves",
       "garlic cloves",
       "chorizo sausage"
     ]
@@ -137340,15 +137340,5 @@
       "sesame seeds",
       "shoyu"
     ]
-  },
-  {
-    "pk": 44166,
-    "cuisine": "chinese",
-    "fields": [
-      "green cabbage",
-      "green onions",
-      "corn starch",
-      "won ton wrappers",
-      "salt",
-      "medium shrimp",
-      "lean ground por
+  }
+  ]

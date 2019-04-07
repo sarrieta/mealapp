@@ -43,7 +43,7 @@ class Coookings:
 	def split(self):
 
 		self.train_data = pd.read_json('whatscooking/train2.txt', orient='records')
-		self.test_data = pd.read_json('whatscooking/test2.txt', orient='records')
+		self.test_data = pd.read_json('whatscooking/menuItem.txt', orient='records')
 
 		X = self.train_data['fields'].str.join('. ')
 		y = self.train_data['cuisine']
@@ -72,15 +72,16 @@ class Coookings:
 
 		print('creating submission..')
 		yhat = pd.Series(self.pipeline.predict(self.test_data['fields'].str.join('. ')),
-													name='cuisine',
-														index=self.test_data['pk'])
+													name='cuisine')
+														#index=self.test_data['pk'])
 
 		p= (self.pipeline.predict(self.test_data['fields'].str.join('. ')))
 		p = str(p)
 		p = p.replace("'", '')
 		p = p.replace("[", '')
 		p = p.replace("]", '')
-		#print (p)
+
+		print (p)
 		#print(yhat)
 		#print(self.test_data['pk'])
 
@@ -90,6 +91,12 @@ class Coookings:
 		yhat.to_csv('submission.csv', header=True)
 
 		return self
+
+		with open('somefile.txt', 'a') as the_file:
+			the_file.write('Hello\n')
+
+		with open('data.json', 'w') as outfile:
+			json.dump(p, outfile)
 
 
 
