@@ -385,6 +385,11 @@ $(document).ready(function(event){
 
                        $("#innerC").empty()
 
+                       if( items.length == 0)
+                       {
+                         alert('There are no menu items that meet your criteria. Please modify the filters')
+                       }
+
                        for (var i=0;i<items.length;i++) {
 
                          name = JSON.stringify(items[i].item_name)
@@ -397,7 +402,6 @@ $(document).ready(function(event){
                          pPrice= price.replace(/['"]+/g, '');
 
 
-
                             /*$("#item_list").append("<li style='color:black;text-align:left' ><a data-toggle='tab'>" + pName + ' '+ pDesc + ' ' + pPrice +'£'
                             + " </a></li>");*/
 
@@ -408,10 +412,14 @@ $(document).ready(function(event){
 
                             }
 
+
+
                             demo =i;
 
                             if ( demo == '1')
                             {
+
+
                               $("#innerC").append("<div class='carousel-item col-md-4 active '> <div class='panel panel-default'> <div class='panel-thumbnail'>"+
 
                               '<div class="card text-center" style=""> <div class="card-body">'+

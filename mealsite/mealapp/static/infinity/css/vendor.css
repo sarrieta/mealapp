@@ -1,19 +1,19 @@
-/* =================================================================== 
+/* ===================================================================
  *
- *  Infinity v1.0 Vendor/Third Party CSS 
+ *  Infinity v1.0 Vendor/Third Party CSS
  *  01-02-2017
  *  ------------------------------------------------------------------
  *
  *  TOC:
  *  01. Animate.css
- *  02. Lightgallery 
- *  03. Owl Carousel 
+ *  02. Lightgallery
+ *  03. Owl Carousel
  *  04. Flexslider
  *
  * =================================================================== */
 
 /**
- * 01. 
+ * 01.
  * Animate.css - http://daneden.me/animate
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  *
@@ -3975,7 +3975,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -4020,7 +4019,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Contributing author: Tyler Smith (@mbmufffin)
- * 
+ *
  * ===================================================================
  */
 /* reset */

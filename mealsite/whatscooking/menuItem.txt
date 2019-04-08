@@ -1,1 +1,1 @@
-[{"fields": []}]
+[{"fields": ["mix", "broad", "beans", "chick", "peas", "vegetable", "herb", "fritters", "humus"]}]
