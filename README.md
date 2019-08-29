@@ -17,6 +17,8 @@ been obtained using an scraping library and classified by food types and cuisine
 - Bootstrap
 - CSS
 - HTML
+- NLTK
+- Sklearn
 
 # Intro
 <a href="https://imgur.com/ZD83FGA"><img src="https://i.imgur.com/ZD83FGA.png" title="source: imgur.com" /></a>
