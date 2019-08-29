@@ -6,4 +6,5 @@ been obtained using an scraping library and classified by food types and cuisine
 
 
 
-<a href="https://imgur.com/ZD83FGA"><img src="https://imgur.com/ZD83FGA" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/ZD83FGA"><img src="https://i.imgur.com/ZD83FGA.png" title="source: imgur.com" /></a>
