@@ -1,7 +1,7 @@
 # Final year project
 # Team Members
 
-Sergio
+- Sergio
 
 # mealapp
 
